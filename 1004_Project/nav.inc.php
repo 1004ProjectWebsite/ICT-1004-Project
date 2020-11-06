@@ -36,12 +36,12 @@
                     <i class="material-icons" style="font-size:2em">account_circle</i>  
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Log in</a>
-                    <a class="dropdown-item" href="#">Account</a>
+                    <a class="dropdown-item" href="login.php">Log in</a>
+                    <a class="dropdown-item" href="register.php">Account</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" title="Sign In" href="login.php">
+                <a class="nav-link" title="Log out" href="#">
                     <i class="material-icons" style="font-size:2em">login</i>
                 </a>
             </li> 
