@@ -9,7 +9,6 @@ and open the template in the editor.
         <title>Phone Case Shop</title>
         <?php
             include "head.inc.php";
-        include "head.inc.php";
         ?>
     </head>
     <body>
@@ -22,7 +21,7 @@ and open the template in the editor.
             <p>at introduces the company/organization</p>
             </div>
         </header>
-
+        
 
         <main class="container">
 <<<<<<< HEAD
