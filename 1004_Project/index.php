@@ -96,7 +96,6 @@ and open the template in the editor.
                         </article>
                     </div>
                 </div>
-=======
 
             </div>
         </main>

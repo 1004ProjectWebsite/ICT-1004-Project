@@ -29,3 +29,6 @@
         "sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
         crossorigin="anonymous">
 </script>
+
+<!-- custom javascript -->
+<script defer src="js/main.js"></script>
