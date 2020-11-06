@@ -1,0 +1,27 @@
+figure 
+{
+    display: inline-block;
+    text-align: center;
+}
+
+figcaption 
+{
+    color: gray;
+    font-style: italic;
+    text-align: center;
+}
+
+img 
+{
+    max-height: 320px;
+    max-width: 200px;
+}
+
+footer 
+{ 
+    border-top-style: solid;
+    text-align: center;
+    font-style: italic;
+    padding: 20px 0;
+}
+

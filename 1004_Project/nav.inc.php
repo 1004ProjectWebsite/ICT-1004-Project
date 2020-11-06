@@ -18,22 +18,32 @@
             </li>
             </ul>
         
-            <ui class="navbar-nav ml-auto">
-                 <li class="nav-item">
-                <a class="nav-link" title="Shopping Cart" href="#">
-                    <i class="material-icons" style="font-size:2em">shopping_cart</i>
-                </a>
-            </li> 
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                <a class="nav-link" title="Create Account" href="register.php">
-                    <i class="material-icons" style="font-size:2em">account_circle</i>
-                </a>
-            </li> 
-            <li class="nav-item">
-                <a class="nav-link" title="Sign In" href="login.php">
-                    <i class="material-icons" style="font-size:2em">login</i>
-                </a>
-            </li> 
+                    <a class="nav-link" title="Shopping Cart" href="#">
+                        <i class="material-icons" style="font-size:2em">shopping_cart</i>
+                    </a>
+                </li> 
+<!--                <li class="nav-item">
+                    <a class="nav-link" title="Create Account" href="register.php">
+                        <i class="material-icons" style="font-size:2em">account_circle</i>                    
+                    </a>
+                </li>-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="material-icons" style="font-size:2em">account_circle</i>  
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Log in</a>
+                      <a class="dropdown-item" href="#"></a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" title="Sign In" href="login.php">
+                        <i class="material-icons" style="font-size:2em">login</i>
+                    </a>
+                </li> 
+            </ul>
         </ul>
     </div>  
 </nav>
