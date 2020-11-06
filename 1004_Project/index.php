@@ -9,24 +9,32 @@ and open the template in the editor.
         <title>Phone Case Shop</title>
         <?php
             include "head.inc.php";
+        include "head.inc.php";
         ?>
     </head>
-    <body> 
-         <?php
-            include "nav.inc.php";
-         ?>
-        <header class="jumbotron text-center">        
+    <body>
+        <?php
+        include "nav.inc.php";
+        ?>
+        <header class="jumbotron parallax text-center">
+            <div class="title">
             <h1 class="display-4">Welcome to ______</h1>
             <p>at introduces the company/organization</p>
+            </div>
         </header>
 
 
         <main class="container">
+<<<<<<< HEAD
+      <p>Scroll Up and Down.</p>
+      <div style="height:1000px;background-color:white;font-size:36px">
+          test
+      >>>>>>> 38ec39f6689b44954d9df0a5bc6eb6c6eaad29e9
             <h3>Popular items</h3>
             <div class="container">
                 <div class="row">
                     <div class="col">
-                       <article>    
+                       <article>
                            <figure>
                                <a href="phone_cases_img/iphone_11_clearcase.jpg">
                                    <img src="phone_cases_img/iphone_11_clearcase.jpg" alt="iphone11"/>
@@ -87,7 +95,9 @@ and open the template in the editor.
                             </figure>
                         </article>
                     </div>
-                </div> 
+                </div>
+=======
+
             </div>
         </main>
         <?php
