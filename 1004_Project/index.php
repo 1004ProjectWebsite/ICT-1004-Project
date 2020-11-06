@@ -22,7 +22,6 @@ and open the template in the editor.
             </div>
         </header>
         
-
         <main class="container">
 <<<<<<< HEAD
       <p>Scroll Up and Down.</p>

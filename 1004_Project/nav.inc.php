@@ -37,7 +37,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="login.php">Log in</a>
-                    <a class="dropdown-item" href="register.php">Account</a>
+                    <a class="dropdown-item" href="register.php">Register</a>
                 </div>
             </li>
             <li class="nav-item">
