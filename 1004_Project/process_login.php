@@ -1,13 +1,11 @@
 <?php
-session_start();
-
+session_start(); //start session
 ?>
 
 <?php
-
 $email = $pwd_hashed = $errorMsg = "";
 $success = true;
-    if(isset($_POST['login-submit'])){
+if (isset($_POST['login-submit'])) {
     if (empty($_POST["email"])) {
         $errorMsg .= "Email is required.<br>";
         $success = false;
@@ -43,16 +41,16 @@ function sanitize_input($data) {
 function authenticateUser() {
     global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
 // Create database connection.   
-   // $config = parse_ini_file('../../private/db-config.ini');
-  //  $conn = new mysqli($config['servername'], $config['username'],
-          //  $config['password'], $config['dbname']);
+    // $config = parse_ini_file('../../private/db-config.ini');
+    //  $conn = new mysqli($config['servername'], $config['username'],
+    //  $config['password'], $config['dbname']);
     $servername = "localhost";
     $username = "root";
     $password = "kahwei";
     $dbname = "1004_Project";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection    
     if ($conn->connect_error) {
         $errorMsg = "Connection failed: " . $conn->connect_error;
@@ -71,16 +69,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             $fname = $row["fname"];
             $lname = $row["lname"];
             $pwd_hashed = $row["password"];
-            
-            $_SESSION['use']=$fname;
-            echo $_SESSION['use'];
-            
+
+            $_SESSION['use'] = $fname;  //get fname from database
+
             if (!isset($_SESSION['use'])) {
                 echo "You are not logged in";
-            }
-            else{
+            } else {
                 echo "You are logged in";
-                header("location: index.php");
+                header("location: index.php"); //Once login jumped to index.php
                 exit();
             }
             // Check if the password matches:            
@@ -107,26 +103,20 @@ include "head.inc.php";
 ?>
     </head>
     <body>
-<?php
-include "nav.inc.php";
-?>
+        <?php
+        include "nav.inc.php";
+        ?>
         <main class="container">
         <?php
-        if ($success) {
-            echo "<h1>Login successful!</h1>";
-            echo "<h3>Welcome back " . $fname . " " . $lname . "</h3>";
-            echo "<a class=\"btn btn-success\" href=\"index.php\">Return to Home</a>";
-        }
-            else 
-    {
-            echo "<h1>Oops!</h1>";
-            echo "<h3>The following input errors were detected:</h3>";
-            echo "<p>" . $errorMsg . "</p>";
-            echo "<a class=\"btn btn-warning\" href=\"login.php\">Return to Login</a>";
-        }   
-        
+        echo "<h1>Oops!</h1>";
+        echo "<h3>The following input errors were detected:</h3>";
+        echo "<p>" . $errorMsg . "</p>";
+        echo "<a class=\"btn btn-warning\" href=\"login.php\">Return to Login</a>";
         ?>                  
-            </main>
-               
+        </main>
+
     </body>
+<?php
+include "footer.inc.php";
+?>
 </html>

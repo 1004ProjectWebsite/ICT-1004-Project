@@ -19,3 +19,9 @@ session_start();
         <div class="about">
             
         </div>
+           
+    </body>
+     <?php
+            include "footer.inc.php";
+        ?>
+</html>

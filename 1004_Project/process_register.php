@@ -1,4 +1,5 @@
 <?php
+session_start(); //start session
 $fname = $lname = $email = $pwd_hashed = $errorMsg = "";
 $success = true;
 
@@ -88,6 +89,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         // Prepare the statement:
         $stmt = $conn->prepare("INSERT INTO member (fname, lname, email, password) VALUES (?, ?, ?, ?)");
         
+          $_SESSION['use']=$fname; //get fname after registration 
+            echo $_SESSION['use'];
+            
+            if (!isset($_SESSION['use'])) { 
+                echo "You are not logged in";
+            }
+            else{
+                echo "You are logged in"; //After registration jump to index.php
+                header("location: index.php");
+                exit();
+            }
+        
         // Bind & execute the query statement:
         $stmt->bind_param("ssss", $fname, $lname, $email, $pwd_hashed);
         if (!$stmt->execute()) {
@@ -129,4 +142,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             
         </main>
     </body>
+     <?php
+            include "footer.inc.php";
+        ?>
 </html>

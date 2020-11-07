@@ -50,6 +50,9 @@
             <button class="btn btn-primary" type="submit">Submit</button> 
             </div>
         </form>  
-    </main>   
+   </main>   
     </body>
+     <?php
+            include "footer.inc.php";
+        ?>
 </html>

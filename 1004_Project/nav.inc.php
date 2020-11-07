@@ -1,6 +1,3 @@
-
-
-
 <nav class="navbar navbar-expand-sm " id="navbar">
     <a class="navbar-brand" href="#">
         <img src="//cdn.shopify.com/s/files/1/0254/0516/1520/files/logo_2048x.gif?v=1561039465" alt="in a nutshell – kurzgesagt" height="30" style="height:30px;">
@@ -35,7 +32,7 @@
                                 </a>
                             </li>-->
             <?php
-            if (isset($_SESSION['use']) && !empty($_SESSION['use'])) {
+            if (isset($_SESSION['use']) && !empty($_SESSION['use'])) { //Means user is logged in display logout
                echo  'Welcome ',$_SESSION['use'];
                 ?>
            
@@ -47,7 +44,7 @@
                
                 <?php 
 
-            } else 
+            } else //User is not logged in diplay login/register
             { 
                 ?>
                 <li class="nav-item dropdown">

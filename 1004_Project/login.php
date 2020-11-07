@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); // start session
 ?>
 <html>
      <?php
@@ -9,7 +9,6 @@ session_start();
     <?php
     include "nav.inc.php";
     ?>
-
     <main class="container">
         <h1>Login</h1>
         <p>
@@ -28,11 +27,15 @@ session_start();
             <input class="form-control" type="password" id="pwd" required name="pwd"    
                    placeholder="Enter password">        
             </div>    
-            <a href="#">Forgot Password<p>
+                <a href="">Forgot Password</a><br>
             <div class="form-group">
             <button class="btn btn-primary" type="Login" name="login-submit">Login</button> 
-            </div>
+        </div>
         </form>  
-    </main>   
+   </main>   
     </body>
+    
+         <?php
+            include "footer.inc.php";
+        ?>
 </html>

@@ -25,7 +25,7 @@ $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
             <div class="container">
                 <div class="col-sm-3">                
                     <?php
-                    echo '<img src="data:image/jpeg;base64,' . base64_encode($row['p_img']) . '"/>';
+                    echo '<img src="data:image/jpeg;base64,' . base64_encode($row['p_img']) . '"/>'; //Load image from database
                     ?>    
                     <h5 class="text-body"><?php echo $row["p_name"]; ?></h5>
                     <h5 class="text-info"><?php echo "$", $row["p_price"]; ?></h5>
