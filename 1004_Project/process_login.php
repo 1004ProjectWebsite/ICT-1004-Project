@@ -1,9 +1,13 @@
 <?php
-//session_start();
+session_start();
+
+?>
+
+<?php
 
 $email = $pwd_hashed = $errorMsg = "";
 $success = true;
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(isset($_POST['login-submit'])){
     if (empty($_POST["email"])) {
         $errorMsg .= "Email is required.<br>";
         $success = false;
@@ -68,15 +72,17 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             $lname = $row["lname"];
             $pwd_hashed = $row["password"];
             
-            //session_start();
-                            
-            // Store data in session variables
-           // $_SESSION["loggedin"] = true;
-           // $_SESSION["fname"] = $fname;                            
-                            
-            // Redirect user to welcome page
-           // header("location: index.php");
+            $_SESSION['use']=$fname;
+            echo $_SESSION['use'];
             
+            if (!isset($_SESSION['use'])) {
+                echo "You are not logged in";
+            }
+            else{
+                echo "You are logged in";
+                header("location: index.php");
+                exit();
+            }
             // Check if the password matches:            
             if (!password_verify($_POST["pwd"], $pwd_hashed)) {
                 // Don't be too specific with the error message - hackers don't                

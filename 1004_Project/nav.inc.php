@@ -1,3 +1,6 @@
+
+
+
 <nav class="navbar navbar-expand-sm " id="navbar">
     <a class="navbar-brand" href="#">
         <img src="//cdn.shopify.com/s/files/1/0254/0516/1520/files/logo_2048x.gif?v=1561039465" alt="in a nutshell – kurzgesagt" height="30" style="height:30px;">
@@ -31,21 +34,37 @@
                                     <i class="material-icons" style="font-size:2em">account_circle</i>                    
                                 </a>
                             </li>-->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="material-icons" style="font-size:2em">account_circle</i>  
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="login.php">Log in</a>
-                    <a class="dropdown-item" href="register.php">Register</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" title="Log out" href="#">
-                    <i class="material-icons" style="font-size:2em">login</i>
-                </a>
-            </li> 
-        </ul>
+            <?php
+            if (isset($_SESSION['use']) && !empty($_SESSION['use'])) {
+               echo  'Welcome ',$_SESSION['use'];
+                ?>
+           
+                <li class="nav-item">
+                    <a class="nav-link" title="Log out" href="logout.php">
+                        <i class="material-icons" style="font-size:2em">exit_to_app</i>
+                    </a>
+                </li> 
+               
+                <?php 
+
+            } else 
+            { 
+                ?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons" style="font-size:2em">account_circle</i>  
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="login.php">Log in</a>
+                        <a class="dropdown-item" href="register.php">Register</a>
+                    </div>
+                </li>
+<?php 
+
+            } 
+            ?>
+
+
         </ul>
     </div>  
 </nav>

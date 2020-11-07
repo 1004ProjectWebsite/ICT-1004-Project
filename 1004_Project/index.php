@@ -1,3 +1,10 @@
+<?php
+session_start();
+            ?>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" conte...
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -7,9 +14,9 @@ and open the template in the editor.
 <html>
     <head>
         <title>Phone Case Shop</title>
-        <?php
-            include "head.inc.php";
-        ?>
+        <?php 
+ include "head.inc.php"; 
+?>
     </head>
     <body>
         <?php

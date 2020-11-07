@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
      <?php
     include "head.inc.php";
@@ -27,7 +30,7 @@
             </div>    
             <a href="#">Forgot Password<p>
             <div class="form-group">
-            <button class="btn btn-primary" type="Login">Login</button> 
+            <button class="btn btn-primary" type="Login" name="login-submit">Login</button> 
             </div>
         </form>  
     </main>   
