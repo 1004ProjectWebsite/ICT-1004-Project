@@ -30,11 +30,8 @@ session_start(); //start session
             </header>
 
             <main class="container">
-                <<<<<<< HEAD
                 <p>Scroll Up and Down.</p>
                 <div style="height:1000px;background-color:white;font-size:36px">
-                    test
-                    >>>>>>> 38ec39f6689b44954d9df0a5bc6eb6c6eaad29e9
                     <h3>Popular items</h3>
                     <div class="container">
                         <div class="row">

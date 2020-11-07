@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 ?>
 <!doctype html>
