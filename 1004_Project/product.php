@@ -20,7 +20,7 @@ $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
         $query->execute();
         $result = $query->get_result();
         while ($row = $result->fetch_array()) {
-            ?>
+            ?>  
             <div class="container">
                 <div class="col-sm-3">                
                     <?php

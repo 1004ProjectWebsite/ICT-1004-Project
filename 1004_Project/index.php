@@ -33,6 +33,8 @@ session_start(); //start session
                 <p>Scroll Up and Down.</p>
                 <div style="height:1000px;background-color:white;font-size:36px">
                     <h3>Popular items</h3>
+                    
+                   <!--put image in 3 column -->
                     <div class="container">
                         <div class="row">
                             <div class="col">
