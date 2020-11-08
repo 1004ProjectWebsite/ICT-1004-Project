@@ -33,7 +33,7 @@
             <div class="form-group">
             <label for="pwd">Password:</label>        
             <input class="form-control" type="password" id="pwd" required name="pwd"    
-                   placeholder="Enter password">        
+                   placeholder="Enter password" minlength="6">        
             </div>    
             <div class="form-group">
             <label for="pwd_confirm">Confirm Password:</label> 
