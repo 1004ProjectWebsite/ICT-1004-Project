@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm " id="navbar">
+<nav class="navbar navbar-expand-sm navbar-light text-right" id="navbar">
     <a class="navbar-brand" href="index.php">
         <img src="//cdn.shopify.com/s/files/1/0254/0516/1520/files/logo_2048x.gif?v=1561039465" alt="in a nutshell – kurzgesagt" height="30" style="height:30px;">
     </a>
@@ -57,11 +57,8 @@
                     </div>
                 </li>
 <?php 
-
             } 
             ?>
-
-
         </ul>
     </div>  
 </nav>
