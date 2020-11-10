@@ -34,7 +34,17 @@
             <?php
             if (isset($_SESSION['use']) && !empty($_SESSION['use'])) { //Means user is logged in display logout
                echo  'Welcome ',$_SESSION['use'];
-                ?>
+               ?>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons" style="font-size:2em">account_circle</i>  
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="">Account</a>
+                        <a class="dropdown-item" href="">Order History</a>
+                    </div>
+                </li>
+           
            
                 <li class="nav-item">
                     <a class="nav-link" title="Log out" href="logout.php">
