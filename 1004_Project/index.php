@@ -87,7 +87,38 @@ session_start(); //start session
                         </article>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col">
+                        <article>
+                            <figure>
+                                <a href="phone_cases_img/iphone_12_starrysky.jpg">
+                                    <img src="phone_cases_img/iphone_12_starrysky.jpg" alt="iPhone12"/>
+                                </a>
+                                <figcaption>iPhone 12 Starry Sky</figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article>
+                            <figure>
+                                <a href="phone_cases_img/iphone_x_dog.jpg">
+                                    <img src="phone_cases_img/iphone_x_dog.jpg" alt="iPhoneX"/>
+                                </a>
+                                <figcaption>iPhone X Dog</figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article>
+                            <figure>
+                                <a href="phone_cases_img/oppo_doraemon.jpg">
+                                    <img src="phone_cases_img/oppo_doraemon.jpg" alt="Oppo"/>
+                                </a>
+                                <figcaption>Oppo Doraemon</figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                </div>
             </div>
     </main>        
 </body>
