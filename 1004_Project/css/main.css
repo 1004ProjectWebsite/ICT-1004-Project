@@ -18,7 +18,7 @@ figcaption
     font-size: 18px;
 }
 
-img
+figure img
 {
     max-height: 320px;
     max-width: 200px;
@@ -198,3 +198,4 @@ footer
     width: 100%;
   }
 }
+
