@@ -15,9 +15,15 @@
                     <i class="material-icons" style="font-size:1em">store</i>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="aboutus.php">About Us</a>
-            </li>
+            
+            <div class="dropdown">
+                <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="aboutus.php">About Us</a></li>
+                    <li><a class="dropdown-item" href="contactus.php">Contact</a></li>
+                </ul>
+            </div>
         </ul>
 
         <ul class="navbar-nav ml-auto">
