@@ -12,7 +12,7 @@ session_start(); //start session
         }
         
         #companyInfo {
-            margin-top: -50px;
+            margin-top: -100px;
         }
         
         #logo {
@@ -27,7 +27,7 @@ session_start(); //start session
     ?>
     <header class="jumbotron parallax text-center" style="margin: 20px;">
         <div>
-            <h1 class="display-4">Welcome to<img id="logo" src="images/sphone_logo_transparent.png"></h1>
+            <h1 class="display-4">Welcome to <img id="logo" src="images/sphone_logo_transparent.png"></h1>
             <p id="companyInfo">at introduces the company/organization</p>
         </div>
     </header>
