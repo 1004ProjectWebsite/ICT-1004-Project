@@ -1,3 +1,13 @@
+ALTER TABLE member
+ADD pno varchar(255);
+
+ALTER TABLE member
+ADD address varchar(255);
+
+ALTER TABLE member
+ADD cc varchar(255);
+
+
 INSERT INTO products (product_id, p_name, p_price, p_img, p_desc)
 VALUES ('1', 'Huawei P30 Silicone Case', '21', 'huawei_p30_red.jpg'
 , "This official Huawei Silicone case for the Huawei P30 in Red offers excellent protection while maintaining your device's sleek, lines. 
@@ -28,3 +38,5 @@ made out of genuine leather. Compatible with 4G and 5G variants.");
 INSERT INTO products (product_id, p_name, p_price, p_img, p_desc)
 VALUES ('6', 'Samsung Note20 Leather Case (Clear)', '18', 'samsung_note20_clear.jpg'
 , "This Official Samsung Clear Cover is the perfect accessory for your Samsung Galaxy Note 20 smartphone.");
+
+-- INSERT INTO member (member_id, fname, lname, email, password, pno, address, creditcard)
