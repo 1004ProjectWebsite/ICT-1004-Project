@@ -38,7 +38,7 @@
                                 </a>
                             </li>-->
             <?php
-            if (isset($_SESSION['username']) && !empty($_SESSION['username'])) { //Means user is logged in display logout
+            if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) { //Means user is logged in display logout
                echo  'Welcome ',$_SESSION['username'];
                ?>
                 <li class="nav-item dropdown">

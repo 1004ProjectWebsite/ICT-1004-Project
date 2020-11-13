@@ -27,6 +27,7 @@ if (isset($_POST['login-submit'])) {
 
 authenticateUser();
 
+
 function sanitize_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -69,13 +70,14 @@ function authenticateUser() {
             $fname = $row["fname"];
             $lname = $row["lname"];
             $pwd_hashed = $row["password"];
-
-            $_SESSION['username'] = $fname;  //get fname from database
+            $_SESSION['username']=$fname;
+            $_SESSION["loggedin"] = true;
             // Check if the password matches:            
             if (!password_verify($_POST["pwd"], $pwd_hashed)) {
                 // Don't be too specific with the error message - hackers don't                
                 // need to know which one they got right or wrong. :)               
                 $errorMsg = "Email not found or password doesn't match...";
+                $_SESSION["loggedin"] = false;
                 $success = false;
             }
         } else {

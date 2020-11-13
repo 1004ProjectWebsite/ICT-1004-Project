@@ -91,6 +91,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         // Prepare the statement:
         $stmt = $conn->prepare("INSERT INTO member (fname, lname, email, password) VALUES (?, ?, ?, ?)");
         $_SESSION['username']=$fname; //get fname after registration 
+        $_SESSION["loggedin"] = true;
             //echo $_SESSION['use'];       
              //start session
         // Bind & execute the query statement:
@@ -98,6 +99,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         if (!$stmt->execute()) {
             $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
             $success = false;
+            $_SESSION["loggedin"] = false;
         }
         $stmt->close();
     }
