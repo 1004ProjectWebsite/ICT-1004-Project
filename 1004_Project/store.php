@@ -8,12 +8,11 @@ $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
     <head>
         <title>Phone Case Shop</title>
         <?php include "head.inc.php"; ?>
+        <?php include "nav.inc.php"; 89/+?>
     </head>
 
     <body>
-        <?php
-        include "nav.inc.php";
-        ?>
+
 
         <div class="container">
             <div class="row">
@@ -36,6 +35,12 @@ $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
                                     <h5 class="text-body"><?php echo $row["p_name"]; ?></h5>
                                     <h5 class="text-info"><?php echo "$", $row["p_price"]; ?></h5>
 
+                                    <div class="form-group">
+                                        <label for="quantity"></label>
+                                        <input class="form-control" type="number" id="quantity" name="quantity"
+                                               placeholder="1">
+                                    </div>
+
                                     <input type="hidden" name="hidden_name" value="<?php echo $row["p_name"]; ?>">
                                     <input type="hidden" name="hidden_price" value="<?php echo $row["p_price"]; ?>">
                                     <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-success" value="Add to Cart">
@@ -54,8 +59,6 @@ $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
     </div>
 </body>
 
-<?php
-include "footer.inc.php";
-?>
+<?php ?>
 
 </html>
