@@ -3,7 +3,7 @@
     $password = "kahwei";
     $dbname = "1004_Project";
     
-    CREATE TABLE `products` (
+CREATE TABLE `products` (
   `product_id` int NOT NULL,
   `p_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `p_price` decimal(10,0) DEFAULT NULL,
@@ -19,7 +19,11 @@ CREATE TABLE `member` (
   `lname` varchar(45) COLLATE utf8_bin NOT NULL,
   `email` varchar(45) COLLATE utf8_bin NOT NULL,
   `password` varchar(255) COLLATE utf8_bin NOT NULL,
+  `pno` varchar(255) COLLATE utf8_bin NOT NULL,
+  `address` varchar(255) COLLATE utf8_bin NOT NULL,
+  `creditcard` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`member_id`),
   UNIQUE KEY `member_id_UNIQUE` (`member_id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
