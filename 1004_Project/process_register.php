@@ -1,5 +1,7 @@
 <?php
 session_start(); //start session
+?>
+   <?php         
 $fname = $lname = $email = $pwd_hashed = $errorMsg = "";
 $success = true;
 
@@ -88,19 +90,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     } else {
         // Prepare the statement:
         $stmt = $conn->prepare("INSERT INTO member (fname, lname, email, password) VALUES (?, ?, ?, ?)");
-        
-          $_SESSION['use']=$fname; //get fname after registration 
-            echo $_SESSION['use'];
-            
-            if (!isset($_SESSION['use'])) { 
-                echo "You are not logged in";
-            }
-            else{
-                echo "You are logged in"; //After registration jump to index.php
-                header("location: index.php");
-                exit();
-            }
-        
+        $_SESSION['username']=$fname; //get fname after registration 
+            //echo $_SESSION['use'];       
+             //start session
         // Bind & execute the query statement:
         $stmt->bind_param("ssss", $fname, $lname, $email, $pwd_hashed);
         if (!$stmt->execute()) {
@@ -129,15 +121,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <?php
             if ($success) {
                 saveMemberToDB();
-                echo "<h3>Your registration is successful!</h3>";
-                echo "<h4>Thank you for signing up, " . $fname . " " . $lname . "</h4>";
-                echo "<a class=\"btn btn-success\" href=\"login.php\">Log-in</a>";
+                 header('Location: welcome.php');
             } else {
                 echo "<h3>Oops!</h3>";
                 echo "<h4>The following input errors were detected:</h4>";
                 echo "<p>" . $errorMsg . "</p>";
                 echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
             }
+            
             ?>
             
         </main>

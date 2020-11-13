@@ -5,6 +5,7 @@ session_start(); // start session
      <?php
     include "head.inc.php";
     ?>
+    
 <body>
     <?php
     include "nav.inc.php";

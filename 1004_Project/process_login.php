@@ -70,15 +70,7 @@ function authenticateUser() {
             $lname = $row["lname"];
             $pwd_hashed = $row["password"];
 
-            $_SESSION['use'] = $fname;  //get fname from database
-
-            if (!isset($_SESSION['use'])) {
-                echo "You are not logged in";
-            } else {
-                echo "You are logged in";
-                header("location: index.php"); //Once login jumped to index.php
-                exit();
-            }
+            $_SESSION['username'] = $fname;  //get fname from database
             // Check if the password matches:            
             if (!password_verify($_POST["pwd"], $pwd_hashed)) {
                 // Don't be too specific with the error message - hackers don't                
@@ -108,10 +100,18 @@ include "head.inc.php";
         ?>
         <main class="container">
         <?php
-        echo "<h1>Oops!</h1>";
-        echo "<h3>The following input errors were detected:</h3>";
-        echo "<p>" . $errorMsg . "</p>";
-        echo "<a class=\"btn btn-warning\" href=\"login.php\">Return to Login</a>";
+        if ($success) {
+            echo "<h1>Login successful!</h1>";
+            echo "<h3>Welcome back $fname</h3>";
+            echo "<a class=\"btn btn-success\" href=\"index.php\">Return to Home</a>";
+        }
+            else 
+    {
+            echo "<h1>Oops!</h1>";
+            echo "<h3>The following input errors were detected:</h3>";
+            echo "<p>" . $errorMsg . "</p>";
+            echo "<a class=\"btn btn-warning\" href=\"login.php\">Return to Login</a>";
+        }                    
         ?>                  
         </main>
 

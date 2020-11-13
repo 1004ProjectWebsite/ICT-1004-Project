@@ -13,11 +13,11 @@ session_start();
         include "nav.inc.php";
         ?>
         <main class="container">
-        <h1>Contact Us</h1>
+        <h1>Account Information</h1>
         <p>
-            For any queries, Please contact us below.
+            Your account detail below. 
         </p>
-
+    
         <div class="container">
             <form action="action_page.php">
 
