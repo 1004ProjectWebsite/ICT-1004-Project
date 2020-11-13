@@ -7,7 +7,7 @@
         include "nav.inc.php";
         ?>
     <body>
-        <div class="signup-form">
+        <div class="layout-form">
             <form action="process_register.php" method="post">
                 <h2>Sign Up</h2>
                 <p>Please fill in this form to create an account!</p>
@@ -62,5 +62,9 @@
             </form>
             <div class="text-center">Already have an account? <a href="login.php" style="color:black">Login here</a></div>
         </div>
+             <?php
+            include "footer.inc.php";
+        ?>
+</html>
     </body>
 </html>

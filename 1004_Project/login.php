@@ -2,41 +2,39 @@
 session_start(); // start session
 ?>
 <html>
-     <?php
+    <?php
     include "head.inc.php";
     ?>
-    
-<body>
-    <?php
-    include "nav.inc.php";
-    ?>
-    <main class="container">
-        <h1>Login</h1>
-        <p>
-            For new members, please go to the
-            <a href="register.php">Register page</a>.
-        </p>
-        <form action="process_login.php" method="post">
-            <div class="form-group">
-            <div class="form-group">
-            <label for="email">Email:</label>      
-            <input class ="form-control" type="email" id="email" required name="email"    
-                   placeholder="Enter email">        
-            </div>     
-            <div class="form-group">
-            <label for="pwd">Password:</label>        
-            <input class="form-control" type="password" id="pwd" required name="pwd"    
-                   placeholder="Enter password">        
-            </div>    
-                <a href="">Forgot Password</a><br>
-            <div class="form-group">
-            <button class="btn btn-primary" type="Login" name="login-submit">Login</button> 
+    <body>
+        <?php
+        include "nav.inc.php";
+        ?>
+    <body>
+        <div class="layout-form">
+           <form action="process_login.php" method="post">
+                <h2>Member Login</h2>
+                <hr>         
+                <div class="form-group">
+                    <div class="input-group">
+                        <input class ="form-control" type="email" id="email" required name="email"    
+                   placeholder="Enter email">    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input class="form-control" type="password" id="pwd" required name="pwd"    
+                   placeholder="Enter password">   
+                    </div>     
+                </div>
+                <div class="form-group">
+                    <button type="Login" class="btn btn-primary btn-lg" name="login-submit">Login</button>
+                </div>
+            </form>
+            <div class="text-center"><a href="#" style="color:black">Forgot Password</a></div>
         </div>
-        </form>  
-   </main>   
-    </body>
-    
-         <?php
+             <?php
             include "footer.inc.php";
         ?>
+</html>
+    </body>
 </html>
