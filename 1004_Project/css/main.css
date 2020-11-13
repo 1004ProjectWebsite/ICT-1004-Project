@@ -230,3 +230,24 @@ input[type=submit]:hover
   }
 }
 
+
+// Store Grid Layout
+.grid-container {
+  display: grid;
+  padding: 10px;
+  grid-gap: 20px 20px;
+  object-fit: contain;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.phone_image {
+  max-width: 500px;
+  max-height:500px;
+}
