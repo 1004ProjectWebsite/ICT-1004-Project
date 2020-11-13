@@ -5,9 +5,9 @@
             <div class="col">
                 <h1>Company</h1>
                 <ul>
-                    <li>About</li>                
+                    <li>About Us</li>                
                     <li>Social</li>
-                    <li>Get in touch</li>
+                    <li>Contact Us</li>
                 </ul>
             </div>
             <div class="col">

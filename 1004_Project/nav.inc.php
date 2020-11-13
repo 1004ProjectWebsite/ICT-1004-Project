@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm " id="navbar">
+<nav class="navbar navbar-expand-sm navbar-light text-right" id="navbar">
     <a class="navbar-brand" href="index.php">
         <img src="//cdn.shopify.com/s/files/1/0254/0516/1520/files/logo_2048x.gif?v=1561039465" alt="in a nutshell – kurzgesagt" height="30" style="height:30px;">
     </a>
@@ -15,9 +15,15 @@
                     <i class="material-icons" style="font-size:1em">store</i>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="aboutus.php">About Us</a>
-            </li>
+            
+            <div class="dropdown">
+                <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="aboutus.php">About Us</a></li>
+                    <li><a class="dropdown-item" href="contactus.php">Contact</a></li>
+                </ul>
+            </div>
         </ul>
 
         <ul class="navbar-nav ml-auto">
@@ -34,7 +40,17 @@
             <?php
             if (isset($_SESSION['use']) && !empty($_SESSION['use'])) { //Means user is logged in display logout
                echo  'Welcome ',$_SESSION['use'];
-                ?>
+               ?>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons" style="font-size:2em">account_circle</i>  
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="">Account</a>
+                        <a class="dropdown-item" href="">Order History</a>
+                    </div>
+                </li>
+           
            
                 <li class="nav-item">
                     <a class="nav-link" title="Log out" href="logout.php">
@@ -57,11 +73,8 @@
                     </div>
                 </li>
 <?php 
-
             } 
             ?>
-
-
         </ul>
     </div>  
 </nav>
