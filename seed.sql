@@ -1,39 +1,3 @@
-CREATE TABLE `products` (
-  `product_id` int NOT NULL,
-  `p_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `p_price` decimal(10,0) DEFAULT NULL,
-  `p_img` blob NOT NULL,
-  `p_desc` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  PRIMARY KEY (`product_id`),
-  UNIQUE KEY `product_id_UNIQUE` (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
-CREATE TABLE `member` (
-  `member_id` int unsigned NOT NULL AUTO_INCREMENT,
-  `fname` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `lname` varchar(45) COLLATE utf8_bin NOT NULL,
-  `email` varchar(45) COLLATE utf8_bin NOT NULL,
-  `password` varchar(255) COLLATE utf8_bin NOT NULL,
-    `pno` varchar(255) COLLATE utf8_bin NOT NULL,
-  `address` varchar(255) COLLATE utf8_bin NOT NULL,
-  `creditcard` varchar(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`member_id`),
-  UNIQUE KEY `member_id_UNIQUE` (`member_id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
-
-
--- ALTER TABLE member
--- ADD pno varchar(255);
-
--- ALTER TABLE member
--- ADD address varchar(255);
-
--- ALTER TABLE member
--- ADD cc varchar(255);
-
-
 INSERT INTO products (product_id, p_name, p_price, p_img, p_desc)
 VALUES ('1', 'Huawei P30 Silicone Case', '21', 'huawei_p30_red.jpg'
 , "This official Huawei Silicone case for the Huawei P30 in Red offers excellent protection while maintaining your device's sleek, lines. 
@@ -64,5 +28,3 @@ made out of genuine leather. Compatible with 4G and 5G variants.");
 INSERT INTO products (product_id, p_name, p_price, p_img, p_desc)
 VALUES ('6', 'Samsung Note20 Leather Case (Clear)', '18', 'samsung_note20_clear.jpg'
 , "This Official Samsung Clear Cover is the perfect accessory for your Samsung Galaxy Note 20 smartphone.");
-
--- INSERT INTO member (member_id, fname, lname, email, password, pno, address, creditcard)
