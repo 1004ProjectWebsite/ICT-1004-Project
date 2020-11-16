@@ -69,6 +69,7 @@ function authenticateUser() {
             $row = $result->fetch_assoc();
             $fname = $row["fname"];
             $lname = $row["lname"];
+            $_SESSION["id"]=$row['member_id'];
             $pwd_hashed = $row["password"];
             $_SESSION['username']=$fname;
             $_SESSION["loggedin"] = true;

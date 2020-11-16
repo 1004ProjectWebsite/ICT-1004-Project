@@ -1,3 +1,10 @@
+<?php
+session_start();
+$mysqli = new mysqli("localhost", "root", "kahwei", "1004_project");
+$id=$_SESSION['id'];
+$query=mysqli_query($mysqli,"SELECT * FROM member where member_id='$id'")or die(mysqli_error());
+$row=mysqli_fetch_array($query);
+  ?>
 <html>
     <head>
 <?php
@@ -23,31 +30,19 @@ include "head.inc.php";
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">First name</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="">
+                                        <input class="form-control" type="text" value="<?php echo $row['fname']; ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Last name</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="">
+                                        <input class="form-control" type="text" value="<?php echo $row['lname']; ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Email</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="email" value="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="password" value="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Confirm</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="password" value="">
+                                        <input class="form-control" type="email" value="<?php echo $row['email']; ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">

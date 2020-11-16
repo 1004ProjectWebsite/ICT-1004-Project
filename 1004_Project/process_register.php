@@ -92,6 +92,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         $stmt = $conn->prepare("INSERT INTO member (fname, lname, email, password) VALUES (?, ?, ?, ?)");
         $_SESSION['username']=$fname; //get fname after registration 
         $_SESSION["loggedin"] = true;
+        $_SESSION["id"]=$row['member_id'];
             //echo $_SESSION['use'];       
              //start session
         // Bind & execute the query statement:
