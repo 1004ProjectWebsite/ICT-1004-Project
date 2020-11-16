@@ -66,7 +66,7 @@ function sanitize_input($data) {
 }
 
 function saveMemberToDB() {
-    global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
+    global $id, $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
     
     // Create database connection.
     //$config = parse_ini_file('../../private/db-config.ini');
@@ -90,14 +90,25 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     } else {
         // Prepare the statement:
         $stmt = $conn->prepare("INSERT INTO member (fname, lname, email, password) VALUES (?, ?, ?, ?)");
+       // $id = mysqli_insert_id($conn);
         $_SESSION['username']=$fname; //get fname after registration 
         $_SESSION["loggedin"] = true;
-        $_SESSION["id"]=$row['member_id'];
-            //echo $_SESSION['use'];       
-             //start session
+          
         // Bind & execute the query statement:
         $stmt->bind_param("ssss", $fname, $lname, $email, $pwd_hashed);
-        if (!$stmt->execute()) {
+        
+         $result = $stmt->execute();
+
+        if ($result) {
+            $id = $stmt->insert_id;
+            $_SESSION['id'] = $id;
+        }
+   
+ else {
+                
+ 
+      // $_SESSION["id"]=$last_id;
+     //   if (!$stmt->execute()) {
             $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
             $success = false;
             $_SESSION["loggedin"] = false;
@@ -124,7 +135,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <?php
             if ($success) {
                 saveMemberToDB();
-                 header('Location: welcome.php');
+                header('Location: welcome.php');
             } else {
                 echo "<h3>Oops!</h3>";
                 echo "<h4>The following input errors were detected:</h4>";

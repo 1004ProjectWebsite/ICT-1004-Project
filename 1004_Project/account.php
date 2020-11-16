@@ -48,7 +48,7 @@ include "head.inc.php";
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label"></label>
                                     <div class="col-lg-9">
-                                        <input type="button" class="btn btn-primary" value="Save Changes">
+                                        <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
                                     </div>
                                 </div>
                             </form>
