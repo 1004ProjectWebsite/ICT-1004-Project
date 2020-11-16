@@ -1,46 +1,72 @@
-<?php
-session_start();
-?>
 <html>
     <head>
-        <title>Phone Case Shop</title>
-        <?php
-        include "head.inc.php";
-        ?>
+<?php
+include "head.inc.php";
+?>
     </head>
-    <body> 
+    <body>
         <?php
         include "nav.inc.php";
         ?>
-        <main class="container">
-        <h1>Account Information</h1>
-        <p>
-            Your account detail below. 
-        </p>
-    
-        <div class="container">
-            <form action="action_page.php">
+<div class="content py-5  bg-light">
+<div class="container">
+	<div class="row">
+		 <div class="col-md-8 offset-md-2">
+                    <span class="anchor" id="formUserEdit"></span>
+                   <!-- form user info -->
+                    <div class="card card-outline-secondary">
+                        <div class="card-header">
+                            <h3 class="mb-0">User Information</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="form" role="form" autocomplete="off">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="email" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="password" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Confirm</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="password" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-9">
+                                        <input type="button" class="btn btn-primary" value="Save Changes">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /form user info -->
 
-              <label for="fname">Name *</label>
-              <input type="text" id="fname" Required name="firstname" placeholder="Your name..">
-
-              <label for="lname">Phone Number *</label>
-              <input type="text" id="phoneno" Required name="phoneno" placeholder="Phone number..">
-              
-               <label for="lname">Email *</label>
-              <input type="text" id="email" Required name="email" placeholder="Email..">
-
-              <label for="subject">Comment</label>
-              <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px"></textarea>
-
-              <input type="submit" value="Submit">
-
-            </form>
-          </div>
-        </main>        
-    </body>
-    <?php
-        include "footer.inc.php";
-    ?>
+                </div>
+	</div>
+</div>
+</div>
+ </body>
+<?php
+include "footer.inc.php";
+?>
 </html>
-
