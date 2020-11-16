@@ -46,6 +46,19 @@ include "head.inc.php";
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Contact Number</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="email" value="<?php echo $row['pno']; ?>">
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="email" value="<?php echo $row['address']; ?>">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label"></label>
                                     <div class="col-lg-9">
                                         <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
