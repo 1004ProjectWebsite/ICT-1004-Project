@@ -94,32 +94,32 @@ function authenticateUser() {
 <html>
     <head>
 <?php
-include "head.inc.php";
+include "../page_incs/head.inc.php";
 ?>
     </head>
     <body>
         <?php
-        include "nav.inc.php";
+        include "../page_incs/nav.inc.php";
         ?>
         <main class="container">
         <?php
         if ($success) {
             echo "<h1>Login successful!</h1>";
             echo "<h3>Welcome back $fname</h3>";
-            echo ">Return to Home</a>";
+            echo "<a class=\"btn btn-success\" href=\"\pages\index.php\">Return to Home</a>";
         }
             else 
     {
             echo "<h1>Oops!</h1>";
             echo "<h3>The following input errors were detected:</h3>";
             echo "<p>" . $errorMsg . "</p>";
-            echo ">Return to Login</a>";
+           echo "<a class=\"btn btn-warning\" href=\"\pages\login.php\">Return to Login</a>";
         }                    
         ?>                  
         </main>
 
     </body>
 <?php
-include "footer.inc.php";
+include "../page_incs/footer.inc.php";
 ?>
 </html>

@@ -122,12 +122,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     <head>
         <title>Registration Results</title>
         <?php
-            include "head.inc.php";
+           include "../page_incs/head.inc.php";
         ?>
     </head>
     <body>
         <?php
-            include "nav.inc.php";
+            include "../page_incs/nav.inc.php";
         ?>
         
         <main class="container">
@@ -135,7 +135,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <?php
             if ($success) {
                 saveMemberToDB();
-                header('Location: welcome.php');
+                header('Location: /pages/welcome.php');
             } else {
                 echo "<h3>Oops!</h3>";
                 echo "<h4>The following input errors were detected:</h4>";
@@ -148,6 +148,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         </main>
     </body>
      <?php
-            include "footer.inc.php";
+            include "../page_incs/footer.inc.php";
         ?>
 </html>
