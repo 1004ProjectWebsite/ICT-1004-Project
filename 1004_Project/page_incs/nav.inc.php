@@ -32,11 +32,6 @@
                     <i class="material-icons" style="font-size:2em">shopping_cart</i>
                 </a>
             </li> 
-            <!--                <li class="nav-item">
-                                <a class="nav-link" title="Create Account" href="register.php">
-                                    <i class="material-icons" style="font-size:2em">account_circle</i>                    
-                                </a>
-                            </li>-->
             <?php
             if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) { //Means user is logged in display logout
                ?>
@@ -48,17 +43,13 @@
                         <a class="dropdown-item" href="../pages/account.php">Account</a>
                         <a class="dropdown-item" href="">Order History</a>
                     </div>
-                </li>
-           
-           
+                </li>          
                 <li class="nav-item">
                     <a class="nav-link" title="Log out" href="../pages/logout.php">
                         <i class="material-icons" style="font-size:2em">exit_to_app</i>
                     </a>
-                </li> 
-               
+                </li>                
                 <?php 
-
             } else //User is not logged in diplay login/register
             { 
                 ?>

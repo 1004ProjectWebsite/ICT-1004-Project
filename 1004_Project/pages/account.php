@@ -26,47 +26,50 @@ include "../page_incs/head.inc.php";
                             <h3 class="mb-0">User Information</h3>
                         </div>
                         <div class="card-body">
-                            <form class="form" role="form" autocomplete="off">
+                            <div class="layout-form">
+                                
+                          <form action="\processes\process_update.php" method="post">
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">First name</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="<?php echo $row['fname']; ?>">
+                                        <input type="text" class="form-control" name="fname"  placeholder="Enter your First Name" value="<?php echo $row['fname']; ?>"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Last name</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="<?php echo $row['lname']; ?>">
+                                        <input type="text" class="form-control" name="lname"  placeholder="Enter your Last Name" value="<?php echo $row['lname']; ?>"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Email</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="email" value="<?php echo $row['email']; ?>">
+                                       <input type="email" class="form-control" name="email"  placeholder="Enter your Email" value="<?php echo $row['email']; ?>"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Contact Number</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="email" value="<?php echo $row['pno']; ?>">
+                                       <input type="text" class="form-control" name="pno"  placeholder="Enter your Contact No" value="<?php echo $row['pno']; ?>"/>
                                     </div>
                                 </div>
                                  <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Address</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="email" value="<?php echo $row['address']; ?>">
+                                        <input type="text" class="form-control" name="address"  placeholder="Enter your Address" value="<?php echo $row['address']; ?>"/>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label"></label>
                                     <div class="col-lg-9">
-                                        <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
+                                        <button type="submit" name="submit" class="btn btn-primary btn-lg">Save Changes</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
+                        </div>
                     <!-- /form user info -->
 
                 </div>
@@ -78,3 +81,25 @@ include "../page_incs/head.inc.php";
 include "../page_incs/footer.inc.php";
 ?>
 </html>
+
+
+<?php
+      if(isset($_POST['submit']))
+      {
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $email = $_POST['email'];
+        $address = $_POST['address'];
+        $pno = $_POST['pno'];
+        echo $pno;
+        $query = "UPDATE member SET fname ='$fname', lname='$lname', email='$email', pno='$pno', address='$address' where member_id='$id'";
+                    $result = mysqli_query($mysqli, $query) or die(mysqli_error($mysqli));
+             
+               ?>
+                     <script type="text/javascript">
+            alert("Update Successfull.");
+            window.location = "index.php";
+        </script>
+        <?php
+            }
+?>
