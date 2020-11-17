@@ -8,12 +8,12 @@ $row=mysqli_fetch_array($query);
 <html>
     <head>
 <?php
-include "head.inc.php";
+include "../page_incs/head.inc.php";
 ?>
     </head>
     <body>
         <?php
-        include "nav.inc.php";
+        include "../page_incs/nav.inc.php";
         ?>
 <div class="content py-5  bg-light">
 <div class="container">
@@ -75,6 +75,6 @@ include "head.inc.php";
 </div>
  </body>
 <?php
-include "footer.inc.php";
+include "../page_incs/footer.inc.php";
 ?>
 </html>

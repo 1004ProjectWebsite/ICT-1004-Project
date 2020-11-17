@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-light text-right" id="navbar">
-    <a class="navbar-brand" href="index.php">
+    <a class="navbar-brand" href="../pages/index.php">
         <img src="//cdn.shopify.com/s/files/1/0254/0516/1520/files/logo_2048x.gif?v=1561039465" alt="in a nutshell – kurzgesagt" height="30" style="height:30px;">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Home</a>
+                <a class="nav-link" href="../pages/index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="product.php">Shop
+                <a class="nav-link" href="../pages/store.php">Shop
                     <i class="material-icons" style="font-size:1em">store</i>
                 </a>
             </li>
@@ -20,8 +20,8 @@
                 <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="aboutus.php">About Us</a></li>
-                    <li><a class="dropdown-item" href="contactus.php">Contact</a></li>
+                    <li><a class="dropdown-item" href="../pages/aboutus.php">About Us</a></li>
+                    <li><a class="dropdown-item" href="../pages/contactus.php">Contact</a></li>
                 </ul>
             </div>
         </ul>
@@ -45,14 +45,14 @@
                         <i class="material-icons" style="font-size:2em">account_circle</i>  
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="account.php">Account</a>
+                        <a class="dropdown-item" href="../pages/account.php">Account</a>
                         <a class="dropdown-item" href="">Order History</a>
                     </div>
                 </li>
            
            
                 <li class="nav-item">
-                    <a class="nav-link" title="Log out" href="logout.php">
+                    <a class="nav-link" title="Log out" href="../pages/logout.php">
                         <i class="material-icons" style="font-size:2em">exit_to_app</i>
                     </a>
                 </li> 
@@ -67,8 +67,8 @@
                         <i class="material-icons" style="font-size:2em">account_circle</i>  
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="login.php">Log in</a>
-                        <a class="dropdown-item" href="register.php">Register</a>
+                        <a class="dropdown-item" href="../pages/login.php">Log in</a>
+                        <a class="dropdown-item" href="../pages/register.php">Register</a>
                     </div>
                 </li>
 <?php 

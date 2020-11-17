@@ -7,12 +7,12 @@ $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
     <head>
         <title>Phone Case Shop</title>
         <?php
-        include "head.inc.php";
+        include "../page_incs/head.inc.php";
         ?>
     </head>
     <body>
         <?php
-        include "nav.inc.php";
+        include "../page_incs/nav.inc.php";
         ?>
         <!-- testing for scrolling -->
         <p>Scroll Up and Down.</p> 
@@ -43,6 +43,6 @@ $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
     </div>
 </body>
 <?php
-include "footer.inc.php";
+include "../page_incs/footer.inc.php";
 ?>
 </html>

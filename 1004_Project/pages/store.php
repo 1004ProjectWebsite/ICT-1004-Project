@@ -7,8 +7,8 @@ $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
     <head>
         <title>Phone Case Shop</title>
-        <?php include "head.inc.php"; ?>
-        <?php include "nav.inc.php"; 89/+?>
+        <?php include "../page_incs/head.inc.php"; ?>
+        <?php include "../page_incs/nav.inc.php" ?>
     </head>
 
     <body>
@@ -28,8 +28,8 @@ $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
                         <div class="grid-item">
                             <article>
                                 <figure>
-                                    <a href="phone_cases_img/<?php echo $row["p_img"]; ?>">
-                                        <img src="phone_cases_img/<?php echo $row["p_img"]; ?>" class="phone_image" alt="<?php echo $row["p_name"]; ?>"/>
+                                    <a href="../images/phone_cases_img/<?php echo $row["p_img"]; ?>">
+                                        <img src="../images/phone_cases_img/<?php echo $row["p_img"]; ?>" class="phone_image" alt="<?php echo $row["p_name"]; ?> style="width="80px" height="150px""/>
                                     </a>
 
                                     <h5 class="text-body"><?php echo $row["p_name"]; ?></h5>

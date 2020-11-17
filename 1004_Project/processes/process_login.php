@@ -106,14 +106,14 @@ include "head.inc.php";
         if ($success) {
             echo "<h1>Login successful!</h1>";
             echo "<h3>Welcome back $fname</h3>";
-            echo "<a class=\"btn btn-success\" href=\"index.php\">Return to Home</a>";
+            echo ">Return to Home</a>";
         }
             else 
     {
             echo "<h1>Oops!</h1>";
             echo "<h3>The following input errors were detected:</h3>";
             echo "<p>" . $errorMsg . "</p>";
-            echo "<a class=\"btn btn-warning\" href=\"login.php\">Return to Login</a>";
+            echo ">Return to Login</a>";
         }                    
         ?>                  
         </main>

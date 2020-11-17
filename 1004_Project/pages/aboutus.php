@@ -5,12 +5,12 @@ session_start();
     <head>
         <title>Phone Case Shop</title>
         <?php
-        include "head.inc.php";
+        include "../page_incs/head.inc.php";
         ?>
     </head>
     <body> 
         <?php
-        include "nav.inc.php";
+        include "../page_incs/nav.inc.php";
         ?>
         
         <-<!-- testing for scrolling -->
@@ -22,6 +22,6 @@ session_start();
            
     </body>
      <?php
-            include "footer.inc.php";
+            include "../page_incs/footer.inc.php";
         ?>
 </html>

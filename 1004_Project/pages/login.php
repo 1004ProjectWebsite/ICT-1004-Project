@@ -3,15 +3,17 @@ session_start(); // start session
 ?>
 <html>
     <?php
-    include "head.inc.php";
+    include "../page_incs/head.inc.php";
     ?>
     <body>
+
         <?php
-        include "nav.inc.php";
+        include "../page_incs/nav.inc.php";
         ?>
+
     <body>
         <div class="layout-form">
-           <form action="process_login.php" method="post">
+           <form action="../processes/process_login.php" method="post">
                 <h2>Member Login</h2>
                 <hr>         
                 <div class="form-group">
@@ -32,9 +34,9 @@ session_start(); // start session
             </form>
             <div class="text-center"><a href="#" style="color:black">Forgot Password</a></div>
         </div>
-             <?php
-            include "footer.inc.php";
-        ?>
-</html>
     </body>
+
+        <?php
+        include "../page_incs/footer.inc.php";
+        ?>
 </html>

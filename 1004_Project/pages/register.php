@@ -1,14 +1,14 @@
-<html>
-    <?php
-    include "head.inc.php";
-    ?>
+<?php
+    include "../page_incs/head.inc.php";
+?>
+
     <body>
         <?php
-        include "nav.inc.php";
+            include "../page_incs/nav.inc.php";
         ?>
-    <body>
+
         <div class="layout-form">
-            <form action="process_register.php" method="post">
+            <form action="../processes/process_register.php" method="post">
                 <h2>Sign Up</h2>
                 <p>Please fill in this form to create an account!</p>
                 <hr>
@@ -62,9 +62,10 @@
             </form>
             <div class="text-center">Already have an account? <a href="login.php" style="color:black">Login here</a></div>
         </div>
-             <?php
-            include "footer.inc.php";
-        ?>
-</html>
     </body>
+
+<?php
+include "../page_incs/footer.inc.php";
+?>
+
 </html>

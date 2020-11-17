@@ -5,12 +5,12 @@ session_start();
     <head>
         <title>Phone Case Shop</title>
         <?php
-        include "head.inc.php";
+        include "../page_incs/head.inc.php";
         ?>
     </head>
     <body> 
         <?php
-        include "nav.inc.php";
+        include "../page_incs/nav.inc.php";
         ?>
         <main class="container">
         <h1>Contact Us</h1>
@@ -40,7 +40,7 @@ session_start();
         </main>        
     </body>
     <?php
-        include "footer.inc.php";
+        include "../page_incs/footer.inc.php";
     ?>
 </html>
 

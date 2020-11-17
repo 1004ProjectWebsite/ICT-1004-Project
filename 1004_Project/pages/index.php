@@ -3,9 +3,11 @@ session_start(); //start session
 ?>
 <head>
     <title>Phone Case Shop</title>
+
     <?php
-    include "head.inc.php";
+    include "../page_incs/head.inc.php";
     ?>
+
     <style>
         article {
             text-align: center;
@@ -23,11 +25,11 @@ session_start(); //start session
 
 <body>
     <?php
-    include "nav.inc.php";
+    include "../page_incs/nav.inc.php";
     ?>
     <header class="jumbotron parallax text-center" style="margin: 20px;">
         <div>
-            <h1 class="display-4">Welcome to <img id="logo" src="images/sphone_logo_transparent.png"></h1>
+            <h1 class="display-4">Welcome to <img id="logo" src="../images/sphone_logo_transparent.png"></h1>
             <p id="companyInfo">at introduces the company/organization</p>
         </div>
     </header>
@@ -40,8 +42,8 @@ session_start(); //start session
                 <div class="col">
                     <article>
                         <figure>
-                            <a href="phone_cases_img/iphone_11_clearcase.jpg">
-                                <img src="phone_cases_img/iphone_11_clearcase.jpg" alt="iphone11"/>
+                            <a href="../images/phone_cases_img/iphone_11_clearcase.jpg">
+                                <img src="../images/phone_cases_img/iphone_11_clearcase.jpg" alt="iphone11"/>
                             </a>
                             <figcaption>iPhone 11 clear case</figcaption>
                         </figure>
@@ -50,8 +52,8 @@ session_start(); //start session
                 <div class="col">
                     <article >
                         <figure>
-                            <a href="phone_cases_img/iphone_12_kumquat.jpg">
-                                <img src="phone_cases_img/iphone_12_kumquat.jpg" alt="iphone12"/>
+                            <a href="../images/phone_cases_img/iphone_12_kumquat.jpg">
+                                <img src="../images/phone_cases_img/iphone_12_kumquat.jpg" alt="iphone12"/>
                             </a>
                             <figcaption>iPhone 12 Silicon case - Kumquat</figcaption>
                         </figure>
@@ -60,8 +62,8 @@ session_start(); //start session
                 <div class="col">
                     <article >
                         <figure>
-                            <a href="phone_cases_img/iphone_12_Green.jpg">
-                                <img src="phone_cases_img/iphone_12_Green.jpg" alt="iphone12"/>
+                            <a href="../images/phone_cases_img/iphone_12_Green.jpg">
+                                <img src="../images/phone_cases_img/iphone_12_Green.jpg" alt="iphone12"/>
                             </a>
                             <figcaption>iPhone 12 Silicon case - Green</figcaption>
                         </figure>
@@ -72,8 +74,8 @@ session_start(); //start session
                 <div class="col">
                     <article>
                         <figure>
-                            <a href="phone_cases_img/samsung_note20_clear.jpg">
-                                <img src="phone_cases_img/samsung_note20_clear.jpg" alt="Samsungnote20"/>
+                            <a href="../images/phone_cases_img/samsung_note20_clear.jpg">
+                                <img src="../images/phone_cases_img/samsung_note20_clear.jpg" alt="Samsungnote20"/>
                             </a>
                             <figcaption>Samsung note20 clear</figcaption>
                         </figure>
@@ -82,8 +84,8 @@ session_start(); //start session
                 <div class="col">
                     <article>
                         <figure>
-                            <a href="phone_cases_img/huawei_p30_red.jpg">
-                                <img src="phone_cases_img/huawei_p30_red.jpg" alt="huaweip30"/>
+                            <a href="../images/phone_cases_img/huawei_p30_red.jpg">
+                                <img src="../images/phone_cases_img/huawei_p30_red.jpg" alt="huaweip30"/>
                             </a>
                             <figcaption>HuaWei P30 silicon case red</figcaption>
                         </figure>
@@ -92,8 +94,8 @@ session_start(); //start session
                 <div class="col">
                     <article>
                         <figure>
-                            <a href="phone_cases_img/samsung_note20_brown.jpg">
-                                <img src="phone_cases_img/samsung_note20_brown.jpg" alt="Samsungnote20"/>
+                            <a href="../images/phone_cases_img/samsung_note20_brown.jpg">
+                                <img src="../images/phone_cases_img/samsung_note20_brown.jpg" alt="Samsungnote20"/>
                             </a>
                             <figcaption>Samsung note20 Leather cover - brown</figcaption>
                         </figure>
@@ -104,8 +106,8 @@ session_start(); //start session
                 <div class="col">
                     <article>
                         <figure>
-                            <a href="phone_cases_img/iphone_12_starrysky.jpg">
-                                <img src="phone_cases_img/iphone_12_starrysky.jpg" alt="iPhone12"/>
+                            <a href="../images/phone_cases_img/iphone_12_starrysky.jpg">
+                                <img src="../images/phone_cases_img/iphone_12_starrysky.jpg" alt="iPhone12"/>
                             </a>
                             <figcaption>iPhone 12 Starry Sky</figcaption>
                         </figure>
@@ -114,8 +116,8 @@ session_start(); //start session
                 <div class="col">
                     <article>
                         <figure>
-                            <a href="phone_cases_img/iphone_x_dog.jpg">
-                                <img src="phone_cases_img/iphone_x_dog.jpg" alt="iPhoneX"/>
+                            <a href="../images/phone_cases_img/iphone_x_dog.jpg">
+                                <img src="../images/phone_cases_img/iphone_x_dog.jpg" alt="iPhoneX"/>
                             </a>
                             <figcaption>iPhone X Dog</figcaption>
                         </figure>
@@ -124,8 +126,8 @@ session_start(); //start session
                 <div class="col">
                     <article>
                         <figure>
-                            <a href="phone_cases_img/oppo_doraemon.jpg">
-                                <img src="phone_cases_img/oppo_doraemon.jpg" alt="Oppo"/>
+                            <a href="../images/phone_cases_img/oppo_doraemon.jpg">
+                                <img src="../images/phone_cases_img/oppo_doraemon.jpg" alt="Oppo"/>
                             </a>
                             <figcaption>Oppo Doraemon</figcaption>
                         </figure>
@@ -137,5 +139,5 @@ session_start(); //start session
 </body>
 
 <?php
-include "footer.inc.php";
+include "../page_incs/footer.inc.php";
 ?>

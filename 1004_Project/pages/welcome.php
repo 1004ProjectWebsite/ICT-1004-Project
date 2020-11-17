@@ -4,13 +4,13 @@ session_start(); // start session
 <head>
     <title>Welcome</title>
     <?php
-    include "head.inc.php";
+    include "../page_incs/head.inc.php";
     ?>
 </head>
 
 <body>
     <?php
-    include "nav.inc.php";
+    include "../page_incs/nav.inc.php";
     ?>
     <main class="container">
         <?php
@@ -24,5 +24,5 @@ session_start(); // start session
 </body>
 
 <?php
-include "footer.inc.php";
+include "../page_incs/footer.inc.php";
 ?>
