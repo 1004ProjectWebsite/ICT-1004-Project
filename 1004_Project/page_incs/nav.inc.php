@@ -28,8 +28,7 @@
                     <li><a class="dropdown-item" href="../pages/aboutus.php">About Us</a></li>
                     <li><a class="dropdown-item" href="../pages/contactus.php">Contact</a></li>
                 </ul>
-            </li>
-            </div>
+            </li>         
         </ul>       
         <ul class="navbar-nav ml-auto">
             <li class="link-icons">
@@ -77,4 +76,5 @@
             ?>
         </ul>
                 </ul>
+    </div>
 </nav>

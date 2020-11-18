@@ -4,7 +4,9 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
+<!--
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+-->
 
 <link rel="stylesheet"    
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"    
