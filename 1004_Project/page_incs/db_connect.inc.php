@@ -8,6 +8,6 @@ function connect_mysql()
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }
-    echo "DB Connected successfully";
+//    echo "DB Connected successfully";
 }
 

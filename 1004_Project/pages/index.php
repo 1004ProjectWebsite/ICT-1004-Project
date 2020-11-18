@@ -1,6 +1,7 @@
 <?php
-session_start();
-// Include functions and connect to the database using PDO MySQL
+
+//session_start();
+
 include '../page_incs/db_connect.inc.php';
 $MySQL = connect_mysql();
 

@@ -1,4 +1,4 @@
-<?php session_start();
+<?php //session_start();
 $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
 //// The amounts of products to show on each page
@@ -84,7 +84,7 @@ include "../page_incs/nav.inc.php";
     <?php if ($current_page > 1): ?>
         <a href="index.php?page=products&p=<?=$current_page-1?>">Prev</a>
     <?php endif; ?>
-    
+
     <?php if ($total_products > ($current_page * $num_products_on_each_page) - $num_products_on_each_page + count($products)): ?>
         <a href="index.php?page=products&p=<?=$current_page+1?>">Next</a>
     <?php endif; ?>
