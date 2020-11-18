@@ -1,6 +1,10 @@
 <?php session_start();
-$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
-//$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+//<<<<<<< Updated upstream
+//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+////$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+//=======
+$con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
+//>>>>>>> Stashed changes
 ?>
 
 <!doctype html>
@@ -41,7 +45,10 @@ $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
         $query->close();
         $con->close();
         ?>
+<<<<<<< Updated upstream:1004_Project/pages/archive-product.php
 
+=======
+>>>>>>> Stashed changes:1004_Project/product.php
 </body>
 <?php
 include "../page_incs/footer.inc.php";
