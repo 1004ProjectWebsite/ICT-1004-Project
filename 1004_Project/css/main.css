@@ -247,14 +247,6 @@ main .placeorder p {
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
 body {
     margin-top: 60px;
     padding-top: 10px;
@@ -291,16 +283,15 @@ footer {
 
 /*contact us page*/
 /* Style inputs with type="text", select elements and textareas */
-<<<<<<< Updated upstream
+
 input[type=text], select, textarea {
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */
-=======
+
 input[type=text], select, textarea 
 {
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */ 
->>>>>>> Stashed changes
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -310,12 +301,8 @@ input[type=text], select, textarea
 }
 
 /* Style the submit button with a specific background color etc */
-<<<<<<< Updated upstream
-input[type=submit] {
-=======
 input[type=submit] 
 {
->>>>>>> Stashed changes
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -325,30 +312,20 @@ input[type=submit]
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
-<<<<<<< Updated upstream
-input[type=submit]:hover {
-=======
 input[type=submit]:hover 
 {
->>>>>>> Stashed changes
     background-color: #45a049;
 }
 
 /*This is the effect for home page titlebg*/
 .parallax {
     /* The image used */
-<<<<<<< Updated upstream
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/wallpaper.jpg);
-
     /* Set a specific height */
     min-height: 400px;
-=======
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/../../images/wallpaper.jpg);
-
     /* Set a specific height */
     min-height: 350px;
->>>>>>> Stashed changes
-
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -378,13 +355,10 @@ input[type=submit]:hover
     color: white;
 }
 
-/*navigation bar settings*/
-<<<<<<< Updated upstream
-#navbar {
-=======
+/*navigation bar settings*
+
 #navbar 
 {
->>>>>>> Stashed changes
     background-color: #A9D4C5;
     position: fixed;
     top: 0;
@@ -486,10 +460,7 @@ input[type=submit]:hover
         width: 1000px;
         display: block;
     }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
+    
     .social h1 {
         margin: 0px;
     }
@@ -499,17 +470,14 @@ input[type=submit]:hover
     .footer .col {
         width: 33%;
     }
-<<<<<<< Updated upstream
 
     .footer .col h1 {
         font-size: 14px;
     }
 
-=======
     .footer .col h1 {
         font-size: 14px;
     }
->>>>>>> Stashed changes
     .footer .col ul li {
         font-size: 13px;
     }
@@ -535,11 +503,7 @@ input[type=submit]:hover
     }
 }
 
-<<<<<<< Updated upstream
-
-=======
 /* Store Grid Layout */
->>>>>>> Stashed changes
 .grid-container {
     display: grid;
     padding: 10px;
@@ -558,14 +522,11 @@ input[type=submit]:hover
 
 .phone_image {
     max-width: 500px;
-<<<<<<< Updated upstream
     max-height: 500px;
 }
-
-=======
     max-height:500px;
 }
->>>>>>> Stashed changes
+
 /*register Page*/
 .form-control {
     font-size: 15px;
@@ -574,23 +535,17 @@ input[type=submit]:hover
 .form-control, .form-control:focus, .input-group-text {
     border-color: #e1e1e1;
 }
-<<<<<<< Updated upstream
 
-.form-control, .btn {
-=======
 .form-control, .btn {        
->>>>>>> Stashed changes
+
     border-radius: 3px;
 }
 
 .layout-form {
     width: 400px;
     margin: 0 auto;
-<<<<<<< Updated upstream
     padding: 30px 0;
-=======
     padding: 30px 0;		
->>>>>>> Stashed changes
 }
 
 .layout-form form {
@@ -623,8 +578,7 @@ input[type=submit]:hover
 
 .layout-form .form-control {
     min-height: 38px;
-    box-shadow: none !important;
-<<<<<<< Updated upstream
+    box-shadow: none !important
 }
 
 .layout-form .input-group-addon {
@@ -633,14 +587,12 @@ input[type=submit]:hover
 }
 
 .layout-form .btn, .signup-form .btn:active {
-=======
 }	
 .layout-form .input-group-addon {
     max-width: 42px;
     text-align: center;
 }	
 .layout-form .btn, .signup-form .btn:active {        
->>>>>>> Stashed changes
     font-size: 16px;
     font-weight: bold;
     background: #19aa8d !important;
@@ -653,11 +605,7 @@ input[type=submit]:hover
 }
 
 .layout-form a {
-<<<<<<< Updated upstream
-    color: #fff;
-=======
     color: #fff;	
->>>>>>> Stashed changes
     text-decoration: underline;
 }
 
@@ -668,12 +616,7 @@ input[type=submit]:hover
 .layout-form form a {
     color: #19aa8d;
     text-decoration: none;
-<<<<<<< Updated upstream
-}
-
-=======
 }	
->>>>>>> Stashed changes
 .layout-form form a:hover {
     text-decoration: underline;
 }
