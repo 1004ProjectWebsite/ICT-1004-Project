@@ -62,18 +62,9 @@
             </form>
             <div class="text-center">Already have an account? <a href="login.php" style="color:black">Login here</a></div>
         </div>
-<<<<<<< Updated upstream:1004_Project/pages/register.php
     </body>
 
 <?php
 include "../page_incs/footer.inc.php";
 ?>
-
-=======
-             
-    </body>
-        <?php
-            include "footer.inc.php";
-        ?>
->>>>>>> Stashed changes:1004_Project/register.php
 </html>

@@ -2,12 +2,13 @@
 
 function connect_mysql()
 {
-    $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
-
+   // $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+    $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 // Check connection
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }
 //    echo "DB Connected successfully";
 }
+?>
 

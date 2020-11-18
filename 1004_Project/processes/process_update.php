@@ -57,26 +57,22 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
   $success = false;
     } else {
-
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $email = $_POST['email'];
         $address = $_POST['address'];
         $pno = $_POST['pno'];
 $sql = ("UPDATE member SET fname ='$fname', lname ='$lname', email ='$email', address ='$address', pno ='$pno' WHERE member_id = '$id'");
-  header('Location:/pages/account.php');
+ // header('Location:/pages/account.php');
     }
 if ($conn->query($sql) === TRUE) {
   echo "Record updated successfully";
 } else {
   echo "Error updating record: " . $conn->error;
-}
-      
+}     
 $conn->close();
       }   
 ?>
-
-
 <html>
     <head>
         <title>Update Results</title>
