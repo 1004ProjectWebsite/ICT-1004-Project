@@ -1,6 +1,6 @@
 <?php //session_start();
-$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
-
+//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 //// The amounts of products to show on each page
 $num_products_on_each_page = 6;
 

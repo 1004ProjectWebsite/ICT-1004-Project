@@ -1,15 +1,11 @@
 <?php
 session_start(); //start session
 ?>
-
-
 <head>
     <title>Phone Case Shop</title>
-
     <?php
     include "../page_incs/head.inc.php";
     ?>
-
     <style>
         article {
             text-align: center;
@@ -24,7 +20,6 @@ session_start(); //start session
         }
     </style>
 </head>
-
 <body>
     <?php
     include "../page_incs/nav.inc.php";
@@ -36,14 +31,11 @@ session_start(); //start session
             <h4 id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</h4>
         </div>
     </header>
-
     <main class="container">
         <h3>Popular items</h3>
-
         <!--put image in 3 column -->
         <div class="container">
             <div class="row">
-
                 <div class="col">
                     <article>
                         <figure>
@@ -143,7 +135,6 @@ session_start(); //start session
         </div>
     </main>        
 </body>
-
 <?php
 include "../page_incs/footer.inc.php";
 ?>
