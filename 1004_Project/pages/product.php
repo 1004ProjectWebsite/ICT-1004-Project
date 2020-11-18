@@ -2,6 +2,7 @@
 $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 //$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 ?>
+
 <!doctype html>
 <html>
     <head>
@@ -14,8 +15,8 @@ $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
         <?php
         include "../page_incs/nav.inc.php";
         ?>
-        <!-- testing for scrolling -->
-        <p>Scroll Up and Down.</p> 
+
+
         <?php
         $query = $con->prepare("SELECT * FROM products");
         $query->execute();
@@ -40,7 +41,7 @@ $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
         $query->close();
         $con->close();
         ?>
-    </div>
+
 </body>
 <?php
 include "../page_incs/footer.inc.php";

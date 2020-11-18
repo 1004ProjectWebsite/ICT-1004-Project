@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-light text-right" id="navbar">
-    <a class="navbar-brand" href="../pages/index.php">
+    <a class="navbar-brand" href="../pages/home.php">
         <img src="//cdn.shopify.com/s/files/1/0254/0516/1520/files/logo_2048x.gif?v=1561039465" alt="in a nutshell – kurzgesagt" height="30" style="height:30px;">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../pages/index.php">Home</a>
+                <a class="nav-link" href="../pages/home.php">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../pages/store.php">Shop
@@ -27,14 +27,15 @@
         </ul>
 
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" title="Shopping Cart" href="#">
-                    <i class="material-icons" style="font-size:2em">shopping_cart</i>
+            <li class="link-icons">
+                <a class="nav-link" title="Shopping Cart" href="home.php?page=cart">
+                    <i class="fas fa-shopping-cart" style="font-size:1.8em"></i>
                 </a>
-            </li> 
+
             <?php
-            if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) { //Means user is logged in display logout
-               ?>
+                if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) { //Means user is logged in display logout
+            ?>
+
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="material-icons" style="font-size:2em">account_circle</i>  
