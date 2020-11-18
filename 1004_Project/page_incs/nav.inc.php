@@ -15,10 +15,10 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="../pages/products.php">All</a></li>
-                    <li><a class="dropdown-item" href="../pages/iphone.php">iPhone</a></li>
-                    <li><a class="dropdown-item" href="../pages/samsung.php">Samsung</a></li>
-                    <li><a class="dropdown-item" href="../pages/oppo.php">Oppo</a></li>
-                    <li><a class="dropdown-item" href="../pages/huawei.php">Huawei</a></li>
+                    <li><a class="dropdown-item" href="../filterpage/iphone.php">iPhone</a></li>
+                    <li><a class="dropdown-item" href="../filterpage/samsung.php">Samsung</a></li>
+                    <li><a class="dropdown-item" href="../filterpage/oppo.php">Oppo</a></li>
+                    <li><a class="dropdown-item" href="../filterpage/huawei.php">Huawei</a></li>
                 </ul>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About

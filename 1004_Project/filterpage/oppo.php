@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>Phone Case Shop</title>
-        <?php include "head.inc.php"; ?>
+          <?php
+        include "../page_incs/head.inc.php";
+    ?>
         <style>
             .divCase img {
                 height: 400px;
@@ -25,12 +27,12 @@
 
     <body>
         <?php
-        include "nav.inc.php";
+        include "../page_incs/nav.inc.php";
         ?>
         <?php
         // create database connection
         $db = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
-        $result = mysqli_query($db, 'SELECT * FROM products WHERE p_type = "samsung"');
+        $result = mysqli_query($db, 'SELECT * FROM products WHERE p_type = "oppo"');
         $p_img = array();
         $p_name = array();
         $p_desc = array();
@@ -136,6 +138,6 @@
         ?>
     </body>
     <?php
-    include "footer.inc.php";
+    include "../page_incs/footer.inc.php";
     ?>
 </html>
