@@ -26,8 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $success = false;
     } else {
         $email = sanitize_input($_POST["email"]);
-
-
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errorMsg .= "Invalid email format.<br>";
             $success = false;

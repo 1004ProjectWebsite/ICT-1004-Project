@@ -12,13 +12,14 @@ session_start();
         <?php
         include "../page_incs/nav.inc.php";
         ?>
-        <main class="container">
-        <h1>About Us</h1>
-        <p>
-            Welcome to our phone website!
-        </p>
         
-        </main>   
+        <-<!-- testing for scrolling -->
+        <p>Scroll Up and Down.</p>
+        <div style="height:1000px;background-color:white;font-size:36px"></div>
+        <div class="about">
+            
+        </div>
+           
     </body>
      <?php
             include "../page_incs/footer.inc.php";
