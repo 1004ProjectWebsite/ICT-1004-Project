@@ -16,7 +16,7 @@
                 text-align: justify;
                 text-justify: inter-word;
             }
-            
+
             .qty {
                 width: 100px!important;
             }
@@ -35,7 +35,7 @@
         $p_name = array();
         $p_desc = array();
         $p_price = array();
-        
+
         while ($row = mysqli_fetch_assoc($result)) {
             $p_img[] = $row['p_img'];
             $p_name[] = $row['p_name'];
@@ -58,7 +58,7 @@
                     echo '<input type="submit" name="add" class="btn btn-success" value="Add to Cart">';
                     $i++;
                     ?></p>
-                        <HR SIZE="3"> 
+                        <HR SIZE="3">
                     </div>
                     <div class="col-md-4">
                         <p class="divCase"><?php
@@ -70,7 +70,7 @@
                         echo '<input type="submit" name="add" class="btn btn-success" value="Add to Cart">';
                         $i++;
                     ?></p>
-                        <HR SIZE="3"> 
+                        <HR SIZE="3">
                     </div>
                     <div class="col-md-4">
                         <p class="divCase"><?php
@@ -82,7 +82,7 @@
                         echo '<input type="submit" name="add" class="btn btn-success" value="Add to Cart">';
                         $i++;
                     ?></p>
-                        <HR SIZE="3"> 
+                        <HR SIZE="3">
                     </div>
                     <div class="col-md-4">
                         <p class="divCase"><?php
@@ -94,7 +94,7 @@
                         echo '<input type="submit" name="add" class="btn btn-success" value="Add to Cart">';
                         $i++;
                     ?></p>
-                        <HR SIZE="3"> 
+                        <HR SIZE="3">
                     </div>
                     <div class="col-md-4">
                         <p class="divCase"><?php
@@ -106,7 +106,7 @@
                         echo '<input type="submit" name="add" class="btn btn-success" value="Add to Cart">';
                         $i++;
                     ?></p>
-                        <HR SIZE="3"> 
+                        <HR SIZE="3">
                     </div>
                     <div class="col-md-4">
                         <p class="divCase"><?php
@@ -118,7 +118,7 @@
                         echo '<input type="submit" name="add" class="btn btn-success" value="Add to Cart">';
                         $i++;
                     ?></p>
-                        <HR SIZE="3"> 
+                        <HR SIZE="3">
                     </div>
                     <?php } ?>
             </div>
@@ -139,5 +139,3 @@
     include "footer.inc.php";
     ?>
 </html>
-
-
