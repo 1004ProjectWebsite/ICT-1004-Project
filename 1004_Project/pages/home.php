@@ -79,7 +79,7 @@ session_start(); //start session
 
                                     <div class="form-group">
                                         <label for="quantity"></label>
-                                        <input class="form-control" type="number" id="quantity" name="quantity"
+                                        <input class="form-control" type="number" id="quantity" name="quantity" min="1.00"
                                                placeholder="1">
                                     </div>
 
