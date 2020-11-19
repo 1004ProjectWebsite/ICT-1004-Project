@@ -16,7 +16,7 @@ session_start(); //start session
         }
         
         #logo {
-            height: 170px;
+            height: 200px;
         }
     </style>
 </head>
@@ -26,7 +26,7 @@ session_start(); //start session
     ?>
     <header class="jumbotron parallax text-center";">
         <div>
-            <h1 class="display-4">Welcome to <img id="logo" src="../images/sphone_logo_transparent.png"></h1>
+            <h1 class="display-4">Welcome to <img id="logo" src="../images/phonix_logo.png"></h1>
             <br/>
             <h4 id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</h4>
         </div>

@@ -31,7 +31,7 @@
         ?>
         <?php
         // create database connection
-        $db = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
+          $db = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
 //        $db = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
         $result = mysqli_query($db, 'SELECT * FROM products WHERE p_type = "huawei"');
