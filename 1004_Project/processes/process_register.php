@@ -103,7 +103,7 @@ function saveMemberToDB() {
             <?php
             if ($success) {
                 saveMemberToDB();
-                ?>
+                   ?>
                 <script type="text/javascript">
                     window.location.href = "/pages/welcome.php";
                 </script>
