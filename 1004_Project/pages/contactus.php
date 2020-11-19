@@ -19,8 +19,7 @@ session_start();
         </p>
 
         <div class="container">
-            <form action="process_contactus.php">
-
+            <form action="../processes/process_contactus.php" method="post">
               <label for="fname">Name *</label>
               <input type="text" id="fname" Required name="name" placeholder="Your name..">
 
