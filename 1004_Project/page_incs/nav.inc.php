@@ -32,7 +32,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" title="Shopping Cart" href="#">
+                <a class="nav-link" title="Shopping Cart" href="index.php?page=cart">
                     <i class="material-icons" style="font-size:2em">shopping_cart</i>
                 </a>
             </li>
