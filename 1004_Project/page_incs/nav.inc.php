@@ -10,7 +10,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="../pages/home.php">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="dropdown">
                 <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>                 
                     <i class="material-icons" style="font-size:1em">store</i>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -26,7 +26,7 @@
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="../pages/aboutus.php">About Us</a></li>
-                    <li><a class="dropdown-item" href="../pages/contactus.php">Contact</a></li>
+                    <li><a class="dropdown-item" href="../pages/contactus.php">Contact Us</a></li>
                 </ul>
             </div>
         </ul>
