@@ -8,25 +8,25 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/pages/home.php">Home</a>
+                <a class="nav-link" href="../pages/home.php">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>                 
                     <i class="material-icons" style="font-size:1em">store</i>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/pages/products.php">All</a></li>
-                    <li><a class="dropdown-item" href="/filterpage//huawei.php">Huawei</a></li>
-                    <li><a class="dropdown-item" href="/filterpage//iphone.php">Iphone</a></li>
-                    <li><a class="dropdown-item" href="/filterpage//oppo.php">Oppo</a></li>
-                    <li><a class="dropdown-item" href="/filterpage//samsung.php">Samsung</a></li>
+                    <li><a class="dropdown-item" href="../pages/products.php">All</a></li>
+                    <li><a class="dropdown-item" href="../filterpage/huawei.php">Huawei</a></li>
+                    <li><a class="dropdown-item" href="../filterpage/iphone.php">Iphone</a></li>
+                    <li><a class="dropdown-item" href="../filterpage/oppo.php">Oppo</a></li>
+                    <li><a class="dropdown-item" href="../filterpage/samsung.php">Samsung</a></li>
                     </ul>
             </li>
             <div class="dropdown">
                 <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/pages/aboutus.php">About Us</a></li>
-                    <li><a class="dropdown-item" href="/pages/contactus.php">Contact</a></li>
+                    <li><a class="dropdown-item" href="../pages/aboutus.php">About Us</a></li>
+                    <li><a class="dropdown-item" href="../pages/contactus.php">Contact</a></li>
                 </ul>
             </div>
         </ul>
@@ -43,14 +43,14 @@
                         <i class="material-icons" style="font-size:2em">account_circle</i>  
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/pages/account.php">Account</a>
+                        <a class="dropdown-item" href="../pages/account.php">Account</a>
                         <a class="dropdown-item" href="">Order History</a>
                     </div>
                 </li>
            
            
                 <li class="nav-item">
-                    <a class="nav-link" title="Log out" href="/pages/logout.php">
+                    <a class="nav-link" title="Log out" href="../pages/logout.php">
                         <i class="material-icons" style="font-size:2em">exit_to_app</i>
                     </a>
                 </li>         
@@ -63,8 +63,8 @@
                         <i class="material-icons" style="font-size:2em">account_circle</i>  
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/pages/login.php">Log in</a>
-                        <a class="dropdown-item" href="/pages/register.php">Register</a>
+                        <a class="dropdown-item" href="../pages/login.php">Log in</a>
+                        <a class="dropdown-item" href="../pages/register.php">Register</a>
                     </div>
                 </li>
 <?php 

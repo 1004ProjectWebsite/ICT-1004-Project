@@ -1,5 +1,5 @@
-<?php session_start();
-$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+<?php //session_start();
+//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 //$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 ?>
 

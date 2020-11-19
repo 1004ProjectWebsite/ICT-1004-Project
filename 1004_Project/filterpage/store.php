@@ -35,7 +35,7 @@ $con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
                     <h5 class="text-info"><?php echo "$", $row["p_price"]; ?></h5>
 
                     <div class="form-group">
-                        <l                    <input type="hidden" name="hidden_price" value="<?php echo $row["p_price"]; ?>">
+                        <input type="hidden" name="hidden_price" value="<?php echo $row["p_price"]; ?>">
                     <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-success" value="Add to Cart">abel for="quantity"></label>
                         <input class="form-control" type="number" id="quantity" name="quantity"
                                placeholder="1">

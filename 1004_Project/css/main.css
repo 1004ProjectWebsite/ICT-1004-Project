@@ -69,7 +69,7 @@ input[type=submit]:hover
 /*This is the effect for home page titlebg*/
 .parallax {
     /* The image used */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/../../images/wallpaper.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/wallpaper.jpg);
 
     /* Set a specific height */
     min-height: 350px;
