@@ -19,10 +19,10 @@ session_start();
         </p>
 
         <div class="container">
-            <form action="action_page.php">
+            <form action="process_contactus.php">
 
               <label for="fname">Name *</label>
-              <input type="text" id="fname" Required name="firstname" placeholder="Your name..">
+              <input type="text" id="fname" Required name="name" placeholder="Your name..">
 
               <label for="lname">Phone Number *</label>
               <input type="text" id="phoneno" Required name="phoneno" placeholder="Phone number..">
@@ -37,10 +37,11 @@ session_start();
 
             </form>
           </div>
-        </main>        
+        </main> 
     </body>
     <?php
         include "../page_incs/footer.inc.php";
     ?>
 </html>
+
 
