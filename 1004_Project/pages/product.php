@@ -63,7 +63,7 @@ if (isset($_GET['id'])) {
                                     <input class="form-control" type="number" id="quantity" name="quantity" min="1" max="<?=$product['p_qty']?>"
                                            placeholder="1">
                                 </div>
-<!--                                <input type="number" name="quantity" value="1" min="1" max="--><?//=$product['p_qty']?><!--" placeholder="Quantity" required>-->
+
                                 <input type="hidden" name="product_id" value="<?=$product['product_id']?>">
                                 <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-success" value="Add to Cart">
                             </form>

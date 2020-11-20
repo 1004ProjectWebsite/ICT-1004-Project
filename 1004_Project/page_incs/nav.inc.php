@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../pages/home.php">Home</a>
+                <a class="nav-link" href="../pages/index.php">Home</a>
             </li>
             <li class="dropdown">
                 <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>                 
                     <i class="material-icons" style="font-size:1em">store</i>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="../pages/products.php">All</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=products">All</a></li>
                     <li><a class="dropdown-item" href="../filterpage/huawei.php">Huawei</a></li>
                     <li><a class="dropdown-item" href="../filterpage/iphone.php">Iphone</a></li>
                     <li><a class="dropdown-item" href="../filterpage/oppo.php">Oppo</a></li>

@@ -1,11 +1,9 @@
 <?php
-
 //Nicholas db connect
-//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
 //Kah Wei db connect
-$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
-
+//$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
 //// The amounts of products to show on each page
 $num_products_on_each_page = 6;
@@ -69,15 +67,18 @@ include "../page_incs/nav.inc.php";
                             <h5 class="text-body"><?=$product['p_name']?></h5>
                             <h5 class="text-info">&dollar;<?=$product['p_price']?></h5>
 
-                            <div class="form-group">
-                                <label for="quantity"></label>
-                                <input class="form-control" type="number" id="quantity" name="quantity"
-                                       placeholder="1">
-                            </div>
 
-                            <input type="hidden" name="hidden_name" value="<?=$product['p_name']?>">
-                            <input type="hidden" name="hidden_price" value="<?=$product['p_price']?>">
-                            <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-success" value="Add to Cart">
+                            <form action="index.php?page=cart" method="post">
+                                <div class="form-group">
+                                    <label for="quantity"></label>
+                                    <input class="form-control" type="number" id="quantity" name="quantity"
+                                           value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required>
+                                </div>
+
+                                <input type="hidden" name="product_id" value="<?=$product['product_id']?>">
+                                <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-success" value="Add to Cart">
+                            </form>
+
                         </figure>
                     </article>
                 </div>

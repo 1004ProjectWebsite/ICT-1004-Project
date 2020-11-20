@@ -1,9 +1,12 @@
 <?php
 // If the user clicked the add to cart button on the product page we can check for the form data
 
+var_dump($_SESSION);
+
+
 if (isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['product_id']) && is_numeric($_POST['quantity'])) {
     // Set the post variables so we easily identify them, also make sure they are integer
-    $product_id = (int)$_POST['product_id'];
+    $product_id = (int)$_POST['$product_id'];
     $quantity = (int)$_POST['quantity'];
 
     // Prepare the SQL statement, we basically are checking if the product exists in our database
@@ -12,12 +15,9 @@ if (isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['produc
 
     // Prepare statement and execute, prevents SQL injection
     $stmt = $con->prepare('SELECT * FROM products WHERE product_id = ?');
-
     $product_id_var = [$_POST['product_id']];
-
     $stmt->bind_param('i', $product_id_var);
     $stmt->execute();
-
 
     // Fetch the product from the database and return the result as an Array
     $result = $stmt->get_result();
@@ -28,7 +28,7 @@ if (isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['produc
         // Product exists in database, now we can create/update the session variable for the cart
         if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
             if (array_key_exists($product_id, $_SESSION['cart'])) {
-                // Product exists in cart so just update the quanity
+                // Product exists in cart so just update the quantity
                 $_SESSION['cart'][$product_id] += $quantity;
             } else {
                 // Product is not in cart so add it
@@ -86,23 +86,35 @@ $subtotal = 0.00;
 if ($products_in_cart) {
 
     $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+
     // There are products in the cart so we need to select those products from the database
     // Products in cart array to question mark string array, we need the SQL statement to include IN (?,?,?,...etc)
     $array_to_question_marks = implode(',', array_fill(0, count($products_in_cart), '?'));
+    $stmt = $con->prepare('SELECT * FROM products WHERE product_id IN (' . $array_to_question_marks . ')');
 
-    $stmt = $con->prepare('SELECT * FROM products WHERE id IN (' . $array_to_question_marks . ')');
 
-    // We only need the array keys, not the values, the keys are the id's of the products
-    $stmt->execute(array_keys($products_in_cart));
+//    Reference Code to convert into mysqli
+//    $stmt->execute(array_keys($products_in_cart));
+//    $stmt->bind_param("sss", $firstname, $lastname, $email);
 
-    // Fetch the products from the database and return the result as an Array
-    $result = $stmt->get_result();
-    $products = $result->fetch_all(MYSQLI_ASSOC);
+//    We only need the array keys, not the values, the keys are the id's of the products
 
-    // Calculate the subtotal
-    foreach ($products as $product) {
-        $subtotal += (float)$product['price'] * (int)$products_in_cart[$product['id']];
-    }
+
+      $types = str_repeat('i', count($products_in_cart));
+
+      $productarraykeys = array_keys($products_in_cart);
+      $stmt->bind_param($types, ...$productarraykeys);
+
+      $stmt->execute();
+
+      // Fetch the products from the database and return the result as an Array
+      $result = $stmt->get_result();
+      $products = $result->fetch_all(MYSQLI_ASSOC);
+
+      // Calculate the subtotal
+      foreach ($products as $product) {
+          $subtotal += (float)$product['p_price'] * (int)$products_in_cart[$product['product_id']];
+      }
 }
 ?>
 
@@ -146,7 +158,7 @@ include "../page_incs/nav.inc.php";
                             </a>
                         </td>
                         <td>
-                            <a href="index.php?page=product&id=<?=$product['id']?>"><?=$product['p_name']?></a>
+                            <a href="index.php?page=product&id=<?=$product['product_id']?>"><?=$product['p_name']?></a>
                             <br>
                             <a href="index.php?page=cart&remove=<?=$product['product_id']?>" class="remove">Remove</a>
                         </td>
