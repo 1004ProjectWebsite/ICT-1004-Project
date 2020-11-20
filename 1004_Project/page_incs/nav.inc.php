@@ -15,24 +15,24 @@
                     <i class="material-icons" style="font-size:1em">store</i>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="index.php?page=products">All</a></li>
-                    <li><a class="dropdown-item" href="../filterpage/huawei.php">Huawei</a></li>
-                    <li><a class="dropdown-item" href="../filterpage/iphone.php">Iphone</a></li>
-                    <li><a class="dropdown-item" href="../filterpage/oppo.php">Oppo</a></li>
-                    <li><a class="dropdown-item" href="../filterpage/samsung.php">Samsung</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=huawei">Huawei</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=apple">Apple</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=oppo">Oppo</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=samsung">Samsung</a></li>
                     </ul>
             </li>
             <div class="dropdown">
                 <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="../pages/aboutus.php">About Us</a></li>
-                    <li><a class="dropdown-item" href="../pages/contactus.php">Contact Us</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=aboutus">About Us</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=contactus">Contact Us</a></li>
                 </ul>
             </div>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" title="Shopping Cart" href="index.php?page=cart">
+                <a class="nav-link" title="Shopping Cart" href="ccart">
                     <i class="material-icons" style="font-size:2em">shopping_cart</i>
                 </a>
             </li>
@@ -44,12 +44,12 @@
                         <i class="material-icons" style="font-size:2em">account_circle</i>  
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../pages/account.php">Account</a>
+                        <a class="dropdown-item" href="index.php?page=account">Account</a>
                         <a class="dropdown-item" href="">Order History</a>
                     </div>
                 </li>         
                 <li class="nav-item">
-                    <a class="nav-link" title="Log out" href="../pages/logout.php">
+                    <a class="nav-link" title="Log out" href="index.php?page=logout">
                         <i class="material-icons" style="font-size:2em">exit_to_app</i>
                     </a>
                 </li> 
@@ -62,8 +62,8 @@
                         <i class="material-icons" style="font-size:2em">account_circle</i>  
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../pages/login.php">Log in</a>
-                        <a class="dropdown-item" href="../pages/register.php">Register</a>
+                        <a class="dropdown-item" href="index.php?page=login">Log in</a>
+                        <a class="dropdown-item" href="index.php?page=register">Register</a>
                     </div>
                 </li>
 <?php 

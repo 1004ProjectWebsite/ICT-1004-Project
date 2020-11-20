@@ -1,5 +1,5 @@
 <?php
-session_start(); //start session
+//session_start(); //start session
 ?>
 <head>
     <title>Phone Case Shop</title>
@@ -34,10 +34,11 @@ session_start(); //start session
     <main class="container">
         <h3>Popular items</h3>
         <?php
+
 //Nicholas db connect
-//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 //Kah Wei db connect
-        $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+//        $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
 
 //// The amounts of products to show on each page

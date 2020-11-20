@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 //Nicholas db connect
 $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 

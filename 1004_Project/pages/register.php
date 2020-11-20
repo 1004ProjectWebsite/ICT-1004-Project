@@ -1,4 +1,5 @@
 <?php
+
     include "../page_incs/head.inc.php";
 ?>
 

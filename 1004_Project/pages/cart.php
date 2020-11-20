@@ -1,13 +1,15 @@
 <?php
 // If the user clicked the add to cart button on the product page we can check for the form data
-
+//session_start();
+//session_unset();
+//session_destroy();
 var_dump($_SESSION);
 
 
-if (isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['product_id']) && is_numeric($_POST['quantity'])) {
+if (isset($_POST['product_id'], $_POST['p_qty']) && is_numeric($_POST['product_id']) && is_numeric($_POST['p_qty'])) {
     // Set the post variables so we easily identify them, also make sure they are integer
     $product_id = (int)$_POST['$product_id'];
-    $quantity = (int)$_POST['quantity'];
+    $quantity = (int)$_POST['p_qty'];
 
     // Prepare the SQL statement, we basically are checking if the product exists in our database
     $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");

@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 include '../page_incs/db_connect.inc.php';
 $MySQL = connect_mysql();
 // Page is set to home (home.php) by default, so when the visitor visits that will be the page they see.

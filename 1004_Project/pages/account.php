@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 $mysqli = new mysqli("localhost", "root", "kahwei", "1004_project");
 $id = $_SESSION['id'];
 $query = mysqli_query($mysqli, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
