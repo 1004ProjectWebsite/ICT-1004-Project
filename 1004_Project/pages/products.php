@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Nicholas db connect
 $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
@@ -66,7 +67,6 @@ include "../page_incs/nav.inc.php";
 
                             <h5 class="text-body"><?=$product['p_name']?></h5>
                             <h5 class="text-info">&dollar;<?=$product['p_price']?></h5>
-
 
                             <form action="index.php?page=cart" method="post">
                                 <div class="form-group">

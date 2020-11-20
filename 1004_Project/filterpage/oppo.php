@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //Nicholas db connect
 //$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
@@ -62,7 +62,7 @@ include "../page_incs/nav.inc.php";
 
                             <div class="form-group">
                                 <label for="quantity"></label>
-                                <input class="form-control" type="number" id="quantity" name="quantity"
+                                <input class="form-control" type="number" id="quantity" name="quantity" min="1.00"
                                        placeholder="1">
                             </div>
 
