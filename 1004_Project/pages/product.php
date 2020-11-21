@@ -1,5 +1,8 @@
 <?php
-//session_start();
+ if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 //$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
  $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
@@ -26,6 +29,38 @@ if (isset($_GET['id'])) {
     // Simple error to display if the id wasn't specified
     exit('Product does not exist!');
 }
+
+     if(isset($_POST['add'])) 
+    { 
+          print_r($_POST['product_id']); 
+          if(isset($_SESSION['cart'])) 
+          {
+               $item_array_id = array_column($_SESSION['cart'], "product_id");
+               print_r($item_array_id);
+              //print_r($_SESSION['cart']);
+               
+               if(in_array($_POST['product_id'],$item_array_id)){
+                  echo "<script>alert('Product is already added in the cart..!')</script>";                   
+               }else{
+                  $count= count($_SESSION['cart']);
+                    $item_array = array(
+                'product_id' => $_POST['product_id']
+        );
+                $_SESSION['cart'][$count] = $item_array; 
+                print_r($_SESSION['cart']);             
+               }
+          }
+          else
+          {
+              $item_array = array(
+                'product_id' => $_POST['product_id']
+        );
+
+        // Create new session variable
+        $_SESSION['cart'][0] = $item_array;
+        print_r($_SESSION['cart']);
+    }
+    } 
 ?>
 
 
@@ -57,7 +92,7 @@ if (isset($_GET['id'])) {
                             <h5 class="text-body"><?=$product['p_name']?></h5>
                             <h5 class="text-info">&dollar;<?=$product['p_price']?></h5>
 
-                            <form action="index.php?page=cart" method="post">
+                            <form method="post" action="product.php?action=add&id=<?php echo $product["product_id"]; ?>">
                                 <div class="form-group">
                                     <label for="quantity"></label>
                                     <input class="form-control" type="number" id="quantity" name="quantity" min="1" max="<?=$product['p_qty']?>"

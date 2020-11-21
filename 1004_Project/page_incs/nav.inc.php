@@ -32,8 +32,19 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" title="Shopping Cart" href="ccart">
+                <a class="nav-link" title="Shopping Cart" href="index.php?page=test5">
                     <i class="material-icons" style="font-size:2em">shopping_cart</i>
+                     <?php
+
+                        if (isset($_SESSION['cart'])){
+                            $count = count($_SESSION['cart']);
+                            echo "<span id=\"cart_count\" class=\"text-warning bg-light\">$count</span>";
+                        }else{
+                            echo "<span id=\"cart_count\" class=\"text-warning bg-light\">0</span>";
+                        }
+
+                        ?>
+                   
                 </a>
             </li>
             <?php

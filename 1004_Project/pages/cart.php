@@ -1,10 +1,12 @@
 <?php
 // If the user clicked the add to cart button on the product page we can check for the form data
-//session_start();
-//session_unset();
-//session_destroy();
-var_dump($_SESSION);
+ if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
+//var_dump($_SESSION);
+$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
 if (isset($_POST['product_id'], $_POST['p_qty']) && is_numeric($_POST['product_id']) && is_numeric($_POST['p_qty'])) {
     // Set the post variables so we easily identify them, also make sure they are integer
@@ -15,7 +17,7 @@ if (isset($_POST['product_id'], $_POST['p_qty']) && is_numeric($_POST['product_i
     //$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
     //Kah Wei db connect
-$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+//$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
     // Prepare statement and execute, prevents SQL injection
     $stmt = $con->prepare('SELECT * FROM products WHERE product_id = ?');
@@ -88,34 +90,36 @@ $subtotal = 0.00;
 
 // If there are products in cart
 if ($products_in_cart) {
-
-   // $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
-    //Kah Wei db connect
-$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
-
     // There are products in the cart so we need to select those products from the database
     // Products in cart array to question mark string array, we need the SQL statement to include IN (?,?,?,...etc)
     $array_to_question_marks = implode(',', array_fill(0, count($products_in_cart), '?'));
+    $arrayKeys = array_keys($products_in_cart);
     $stmt = $con->prepare('SELECT * FROM products WHERE product_id IN (' . $array_to_question_marks . ')');
-
+    $stmt->bind_param(str_repeat("s", count($arrayKeys)), ...$arrayKeys);
+    $stmt->execute();
+    // We only need the array keys, not the values, the keys are the id's of the products
+    //$stmt->bind_param('i', array_keys($products_in_cart));
+   // $stmt->execute();
+    // Fetch the products from the database and return the result as an Array
+   // $products = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
 //    Reference Code to convert into mysqli
-//    $stmt->execute(array_keys($products_in_cart));
+//   stmt->execute(array_keys($products_in_cart));
 //    $stmt->bind_param("sss", $firstname, $lastname, $email);
 
 //    We only need the array keys, not the values, the keys are the id's of the products
 
 
-      $types = str_repeat('i', count($products_in_cart));
+     // $types = str_repeat('i', count($products_in_cart));
 
-      $productarraykeys = array_keys($products_in_cart);
-      $stmt->bind_param($types, ...$productarraykeys);
+      //$productarraykeys = array_keys($products_in_cart);
+      //$stmt->bind_param($types, ...$productarraykeys);
 
-      $stmt->execute();
+      //$stmt->execute();
 
       // Fetch the products from the database and return the result as an Array
-      $result = $stmt->get_result();
-      $products = $result->fetch_all(MYSQLI_ASSOC);
+      //$result = $stmt->get_result();
+      //$products = $result->fetch_all(MYSQLI_ASSOC);
 
       // Calculate the subtotal
       foreach ($products as $product) {
@@ -160,7 +164,7 @@ include "../page_incs/nav.inc.php";
                     <tr>
                         <td class="img">
                             <a href="index.php?page=product&id=<?=$product['product_id']?>">
-                                <img src="imgs/<?=$product['p_img']?>" width="50" height="50" alt="<?=$product['p_name']?>">
+                                <img src="../images/phone_cases_img/<?=$product['p_img']?>" width="" height="" class="phone_image" alt="<?=$product['p_name']?>">
                             </a>
                         </td>
                         <td>

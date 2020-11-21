@@ -1,5 +1,40 @@
 <?php
-//session_start();
+ if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+    
+         if(isset($_POST['add'])) 
+    { 
+          print_r($_POST['product_id']); 
+          if(isset($_SESSION['cart'])) 
+          {
+               $item_array_id = array_column($_SESSION['cart'], "product_id");
+               print_r($item_array_id);
+              //print_r($_SESSION['cart']);
+               
+               if(in_array($_POST['product_id'],$item_array_id)){
+                  echo "<script>alert('Product is already added in the cart..!')</script>";                   
+               }else{
+                  $count= count($_SESSION['cart']);
+                    $item_array = array(
+                'product_id' => $_POST['product_id']
+        );
+                $_SESSION['cart'][$count] = $item_array; 
+                print_r($_SESSION['cart']);             
+               }
+          }
+          else
+          {
+              $item_array = array(
+                'product_id' => $_POST['product_id']
+        );
+
+        // Create new session variable
+        $_SESSION['cart'][0] = $item_array;
+        print_r($_SESSION['cart']);
+    }
+    } 
 //Nicholas db connect
 //$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
@@ -19,12 +54,15 @@ $stmt = $con->prepare("SELECT * FROM products ORDER BY p_date_added DESC LIMIT ?
 $var1 = (($current_page - 1) * $num_products_on_each_page);
 
 $stmt->bind_param('ii', $var1, $num_products_on_each_page);
+
 $stmt->execute();
 
 // Fetch the products from the database and return the result as an Array
 $result = $stmt->get_result();
 $products = $result->fetch_all(MYSQLI_ASSOC);
 
+// Get the total number of products
+//$total_products = $result->num_rows;
 // Get the total number of products
 $total_products = $result->num_rows;
 ?>
@@ -68,7 +106,7 @@ include "../page_incs/nav.inc.php";
                             <h5 class="text-body"><?=$product['p_name']?></h5>
                             <h5 class="text-info">&dollar;<?=$product['p_price']?></h5>
 
-                            <form action="index.php?page=cart" method="post">
+                            <form action="index.php?page=products" method="post">
                                 <div class="form-group">
                                     <label for="quantity"></label>
                                     <input class="form-control" type="number" id="quantity" name="quantity"
