@@ -1,10 +1,10 @@
 <?php
 //session_start();
 //Nicholas db connect
-$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
 //Kah Wei db connect
-//$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
 
 //// The amounts of products to show on each page
@@ -56,7 +56,7 @@ include "../page_incs/nav.inc.php";
                         <figure>
 
                             <a href="index.php?page=product&id=<?=$product['product_id']?>" class="product">
-                                <img src="../images/phone_cases_img/<?=$product['p_img']?>" width="80px" height="150px" class="phone_image" alt="<?=$product['p_name']?>">
+                                <img src="../phone_cases_img/<?=$product['p_img']?>" width="80px" height="150px" class="phone_image" alt="<?=$product['p_name']?>">
                             </a>
 
                             <h5 class="text-body"><?=$product['p_name']?></h5>

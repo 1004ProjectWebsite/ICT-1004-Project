@@ -12,8 +12,10 @@ if (isset($_POST['product_id'], $_POST['p_qty']) && is_numeric($_POST['product_i
     $quantity = (int)$_POST['p_qty'];
 
     // Prepare the SQL statement, we basically are checking if the product exists in our database
-    $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+    //$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
+    //Kah Wei db connect
+$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
     // Prepare statement and execute, prevents SQL injection
     $stmt = $con->prepare('SELECT * FROM products WHERE product_id = ?');
@@ -87,7 +89,9 @@ $subtotal = 0.00;
 // If there are products in cart
 if ($products_in_cart) {
 
-    $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+   // $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+    //Kah Wei db connect
+$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
     // There are products in the cart so we need to select those products from the database
     // Products in cart array to question mark string array, we need the SQL statement to include IN (?,?,?,...etc)
