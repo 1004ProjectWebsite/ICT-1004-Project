@@ -3,45 +3,13 @@
     { 
         session_start(); 
     } 
-    
-         if(isset($_POST['add'])) 
-    { 
-          print_r($_POST['product_id']); 
-          if(isset($_SESSION['cart'])) 
-          {
-               $item_array_id = array_column($_SESSION['cart'], "product_id");
-               print_r($item_array_id);
-              //print_r($_SESSION['cart']);
-               
-               if(in_array($_POST['product_id'],$item_array_id)){
-                  echo "<script>alert('Product is already added in the cart..!')</script>";                   
-               }else{
-                  $count= count($_SESSION['cart']);
-                    $item_array = array(
-                'product_id' => $_POST['product_id']
-        );
-                $_SESSION['cart'][$count] = $item_array; 
-                print_r($_SESSION['cart']);             
-               }
-          }
-          else
-          {
-              $item_array = array(
-                'product_id' => $_POST['product_id']
-        );
+  $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    die();
+}
+$status = "";
 
-        // Create new session variable
-        $_SESSION['cart'][0] = $item_array;
-        print_r($_SESSION['cart']);
-    }
-    } 
-//Nicholas db connect
-//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
-
-//Kah Wei db connect
-$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
-
-//// The amounts of products to show on each page
 $num_products_on_each_page = 6;
 
 // The current page, in the URL this will appear as index.php?page=products&p=1, index.php?page=products&p=2, etc...
@@ -60,15 +28,47 @@ $stmt->execute();
 // Fetch the products from the database and return the result as an Array
 $result = $stmt->get_result();
 $products = $result->fetch_all(MYSQLI_ASSOC);
-
 // Get the total number of products
 //$total_products = $result->num_rows;
 // Get the total number of products
 $total_products = $result->num_rows;
+
+if (isset($_POST['product_id']) && $_POST['product_id'] != "") {
+    $product_id = $_POST['product_id'];
+    $result = mysqli_query($con, "SELECT * FROM `products` WHERE `product_id`='$product_id'");
+    $row = mysqli_fetch_assoc($result);
+    $name = $row['p_name'];
+    $product_id = $row['product_id'];
+    $price = $row['p_price'];
+    $image = $row['p_img'];
+
+    $cartArray = array(
+        $product_id => array(
+            'p_name' => $name,
+            'product_id' => $product_id,
+            'p_price' => $price,
+            'quantity' => 1,
+            'p_img' => $image)
+    );
+
+    if (empty($_SESSION["shopping_cart"])) {
+        $_SESSION["shopping_cart"] = $cartArray;
+        $status = "<div class='box'>Product is added to your cart!</div>";
+    } else {
+        $array_keys = array_keys($_SESSION["shopping_cart"]);
+        if (in_array($product_id, $array_keys)) {
+            $status = "<div class='box' style='color:red;'>
+		Product is already added to your cart!</div>";
+        } else {
+            $_SESSION["shopping_cart"] = array_merge($_SESSION["shopping_cart"], $cartArray);
+            $status = "<div class='box'>Product is added to your cart!</div>";
+        }
+    }
+}
 ?>
-
-
-<!doctype html>
+<html>
+    <head>
+      <!doctype html>
 <html>
 <head>
     <title>Phone Case Shop</title>
@@ -91,11 +91,20 @@ include "../page_incs/nav.inc.php";
         <h6>&nbsp;<?=$total_products?> Products</h6>
     </div>
 
-        <div class="row">
+    <body>
+      <div class="row">
         <div class="grid-container">
 
-            <?php foreach ($products as $product): ?>
+            <?php
+            if (!empty($_SESSION["shopping_cart"])) {
+                $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+                ?>
+                <?php
+            }
+      
 
+           foreach ($products as $product): ?>          
+          
                 <div class="grid-item">
                     <article>
                         <figure>
@@ -120,23 +129,21 @@ include "../page_incs/nav.inc.php";
                         </figure>
                     </article>
                 </div>
-            <?php endforeach; ?>
+            
+        <?php
+           
+            endforeach;
+            ?>
+
+            <div style="clear:both;"></div>
+
+            <div class="message_box" style="margin:10px 0px;">
+                <?php echo $status; ?>
+            </div>
         </div>
-    </div>
-</div>
+    </body>
+    <?php
+        include "../page_incs/footer.inc.php";
+    ?>
 
-<div class="buttons">
-    <?php if ($current_page > 1): ?>
-        <a href="index.php?page=products&p=<?=$current_page-1?>">Prev</a>
-    <?php endif; ?>
-
-    <?php if ($total_products > ($current_page * $num_products_on_each_page) - $num_products_on_each_page + count($products)): ?>
-        <a href="index.php?page=products&p=<?=$current_page+1?>">Next</a>
-    <?php endif; ?>
-</div>
-
-</body>
-<?php
-include "../page_incs/footer.inc.php";
-?>
 </html>

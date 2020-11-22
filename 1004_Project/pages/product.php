@@ -30,38 +30,44 @@ if (isset($_GET['id'])) {
     exit('Product does not exist!');
 }
 
-     if(isset($_POST['add'])) 
-    { 
-          print_r($_POST['product_id']); 
-          if(isset($_SESSION['cart'])) 
-          {
-               $item_array_id = array_column($_SESSION['cart'], "product_id");
-               print_r($item_array_id);
-              //print_r($_SESSION['cart']);
-               
-               if(in_array($_POST['product_id'],$item_array_id)){
-                  echo "<script>alert('Product is already added in the cart..!')</script>";                   
-               }else{
-                  $count= count($_SESSION['cart']);
-                    $item_array = array(
-                'product_id' => $_POST['product_id']
-        );
-                $_SESSION['cart'][$count] = $item_array; 
-                print_r($_SESSION['cart']);             
-               }
-          }
-          else
-          {
-              $item_array = array(
-                'product_id' => $_POST['product_id']
-        );
+if (isset($_POST['product_id']) && $_POST['product_id'] != "") {
+    $product_id = $_POST['product_id'];
+    $result = mysqli_query($con, "SELECT * FROM `products` WHERE `product_id`='$product_id'");
+    $row = mysqli_fetch_assoc($result);
+    $name = $row['p_name'];
+    $product_id = $row['product_id'];
+    $price = $row['p_price'];
+    $image = $row['p_img'];
 
-        // Create new session variable
-        $_SESSION['cart'][0] = $item_array;
-        print_r($_SESSION['cart']);
-    }
-    } 
+    $cartArray = array(
+        $product_id => array(
+            'p_name' => $name,
+            'product_id' => $product_id,
+            'p_price' => $price,
+            'quantity' => 1,
+            'p_img' => $image)
+    );
+
+    if (empty($_SESSION["shopping_cart"])) {
+        $_SESSION["shopping_cart"] = $cartArray;
+        $status = "<div class='box'>Product is added to your cart!</div>";
+    } else {
+        $array_keys = array_keys($_SESSION["shopping_cart"]);
+        if (in_array($product_id, $array_keys)) {
+            $status = "<div class='box' style='color:red;'>
+		Product is already added to your cart!</div>";
+        } else {
+            $_SESSION["shopping_cart"] = array_merge($_SESSION["shopping_cart"], $cartArray);
+            $status = "<div class='box'>Product is added to your cart!</div>";
+        }
+    }        
+}
+ if (!empty($_SESSION["shopping_cart"])) {
+                $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+        
+            }
 ?>
+
 
 
 <head>
