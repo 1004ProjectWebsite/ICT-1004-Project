@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     die();
 }
-$status = "";
+
 
 $num_products_on_each_page = 6;
 
@@ -33,41 +33,41 @@ $products = $result->fetch_all(MYSQLI_ASSOC);
 // Get the total number of products
 $total_products = $result->num_rows;
 
-if (isset($_POST['product_id']) && $_POST['product_id'] != "") {
-    $product_id = $_POST['product_id'];
-    $result = mysqli_query($con, "SELECT * FROM `products` WHERE `product_id`='$product_id'");
-    $row = mysqli_fetch_assoc($result);
-    $name = $row['p_name'];
-    $product_id = $row['product_id'];
-    $price = $row['p_price'];
-    $image = $row['p_img'];
-
-    $cartArray = array(
-        $product_id => array(
-            'p_name' => $name,
-            'product_id' => $product_id,
-            'p_price' => $price,
-            'quantity' => 1,
-            'p_img' => $image)
-    );
-
-    if (empty($_SESSION["shopping_cart"])) {
-        $_SESSION["shopping_cart"] = $cartArray;
-        $status = "<div class='box'>Product is added to your cart!</div>";
-    } else {
-        $array_keys = array_keys($_SESSION["shopping_cart"]);
-        if (in_array($product_id, $array_keys)) {
-            $status = "<div class='box' style='color:red;'>
-		Product is already added to your cart!</div>";
-        } else {
-            $_SESSION["shopping_cart"] = array_merge($_SESSION["shopping_cart"], $cartArray);
-            $status = "<div class='box'>Product is added to your cart!</div>";
-        }
-    }
-}
+ if(isset($_POST["add_to_cart"]))  
+ {  
+      if(isset($_SESSION["shopping_cart"]))  
+      {  
+           $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
+           if(!in_array($_GET["id"], $item_array_id))  
+           {  
+                $count = count($_SESSION["shopping_cart"]);  
+                $item_array = array(  
+                     'item_id'               =>     $_GET["id"],  
+                     'item_name'               =>     $_POST["hidden_name"],  
+                     'item_price'          =>     $_POST["hidden_price"],  
+                     'item_quantity'          =>     $_POST["quantity"],  
+                );  
+                $_SESSION["shopping_cart"][$count] = $item_array;  
+                  echo '<script>alert("Item Added")</script>';  
+           }  
+           else  
+           {  
+                echo '<script>alert("Item Already Added")</script>';  
+                //echo '<script>window.location="index.php"</script>';  
+           }  
+      }  
+      else  
+      {  
+           $item_array = array(  
+                'item_id'               =>     $_GET["id"],  
+                'item_name'               =>     $_POST["hidden_name"],  
+                'item_price'          =>     $_POST["hidden_price"],  
+                'item_quantity'          =>     $_POST["quantity"]  
+           );  
+           $_SESSION["shopping_cart"][0] = $item_array;  
+      }  
+ }  
 ?>
-<html>
-    <head>
       <!doctype html>
 <html>
 <head>
@@ -109,21 +109,21 @@ include "../page_incs/nav.inc.php";
                     <article>
                         <figure>
                             <a href="index.php?page=product&id=<?=$product['product_id']?>" class="product">
-                                <img src="../images/phone_cases_img/<?=$product['p_img']?>" width="80px" height="150px" class="phone_image" alt="<?=$product['p_name']?>">
+                                <img src="../images/phone_cases_img/<?=$product['p_img']?>" width="80px" height="150px" name="img" class="phone_image" alt="<?=$product['p_name']?>">
                             </a>
 
                             <h5 class="text-body"><?=$product['p_name']?></h5>
                             <h5 class="text-info">&dollar;<?=$product['p_price']?></h5>
 
-                            <form action="index.php?page=products" method="post">
+                            <form method="post" action="products.php?action=add&id=<?php echo $product["product_id"]; ?>">  
                                 <div class="form-group">
                                     <label for="quantity"></label>
                                     <input class="form-control" type="number" id="quantity" name="quantity"
                                            value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required>
-                                </div>
-
-                                <input type="hidden" name="product_id" value="<?=$product['product_id']?>">
-                                <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-success" value="Add to Cart">
+                                </div> 
+                               <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>" />  
+                               <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />  
+                               <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" /> 
                             </form>
 
                         </figure>

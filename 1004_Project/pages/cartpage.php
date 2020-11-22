@@ -1,36 +1,24 @@
 <?php
- if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    }
-$status = "";
-
-if (isset($_POST['action']) && $_POST['action'] == "remove") {
-    if (!empty($_SESSION["shopping_cart"])) {
-        foreach ($_SESSION["shopping_cart"] as $key => $value) {
-            if ($_POST["product_id"] == $key) {
-                unset($_SESSION["shopping_cart"][$key]);
-                $status = "<div class='box' style='color:red;'>
-		Product is removed from your cart!</div>";
-            }
-            if (empty($_SESSION["shopping_cart"]))
-                unset($_SESSION["shopping_cart"]);
-        }
-    }
+if (!isset($_SESSION)) {
+    session_start();
 }
 
-if (isset($_POST['action']) && $_POST['action'] == "change") {
-    foreach ($_SESSION["shopping_cart"] as &$value) {
-        if ($value['product_id'] === $_POST["product_id"]) {
-            $value['quantity'] = $_POST["quantity"];
-            break; // Stop the loop after we've found the product
-        }
-    }
-}
+ if(isset($_GET["action"]))  
+ {  
+      if($_GET["action"] == "delete")  
+      {  
+           foreach($_SESSION["shopping_cart"] as $keys => $values)  
+           {  
+                if($values["item_id"] == $_GET["id"])  
+                {  
+                     unset($_SESSION["shopping_cart"][$keys]);  
+                     echo '<script>alert("Item Removed")</script>';  
+                    
+                }  
+           }  
+      }  
+ }  
 ?>
-<html>
-    <head>
-      <!doctype html>
 <html>
 <head>
     <title>Phone Case Shop</title>
@@ -43,82 +31,45 @@ if (isset($_POST['action']) && $_POST['action'] == "change") {
 <?php
 include "../page_incs/nav.inc.php";
 ?>
-            <?php
-            if (!empty($_SESSION["shopping_cart"])) {
-                $cart_count = count(array_keys($_SESSION["shopping_cart"]));
-            }
-            ?>
-
-            <div class="cart">
-                <?php
-                if (isset($_SESSION["shopping_cart"])) {
-                    $total_price = 0;
-                    ?>	
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td>ITEM NAME</td>
-                                <td>QUANTITY</td>
-                                <td>UNIT PRICE</td>
-                                <td>ITEMS TOTAL</td>
-                            </tr>	
-                            <?php
-                            foreach ($_SESSION["shopping_cart"] as $product) {
-                                ?>
-                                <tr>
-                                    <td>  <img src="../images/phone_cases_img/<?=$product['p_img']?>" width="80px" height="150px" class="phone_image" alt="<?=$product['p_name']?>"></td>
-                                    <td><?php echo $product["p_name"]; ?><br />
-                                        <form method='post' action=''>
-                                            <input type='hidden' name='product_id' value="<?php echo $product["product_id"]; ?>" />
-                                            <input type='hidden' name='action' value="remove" />
-                                            <button type='submit' class='remove'>Remove Item</button>
-                                        </form>
-                                    </td>
-                                    <td>
-                                        <form method='post' action='index.php?page=cartpage'>
-                                            <input type='hidden' name='product_id' value="<?php echo $product["product_id"]; ?>" />
-                                            <input type='hidden' name='action' value="change" />
-                                            <select name='quantity' class='quantity' onChange="this.form.submit()">
-                                                <option <?php if ($product["quantity"] == 1) echo "selected"; ?> value="1">1</option>
-                                                <option <?php if ($product["quantity"] == 2) echo "selected"; ?> value="2">2</option>
-                                                <option <?php if ($product["quantity"] == 3) echo "selected"; ?> value="3">3</option>
-                                                <option <?php if ($product["quantity"] == 4) echo "selected"; ?> value="4">4</option>
-                                                <option <?php if ($product["quantity"] == 5) echo "selected"; ?> value="5">5</option>
-                                            </select>
-                                        </form>
-                                    </td>
-                                    <td><?php echo "$" . $product["p_price"]; ?></td>
-                                    <td><?php echo "$" . $product["p_price"] * $product["quantity"]; ?></td>
-                                </tr>
-                                <?php
-                                $total_price += ($product["p_price"] * $product["quantity"]);
-                            }
-                            ?>
-                            <tr>
-                                <td colspan="5" align="right">
-                                    <strong>TOTAL: <?php echo "$" . $total_price; ?></strong><br>
-                                    <input type="submit" value="Place Order" name="placeorder">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>		
-                    <?php
-                } else {
-                    echo "<h3>Your cart is empty!</h3>";
-                }
-                ?>
-            </div>
-
-            <div style="clear:both;"></div>
-
-            <div class="message_box" style="margin:10px 0px;">
-                <?php echo $status; ?>
-            </div>
-        </div> 
-    </body>
-       <?php
-        include "../page_incs/footer.inc.php";
-    ?>
-
-</html>
+<h3>Order Details</h3>  
+                <div class="table-responsive">  
+                     <table class="table table-bordered">  
+                          <tr>  
+                               <th width="40%">Item Name</th>  
+                               <th width="10%">Quantity</th>  
+                               <th width="20%">Price</th>  
+                               <th width="15%">Total</th>  
+                               <th width="5%">Action</th>  
+                          </tr>  
+                          <?php   
+                          if(!empty($_SESSION["shopping_cart"]))  
+                          {  
+                               $total = 0;  
+                               foreach($_SESSION["shopping_cart"] as $keys => $values)  
+                               {  
+                          ?>  
+                          <tr>  
+                               <td><?php echo $values["item_name"]; ?></td>  
+                               <td><?php echo $values["item_quantity"]; ?></td>  
+                               <td>$ <?php echo $values["item_price"]; ?></td>  
+                               <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>  
+                               <td><a href="cartpage.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>  
+                          </tr>  
+                          <?php  
+                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);  
+                               }  
+                          ?>  
+                          <tr>  
+                               <td colspan="3" align="right">Total</td>  
+                               <td align="right">$ <?php echo number_format($total, 2); ?></td>  
+                               <td></td>  
+                          </tr>  
+                          <?php  
+                          }  
+                          ?>  
+                     </table>  
+                </div>  
+           </div>  
+           <br />  
+      </body>  
+ </html>
