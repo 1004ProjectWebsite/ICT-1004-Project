@@ -9,7 +9,6 @@ if (mysqli_connect_errno()) {
     die();
 }
 
-
 $num_products_on_each_page = 6;
 
 // The current page, in the URL this will appear as index.php?page=products&p=1, index.php?page=products&p=2, etc...
@@ -133,13 +132,7 @@ include "../page_incs/nav.inc.php";
         <?php
            
             endforeach;
-            ?>
-
-            <div style="clear:both;"></div>
-
-            <div class="message_box" style="margin:10px 0px;">
-                <?php echo $status; ?>
-            </div>
+            ?>         
         </div>
     </body>
     <?php
