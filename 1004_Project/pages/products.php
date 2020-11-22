@@ -44,7 +44,8 @@ $total_products = $result->num_rows;
                      'item_id'               =>     $_GET["id"],  
                      'item_name'               =>     $_POST["hidden_name"],  
                      'item_price'          =>     $_POST["hidden_price"],  
-                     'item_quantity'          =>     $_POST["quantity"],  
+                     'item_quantity'          =>     $_POST["quantity"], 
+                   
                 );  
                 $_SESSION["shopping_cart"][$count] = $item_array;  
                   echo '<script>alert("Item Added")</script>';  
@@ -61,7 +62,8 @@ $total_products = $result->num_rows;
                 'item_id'               =>     $_GET["id"],  
                 'item_name'               =>     $_POST["hidden_name"],  
                 'item_price'          =>     $_POST["hidden_price"],  
-                'item_quantity'          =>     $_POST["quantity"]  
+                'item_quantity'          =>     $_POST["quantity"],
+                
            );  
            $_SESSION["shopping_cart"][0] = $item_array;  
       }  
@@ -102,7 +104,8 @@ include "../page_incs/nav.inc.php";
             }
       
 
-           foreach ($products as $product): ?>          
+           foreach ($products as $product):
+               ?>          
           
                 <div class="grid-item">
                     <article>
