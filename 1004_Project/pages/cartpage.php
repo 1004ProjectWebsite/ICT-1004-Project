@@ -97,7 +97,8 @@ include "../page_incs/nav.inc.php";
                             ?>
                             <tr>
                                 <td colspan="5" align="right">
-                                    <strong>TOTAL: <?php echo "$" . $total_price; ?></strong>
+                                    <strong>TOTAL: <?php echo "$" . $total_price; ?></strong><br>
+                                    <input type="submit" value="Place Order" name="placeorder">
                                 </td>
                             </tr>
                         </tbody>
@@ -114,7 +115,7 @@ include "../page_incs/nav.inc.php";
             <div class="message_box" style="margin:10px 0px;">
                 <?php echo $status; ?>
             </div>
-        </div>
+        </div> 
     </body>
        <?php
         include "../page_incs/footer.inc.php";
