@@ -3,8 +3,8 @@
     { 
         session_start(); 
     } 
-  //$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
-    $con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
+  $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+  //  $con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     die();
@@ -83,8 +83,8 @@ $total_products = $result->num_rows;
 <?php
 include "../page_incs/nav.inc.php";
 ?>
+ <main class="container">
 
-<div class="container">
     <div class="row">
         <h1>&nbsp;Phone Cases and Accessories</h1>
     </div>
@@ -112,12 +112,11 @@ include "../page_incs/nav.inc.php";
                     <article>
                         <figure>
                             <a href="index.php?page=product&id=<?=$product['product_id']?>" class="product">
-                                <img src="../phone_cases_img/<?=$product['p_img']?>" width="80px" height="150px" name="img" class="phone_image" alt="<?=$product['p_name']?>">
+                                <img src="../phone_cases_img/<?=$product['p_img']?>" width="80px" height="150px" class="phone_image" alt="<?=$product['p_name']?>">
                             </a>
 
                             <h5 class="text-body"><?=$product['p_name']?></h5>
                             <h5 class="text-info">&dollar;<?=$product['p_price']?></h5>
-
                             <form method="post" action="products.php?action=add&id=<?php echo $product["product_id"]; ?>">  
                                 <div class="form-group">
                                     <label for="quantity"></label>
@@ -138,9 +137,9 @@ include "../page_incs/nav.inc.php";
             endforeach;
             ?>         
         </div>
-    </body>
-    <?php
-        include "../page_incs/footer.inc.php";
-    ?>
-
-</html>
+      </div>
+   </main>        
+</body>
+<?php
+include "../page_incs/footer.inc.php";
+?>

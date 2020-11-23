@@ -3,8 +3,8 @@ if (!isset($_SESSION)) {
     session_start();
 }
 //$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
-//$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
-    $con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
+$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+//    $con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
 
 // Check to make sure the id parameter is specified in the URL
 if (isset($_GET['id'])) {
@@ -79,7 +79,7 @@ include "../page_incs/nav.inc.php";
 
     <?php foreach ($products as $product): ?>
                 <div class="col">
-                    <img src="../images/phone_cases_img/<?= $product['p_img'] ?>" width="" height="" class="phone_image" alt="<?= $product['p_name'] ?>">
+                     <img src="../phone_cases_img/<?=$product['p_img']?>" class="phone_image" alt="<?=$product['p_name']?>">
                 </div>
 
                 <div class="col">
@@ -91,8 +91,8 @@ include "../page_incs/nav.inc.php";
                             <form method="post" action="product.php?action=add&id=<?php echo $product["product_id"]; ?>">
                                 <div class="form-group">
                                     <label for="quantity"></label>
-                                    <input class="form-control" type="number" id="quantity" name="quantity" min="1" max="<?= $product['p_qty'] ?>"
-                                           placeholder="1">
+                                    <input class="form-control" type="number" id="quantity" name="quantity"
+                                           value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required>
                                 </div>
                                 <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>" />  
                                 <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />  
