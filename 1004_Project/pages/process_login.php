@@ -43,15 +43,15 @@ function authenticateUser() {
     global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
 // Create database connection.   
 
-//    $servername = "localhost";
-//    $username = "root";
-//    $password = "kahwei";
-//    $dbname = "1004_Project";
+   // $servername = "localhost";
+   // $username = "root";
+    //$password = "kahwei";
+    //$dbname = "1004_Project";
 
     //  Nicholas DB connect
     $servername = "localhost";
     $username = "root";
-    $password = "E*z?%-iD8#hr";
+   $password = "E*z?%-iD8#hr";
     $dbname = "1004_Project";
 
 // Create connection

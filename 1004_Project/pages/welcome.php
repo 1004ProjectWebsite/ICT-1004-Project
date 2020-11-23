@@ -1,5 +1,5 @@
 <?php
-session_start(); // start session
+//session_start(); // start session
 ?>
 <head>
     <title>Welcome</title>
@@ -18,7 +18,7 @@ session_start(); // start session
                  $uname = $_SESSION['username'];
                 echo "<h3>Your registration is successful!</h3>";
                 echo "<h4>Thank you for signing up $uname<h4>";
-                echo "<a class=\"btn btn-success\" href=pages/index.php?page=home>Proceed to shop</a>";
+                echo "<a class=\"btn btn-success\" href=index.php?page=home>Proceed to shop</a>";
             }
          ?>                
     </main>        

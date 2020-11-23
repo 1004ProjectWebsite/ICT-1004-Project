@@ -52,16 +52,16 @@ function saveMemberToDB() {
     global $id, $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
 
 // Create connection
-//    $servername = "localhost";
-//    $username = "root";
-//    $password = "kahwei";
-//    $dbname = "1004_Project";
-
-//  Nicholas DB connect
     $servername = "localhost";
     $username = "root";
-    $password = "E*z?%-iD8#hr";
+    $password = "kahwei";
     $dbname = "1004_Project";
+
+//  Nicholas DB connect
+ //   $servername = "localhost";
+  //  $username = "root";
+ //   $password = "E*z?%-iD8#hr";
+  //  $dbname = "1004_Project";
 
 // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

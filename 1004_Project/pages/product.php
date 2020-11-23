@@ -2,8 +2,8 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
-$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+//$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 //    $con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
 
 // Check to make sure the id parameter is specified in the URL

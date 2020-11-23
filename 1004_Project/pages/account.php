@@ -30,7 +30,7 @@ $row = mysqli_fetch_array($query);
                             <div class="card-header">
                                 <h3 class="mb-0">User Information</h3>
                             </div>
-                            <div class="card-body">W
+                            <div class="card-body">
                                 <div class="layout-form">
 
                                     <form action="process_update.php" method="post">
