@@ -2,8 +2,8 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
-$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+//$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 //    $con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
 
 // Check to make sure the id parameter is specified in the URL
@@ -38,7 +38,8 @@ if (isset($_POST["add_to_cart"])) {
                 'item_id' => $_GET["id"],
                 'item_name' => $_POST["hidden_name"],
                 'item_price' => $_POST["hidden_price"],
-                'item_quantity' => $_POST["quantity"]
+                'item_quantity' => $_POST["quantity"],
+                'item_image' => $_POST["hidden_image_url"]
             );
             $_SESSION["shopping_cart"][$count] = $item_array;
              echo '<script>alert("Item Added")</script>';
@@ -51,7 +52,8 @@ if (isset($_POST["add_to_cart"])) {
             'item_id' => $_GET["id"],
             'item_name' => $_POST["hidden_name"],
             'item_price' => $_POST["hidden_price"],
-            'item_quantity' => $_POST["quantity"]
+            'item_quantity' => $_POST["quantity"],
+            'item_image' => $_POST["hidden_image_url"]
         );
         $_SESSION["shopping_cart"][0] = $item_array;
     }
@@ -95,15 +97,16 @@ include "../page_incs/nav.inc.php";
                                            value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required>
                                 </div>
                                 <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>" />  
-                                <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />  
+                                <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />
+                                <input type="hidden" name="hidden_image_url" value="<?php echo $product["p_img"]; ?>" />
                                 <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" /> 
                             </form>
 
-                            <p>
-                                <br/>
-                            <h4>Product Description</h4>
-    <?= $product['p_desc'] ?>
-                            </p>
+                                <p>
+                                    <br/>
+                                    <h4>Product Description</h4>
+                                    <?= $product['p_desc'] ?>
+                                </p>
                         </figure>
                     </article>
                 </div>
