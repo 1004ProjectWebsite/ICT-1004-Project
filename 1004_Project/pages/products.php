@@ -3,37 +3,38 @@
     { 
         session_start(); 
     } 
-//  $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+  $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 //    $con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
-$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     die();
 }
 
-$num_products_on_each_page = 6;
+
+$num_results_on_page = 6;
 
 // The current page, in the URL this will appear as index.php?page=products&p=1, index.php?page=products&p=2, etc...
-$current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int)$_GET['p'] : 1;
+// 
+//$current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int)$_GET['p'] : 1;
+$page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
+
+$total_products = $con->query('SELECT * FROM products')->num_rows;
 
 // Select products ordered by the date added
-$stmt = $con->prepare("SELECT * FROM products ORDER BY p_date_added DESC LIMIT ?,?");
+if ($stmt = $con->prepare('SELECT * FROM products ORDER BY p_date_added  DESC LIMIT ?,?')) {
+    // bindValue will allow us to use integer in the SQL statement, we need to use for LIMIT
+    $calc_page = ($page - 1) * $num_results_on_page;
+	$stmt->bind_param('ii', $calc_page, $num_results_on_page);
+	$stmt->execute(); 
+	// Get the results...
+        // Fetch the products from the database and return the result as an Array
+	$result = $stmt->get_result();
+}
 
-// bindValue will allow us to use integer in the SQL statement, we need to use for LIMIT
-$var1 = (($current_page - 1) * $num_products_on_each_page);
-
-$stmt->bind_param('ii', $var1, $num_products_on_each_page);
-
-$stmt->execute();
-
-// Fetch the products from the database and return the result as an Array
-$result = $stmt->get_result();
 $products = $result->fetch_all(MYSQLI_ASSOC);
-// Get the total number of products
-//$total_products = $result->num_rows;
-// Get the total number of products
-$total_products = $result->num_rows;
+
 
  if(isset($_POST["add_to_cart"]))  
  {  
@@ -143,6 +144,35 @@ include "../page_incs/nav.inc.php";
             ?>         
         </div>
       </div>
+        			<?php if (ceil($total_products / $num_results_on_page) > 0): ?>
+			<ul class="pagination">
+				<?php if ($page > 1): ?>
+                            <li class="prev"><a href="products.php?page=<?php echo $page-1 ?>">Prev</a></li>
+				<?php endif; ?>
+
+				<?php if ($page > 3): ?>
+				<li class="start"><a href="products.php?page=1">1</a></li>
+				<li class="dots">...</li>
+				<?php endif; ?>
+
+				<?php if ($page-2 > 0): ?><li class="page"><a href="products.php?page=<?php echo $page-2 ?>"><?php echo $page-2 ?></a></li><?php endif; ?>
+				<?php if ($page-1 > 0): ?><li class="page"><a href="products.php?page=<?php echo $page-1 ?>"><?php echo $page-1 ?></a></li><?php endif; ?>
+
+				<li class="currentpage"><a href="products.php?page=<?php echo $page ?>"><?php echo $page ?></a></li>
+
+				<?php if ($page+1 < ceil($total_products / $num_results_on_page)+1): ?><li class="page"><a href="products.php?page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li><?php endif; ?>
+				<?php if ($page+2 < ceil($total_products / $num_results_on_page)+1): ?><li class="page"><a href="products.php?page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li><?php endif; ?>
+
+				<?php if ($page < ceil($total_products / $num_results_on_page)-2): ?>
+				<li class="dots">...</li>
+				<li class="end"><a href="products.php?page=<?php echo ceil($total_products / $num_results_on_page) ?>"><?php echo ceil($total_products / $num_results_on_page) ?></a></li>
+				<?php endif; ?>
+
+				<?php if ($page < ceil($total_products / $num_results_on_page)): ?>
+				<li class="next"><a href="products.php?page=<?php echo $page+1 ?>">Next</a></li>
+				<?php endif; ?>
+			</ul>
+			<?php endif; ?>
    </main>        
 </body>
 <?php
