@@ -74,18 +74,12 @@ include "../page_incs/nav.inc.php";
             </div>  
          
        <br />  
-       <div class="form-group">
-           <style>
-               a.btn btn-info
-               {
-                  float: right;
-                  text-align: right;
-               }
-           </style>
-        <a href="checkout.php" id="cart1" style = "text-align: right" class="btn btn-info">Proceed to Payment</a>
-<!--                    <button type="submit" class="btn btn-primary btn-lg">Payment</button>-->
-        <a href="products.php" id="cart1" class="btn btn-info">Back to shop</a>
-     </div>
+        <div class="form-group">
+            <a href="products.php" id="cart1" class="btn btn-info">Back to shop</a>
+            <div class="float-right">
+                <a href="checkout.php" id="cart1" class="btn btn-info">Proceed to Payment</a>
+            </div>
+        </div>
   </body>  
   <?php
     include "../page_incs/footer.inc.php";
