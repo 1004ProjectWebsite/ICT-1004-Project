@@ -3,7 +3,8 @@
     { 
         session_start(); 
     } 
-  $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+  //$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+    $con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     die();

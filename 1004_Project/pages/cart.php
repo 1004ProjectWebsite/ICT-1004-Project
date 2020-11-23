@@ -6,8 +6,11 @@
     } 
 
 //var_dump($_SESSION);
-$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+//$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
+//sj db
+$con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");    
+    
 if (isset($_POST['product_id'], $_POST['p_qty']) && is_numeric($_POST['product_id']) && is_numeric($_POST['p_qty'])) {
     // Set the post variables so we easily identify them, also make sure they are integer
     $product_id = (int)$_POST['$product_id'];
