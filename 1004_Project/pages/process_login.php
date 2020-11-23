@@ -42,12 +42,16 @@ function sanitize_input($data) {
 function authenticateUser() {
     global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
 // Create database connection.   
-    // $config = parse_ini_file('../../private/db-config.ini');
-    //  $conn = new mysqli($config['servername'], $config['username'],
-    //  $config['password'], $config['dbname']);
+
+//    $servername = "localhost";
+//    $username = "root";
+//    $password = "kahwei";
+//    $dbname = "1004_Project";
+
+    //  Nicholas DB connect
     $servername = "localhost";
     $username = "root";
-    $password = "kahwei";
+    $password = "E*z?%-iD8#hr";
     $dbname = "1004_Project";
 
 // Create connection
@@ -106,14 +110,14 @@ include "../page_incs/head.inc.php";
         if ($success) {
             echo "<h1>Login successful!</h1>";
             echo "<h3>Welcome back $fname</h3>";
-            echo "<a class=\"btn btn-success\" href=\"\pages\home.php\">Return to Home</a>";
+            echo "<a class=\"btn btn-success\" href=index.php?page=home>Return to Home</a>";
         }
             else 
     {
             echo "<h1>Oops!</h1>";
             echo "<h3>The following input errors were detected:</h3>";
             echo "<p>" . $errorMsg . "</p>";
-            echo "<a class=\"btn btn-warning\" href=\"\pages\login.php\">Return to Login</a>";
+            echo "<a class=\"btn btn-warning\" href=index.php?page=login>Return to Login</a>";
         }                    
         ?>                  
         </main>

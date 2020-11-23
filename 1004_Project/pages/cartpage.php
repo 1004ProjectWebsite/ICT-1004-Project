@@ -81,8 +81,9 @@ include "../page_incs/nav.inc.php";
                           </form>
 
                           <?php
+                                // Clears shopping cart
                               if(isset($_POST['remove_cart'])) {
-                                  session_unset();
+                                  unset($_SESSION['shopping_cart']);
                                   echo "<meta http-equiv='refresh' content='0'>";
                               }
                           ?>

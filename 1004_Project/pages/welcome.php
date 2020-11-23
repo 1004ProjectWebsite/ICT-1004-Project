@@ -18,7 +18,7 @@
                  $uname = $_SESSION['username'];
                 echo "<h3>Your registration is successful!</h3>";
                 echo "<h4>Thank you for signing up $uname<h4>";
-                echo "<a class=\"btn btn-success\" href=\"\pages\home.php\">Proceed to shop</a>";
+                echo "<a class=\"btn btn-success\" href=pages/index.php?page=home>Proceed to shop</a>";
             }
          ?>                
     </main>        

@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "<h2>This page is not meant to be run directly.</h2>";
     echo "<p>You can register at the link below:</p>";
-    echo "<a href='../pages/register.php'>Go to Sign up page...</a>";
+    echo "<a href='index.php?page=register'>Go to Sign up page...</a>";
     exit();
 }
 
@@ -51,15 +51,18 @@ function sanitize_input($data) {
 function saveMemberToDB() {
     global $id, $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
 
-    // Create database connection.
-    //$config = parse_ini_file('../../private/db-config.ini');
-    //$conn = new mysqli($config['servername'], $config['username'],
-    //      $config['password'], $config['dbname']);
 // Create connection
+//    $servername = "localhost";
+//    $username = "root";
+//    $password = "kahwei";
+//    $dbname = "1004_Project";
+
+//  Nicholas DB connect
     $servername = "localhost";
     $username = "root";
-    $password = "kahwei";
+    $password = "E*z?%-iD8#hr";
     $dbname = "1004_Project";
+
 // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
@@ -105,7 +108,7 @@ function saveMemberToDB() {
                 saveMemberToDB();
                    ?>
                 <script type="text/javascript">
-                    window.location.href = "/pages/welcome.php";
+                    window.location.href = "index.php?page=welcome";
                 </script>
                 <?php
             } else {

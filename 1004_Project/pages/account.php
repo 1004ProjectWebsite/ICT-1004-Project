@@ -1,6 +1,11 @@
 <?php
 //session_start();
-$mysqli = new mysqli("localhost", "root", "kahwei", "1004_project");
+//$mysqli = new mysqli("localhost", "root", "kahwei", "1004_project");
+
+//Nicholas db connect
+$mysqli = new mysqli("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+
+
 $id = $_SESSION['id'];
 $query = mysqli_query($mysqli, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
 $row = mysqli_fetch_array($query);
@@ -25,10 +30,10 @@ $row = mysqli_fetch_array($query);
                             <div class="card-header">
                                 <h3 class="mb-0">User Information</h3>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body">W
                                 <div class="layout-form">
 
-                                    <form action="\processes\process_update.php" method="post">
+                                    <form action="process_update.php" method="post">
                                         <div class="form-group row">
                                             <label class="col-lg-3 col-form-label form-control-label">First name</label>
                                             <div class="col-lg-9">

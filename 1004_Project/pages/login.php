@@ -13,7 +13,7 @@
 
     <body>
         <div class="layout-form">
-           <form action="../processes/process_login.php" method="post">
+           <form action="process_login.php" method="post">
                 <h2>Member Login</h2>
                 <hr>         
                 <div class="form-group">

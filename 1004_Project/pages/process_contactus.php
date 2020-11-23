@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     echo "<h2>This page is not meant to be run directly.</h2>";
-    echo "<a href='../pages/contactus.php'>Go to Contact us page...</a>";
+    echo "<a href='contactus.php'>Go to Contact us page...</a>";
     exit();
 }
 

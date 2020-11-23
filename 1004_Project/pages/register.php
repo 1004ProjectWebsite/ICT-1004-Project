@@ -9,7 +9,7 @@
         ?>
 
         <div class="layout-form">
-            <form action="../processes/process_register.php" method="post">
+            <form action="process_register.php" method="post">
                 <h2>Sign Up</h2>
                 <p>Please fill in this form to create an account!</p>
                 <hr>
@@ -61,7 +61,7 @@
                     <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
                 </div>
             </form>
-            <div class="text-center">Already have an account? <a href="login.php" style="color:black">Login here</a></div>
+            <div class="text-center">Already have an account? <a href="index.php?page=login" style="color:black">Login here</a></div>
         </div>
     </body>
 

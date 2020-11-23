@@ -53,10 +53,18 @@ function sanitize_input($data) {
 function UpdateDB() {
     global $id, $fname, $lname, $email, $address, $pno, $pwd_hashed, $errorMsg, $success;
 
+//    $servername = "localhost";
+//    $username = "root";
+//    $password = "kahwei";
+//    $dbname = "1004_Project";
+
+    //  Nicholas DB connect
     $servername = "localhost";
     $username = "root";
-    $password = "kahwei";
+    $password = "E*z?%-iD8#hr";
     $dbname = "1004_Project";
+
+
 // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -70,7 +78,7 @@ function UpdateDB() {
         $address = $_POST['address'];
         $pno = $_POST['pno'];
         $sql = ("UPDATE member SET fname ='$fname', lname ='$lname', email ='$email', address ='$address', pno ='$pno' WHERE member_id = '$id'");
-        //header('Location:/pages/account.php');
+//        header('Location:index.php?page=account');
     }
     if ($conn->query($sql) === TRUE) {
         //echo "Record updated successfully";
@@ -97,7 +105,7 @@ function UpdateDB() {
             <?php
             if ($success) {
                 echo "<h3>Update successful!</h3>"; 
-                echo "<a class=\"btn btn-success\" href=\"\pages\account.php\">Return to Account</a>";
+                echo "<a class=\"btn btn-success\" href=index.php?page=account>Return to Account</a>";
             } else {
                 echo "<h3>Oops!</h3>";
                 echo "<h4>The following input errors were detected:</h4>";
