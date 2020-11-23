@@ -3,9 +3,9 @@
     { 
         session_start(); 
     } 
-  //$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+  $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 //    $con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
-$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -122,7 +122,7 @@ include "../page_incs/nav.inc.php";
 
                             <h5 class="text-body"><?=$product['p_name']?></h5>
                             <h5 class="text-info">&dollar;<?=$product['p_price']?></h5>
-                            <form method="post" action="products.php?action=add&id=<?php echo $product["product_id"]; ?>">  
+                            <form method="post" action="products.php?action=add&id=<?php echo $product["product_id"]; ?>&page=<?php echo $page ?>">
                                 <div class="form-group">
                                     <label for="quantity"></label>
                                     <input class="form-control" type="number" id="quantity" name="quantity"
@@ -178,3 +178,4 @@ include "../page_incs/nav.inc.php";
 <?php
 include "../page_incs/footer.inc.php";
 ?>
+
