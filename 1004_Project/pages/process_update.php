@@ -1,5 +1,8 @@
 <?php
-//session_start(); // start session
+ //if(!isset($_SESSION)) 
+   // { 
+        session_start(); 
+   // }
 
 $id = $_SESSION['id'];
 $fname = $lname = $email = $pno = $address = $pwd_hashed = $errorMsg = "";
@@ -40,8 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $pno = sanitize_input($_POST["pno"]);
     }   
 }
-
-UpdateDB(); 
+ 
 // Helper function that checks input for malicious or unwanted content.
 function sanitize_input($data) {
     $data = trim($data);
@@ -74,7 +76,6 @@ function UpdateDB() {
     }
     if ($conn->query($sql) === TRUE) {
         echo "Record updated successfully";
-        $_SESSION["update"] = true;
     } else {
         echo "Error updating record: " . $conn->error;
     }
@@ -93,16 +94,16 @@ function UpdateDB() {
         include "../page_incs/nav.inc.php";
         ?>     
         <main class="container">
-
             <?php
             if ($success) {
+                UpdateDB();
                 echo "<h3>Update successful!</h3>"; 
                 echo "<a class=\"btn btn-success\" href=index.php?page=account>Return to Account</a>";
             } else {
                 echo "<h3>Oops!</h3>";
                 echo "<h4>The following input errors were detected:</h4>";
                 echo "<p>" . $errorMsg . "</p>";
-                echo '<button class="btn btn-danger hBack">Return to Account</button>';
+                echo "<a class=\"btn btn-danger\" href=index.php?page=account>Return to Account</a>";
             }
             ?>           
         </main>

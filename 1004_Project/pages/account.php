@@ -1,8 +1,10 @@
 <?php
-//session_start();
+ if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
 
 include "../page_incs/db_onetimelogin.php";
-
 
 $id = $_SESSION['id'];
 $query = mysqli_query($mysqli, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
@@ -79,6 +81,9 @@ $row = mysqli_fetch_array($query);
                 </div>
             </div>
         </div>
+        <!--
+        <div class="text-center"><a href="changepwd.php" style="color:black">Change Password</a></div>
+        !-->
     </body>
     <?php
     include "../page_incs/footer.inc.php";

@@ -1,5 +1,8 @@
 <?php
-//session_start(); // start session
+ if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
 ?>
 <head>
     <title>Welcome</title>

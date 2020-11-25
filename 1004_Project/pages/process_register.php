@@ -1,5 +1,5 @@
 <?php
-//session_start(); //start session
+session_start(); //start session
 $fname = $lname = $email = $pwd_hashed = $errorMsg = "";
 $success = true;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -107,7 +107,8 @@ function saveMemberToDB() {
                 echo "<h3>Oops!</h3>";
                 echo "<h4>The following input errors were detected:</h4>";
                 echo "<p>" . $errorMsg . "</p>";
-                echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
+                echo "<a class=\"btn btn-danger\" href=index.php?page=register>Return to Account</a>";
+               //echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
             }
             ?>            
         </main>

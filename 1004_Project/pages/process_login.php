@@ -1,5 +1,5 @@
 <?php
-//session_start(); //start session
+session_start(); //start session
 ?>
 
 <?php
@@ -66,6 +66,7 @@ function authenticateUser() {
             $fname = $row["fname"];
             $lname = $row["lname"];
             $_SESSION["id"]=$row['member_id'];
+            $_SESSION["email"]=$row['email'];
             $pwd_hashed = $row["password"];
             $_SESSION['username']=$fname;
             $_SESSION["loggedin"] = true;

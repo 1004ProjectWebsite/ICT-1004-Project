@@ -12,13 +12,13 @@ if (!isset($_SESSION)) {
                 if($values["item_id"] == $_GET["id"])  
                 {  
                      unset($_SESSION["shopping_cart"][$keys]);  
-                     echo '<script>alert("Item Removed")</script>';  
+                     //echo '<script>alert("Item Updated")</script>';  
                     
                 }  
            }  
       }  
  }  
-
+ 
 ?>
 <html>
 <head>
@@ -41,7 +41,10 @@ include "../page_incs/nav.inc.php";
                            <th width="20%">Price</th>  
                            <th width="15%">Total</th>  
                            <th width="5%">Action</th>  
+			</th>
+                        
                       </tr>  
+                    
                       <?php   
                       if(!empty($_SESSION["shopping_cart"]))  
                       {  
@@ -51,17 +54,20 @@ include "../page_incs/nav.inc.php";
                       ?>  
                       <tr>
                            <td>
+  
                                <?php echo $values["item_name"]; ?>
                                <br/>
                                <img src="../phone_cases_img/<?=$values["item_image"]?>" alt="<?=$values["item_image"]?>" height="200px" width="100px">
                            </td>
 
-                           <td><input type="number" name="quantity" value="<?php echo $values["item_quantity"]; ?>" min="1" required></td>
+                           <td><input type="number" name="quantity" value="<?php echo $values["item_quantity"]; ?>" min="1" required></td>                              
+                      
                            <td>$ <?php echo $values["item_price"]; ?></td>  
                            <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
 
                            <td>
                                <a href="cartpage.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a>
+                              
                            </td>  
                       </tr>  
                       <?php  
@@ -79,7 +85,7 @@ include "../page_incs/nav.inc.php";
                            </td>
 
                           </form>
-
+ 
                           <?php
                                 // Clears shopping cart
                               if(isset($_POST['remove_cart'])) {
