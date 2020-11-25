@@ -81,9 +81,9 @@ $row = mysqli_fetch_array($query);
                 </div>
             </div>
         </div>
-        <!--
+        
         <div class="text-center"><a href="changepwd.php" style="color:black">Change Password</a></div>
-        !-->
+     
     </body>
     <?php
     include "../page_incs/footer.inc.php";
