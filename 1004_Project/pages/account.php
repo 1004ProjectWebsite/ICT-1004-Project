@@ -1,9 +1,7 @@
 <?php
 //session_start();
-//$mysqli = new mysqli("localhost", "root", "kahwei", "1004_project");
 
-//Nicholas db connect
-$mysqli = new mysqli("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+include "../page_incs/db_onetimelogin.php";
 
 
 $id = $_SESSION['id'];
