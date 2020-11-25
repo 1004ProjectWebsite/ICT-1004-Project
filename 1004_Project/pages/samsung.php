@@ -1,13 +1,6 @@
 <?php
-//session_start();
-//Nicholas db connect
-//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
-//Kah Wei db connect
-//$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
-
-//sj db
-$con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
+include "../page_incs/db_connect.inc.php";
 
 //// The amounts of products to show on each page
 $num_products_on_each_page = 6;
