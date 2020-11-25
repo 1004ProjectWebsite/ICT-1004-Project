@@ -1,5 +1,5 @@
 <?php
-session_start(); //start session
+//session_start(); //start session
 $fname = $lname = $email = $pwd_hashed = $errorMsg = "";
 $success = true;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -51,17 +51,9 @@ function sanitize_input($data) {
 function saveMemberToDB() {
     global $id, $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
 
-// Create connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "kahwei";
-    $dbname = "1004_Project";
+// DB Login
+    include "../page_incs/db_onetimelogin.php";
 
-//  Nicholas DB connect
- //   $servername = "localhost";
-  //  $username = "root";
- //   $password = "E*z?%-iD8#hr";
-  //  $dbname = "1004_Project";
 
 // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

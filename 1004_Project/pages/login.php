@@ -1,17 +1,21 @@
 <?php
 //session_start(); // start session
 ?>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
+<!--HEAD-->
     <?php
     include "../page_incs/head.inc.php";
     ?>
     <body>
-
-        <?php
+<!--    NAV BAR-->
+    <?php
         include "../page_incs/nav.inc.php";
         ?>
 
-    <body>
+<!--MEMBER LOGIN FORM-->
+
         <div class="layout-form">
            <form action="process_login.php" method="post">
                 <h2>Member Login</h2>
@@ -34,9 +38,9 @@
             </form>
             <div class="text-center"><a href="#" style="color:black">Forgot Password</a></div>
         </div>
-    </body>
 
         <?php
         include "../page_incs/footer.inc.php";
         ?>
+    </body>
 </html>

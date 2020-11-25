@@ -1,5 +1,5 @@
 <?php
-session_start(); // start session
+//session_start(); // start session
 
 $id = $_SESSION['id'];
 $fname = $lname = $email = $pno = $address = $pwd_hashed = $errorMsg = "";
@@ -53,16 +53,8 @@ function sanitize_input($data) {
 function UpdateDB() {
     global $id, $fname, $lname, $email, $address, $pno, $pwd_hashed, $errorMsg, $success;
 
-//    $servername = "localhost";
-//    $username = "root";
-//    $password = "kahwei";
-//    $dbname = "1004_Project";
-
-    //  Nicholas DB connect
-    $servername = "localhost";
-    $username = "root";
-    $password = "E*z?%-iD8#hr";
-    $dbname = "1004_Project";
+//Login DB
+    include "../page_incs/db_onetimelogin.php";
 
 
 // Create connection
@@ -81,7 +73,7 @@ function UpdateDB() {
 //        header('Location:index.php?page=account');
     }
     if ($conn->query($sql) === TRUE) {
-        //echo "Record updated successfully";
+        echo "Record updated successfully";
         $_SESSION["update"] = true;
     } else {
         echo "Error updating record: " . $conn->error;

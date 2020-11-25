@@ -1,6 +1,7 @@
 <?php
 //session_start();
 
+//DB Login
 include "../page_incs/db_onetimelogin.php";
 
 //// The amounts of products to show on each page
@@ -18,6 +19,7 @@ $result = $con->query($sql);
 $products = $result->fetch_all(MYSQLI_ASSOC);
 $total_products = $result->num_rows;
 ?>
+
 <!doctype html>
 <html>
 <head>

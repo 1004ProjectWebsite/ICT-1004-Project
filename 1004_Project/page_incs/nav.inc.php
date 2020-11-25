@@ -21,13 +21,8 @@
                     <li><a class="dropdown-item" href="index.php?page=samsung">Samsung</a></li>
                     </ul>
             </li>
-            <div class="dropdown">
-                <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About
-                <span class="caret"></span></a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="nav-item">
                     <li><a class="dropdown-item" href="index.php?page=aboutus">About Us</a></li>
-                    <li><a class="dropdown-item" href="index.php?page=contactus">Contact Us</a></li>
-                </ul>
             </div>
         </ul>
         <ul class="navbar-nav ml-auto">

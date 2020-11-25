@@ -1,25 +1,22 @@
 body {
     margin-top: 60px;
     padding-top: 10px;
+    height: 100vh;
     z-index: 1;
 }
 
-figure
-{
+
+figure {
     display: inline-block;
     text-align: center;
 }
-
-figcaption
-{
+figcaption {
     color: gray;
     font-style: italic;
     text-align: center;
     font-size: 18px;
 }
-
-figure img
-{
+figure img {
     max-height: 320px;
     max-width: 200px;
     /*display: block;*/
@@ -28,17 +25,9 @@ figure img
     /*width: 50%;*/
 }
 
-footer
-{
-    border-top-style: solid;
-    text-align: center;
-    font-style: italic;
-    padding: 20px 0;
-}
 /*contact us page*/ 
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea 
-{
+input[type=text], select, textarea {
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */ 
     border: 1px solid #ccc; /* Gray border */
@@ -50,8 +39,7 @@ input[type=text], select, textarea
 }
 
 /* Style the submit button with a specific background color etc */
-input[type=submit] 
-{
+input[type=submit] {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -61,8 +49,7 @@ input[type=submit]
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover 
-{
+input[type=submit]:hover {
     background-color: #45a049;
 }
 
@@ -80,7 +67,6 @@ input[type=submit]:hover
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .jumbotron h1 {
     text-align: center;
     position: relative;
@@ -92,7 +78,6 @@ input[type=submit]:hover
     transform: translate(-50%, -50%);
     color: white;
 }
-
 .jumbotron p {
     text-align: center;
     position: relative;
@@ -102,9 +87,9 @@ input[type=submit]:hover
     transform: translate(-50%, -50%);
     color: white;
 }
+
 /*navigation bar settings*/
-#navbar 
-{
+#navbar {
     background-color: #A9D4C5;
     position: fixed;
     top: 0;
@@ -113,7 +98,6 @@ input[type=submit]:hover
     transition: top 0.5s;
     z-index: 2;
 }
-
 #navbar a {
     float: left;
     display: block;
@@ -123,112 +107,12 @@ input[type=submit]:hover
     text-decoration: none;
     font-size: 15px;
 }
-
 #navbar a:hover {
     background-color: #F4BCB8;
     color: black;
 }
 
-/* STYLES SPECIFIC TO FOOTER  */
-.footer {
-    width: 100%;
-    position: relative;
-    height: auto;
-    background-color: #A9D4C5;
-}
-.footer .col {
-    width: 190px;
-    height: auto;
-    float: left;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    padding: 0px 20px 20px 20px;
-}
-.footer .col h1 {
-    margin: 0;
-    padding: 0;
-    font-family: inherit;
-    font-size: 12px;
-    line-height: 17px;
-    padding: 20px 0px 5px 0px;
-    color: black;
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.250em;
-}
-.footer .col ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.footer .col ul li {
-    color: #999999;
-    font-size: 14px;
-    font-family: inherit;
-    font-weight: bold;
-    padding: 5px 0px 5px 0px;
-    cursor: pointer;
-    transition: .2s;
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
-}
-.social ul li {
-    display: inline-block;
-    padding-right: 5px !important;
-}
 
-.footer .col ul li:hover {
-    color: #ffffff;
-    transition: .1s;
-    -webkit-transition: .1s;
-    -moz-transition: .1s;
-}
-.clearfix {
-    clear: both;
-}
-@media only screen and (min-width: 1280px) {
-    .contain {
-        width: 1200px;
-        margin: 0 auto;
-    }
-}
-@media only screen and (max-width: 1139px) {
-    .contain .social {
-        width: 1000px;
-        display: block;
-    }
-    .social h1 {
-        margin: 0px;
-    }
-}
-@media only screen and (max-width: 950px) {
-    .footer .col {
-        width: 33%;
-    }
-    .footer .col h1 {
-        font-size: 14px;
-    }
-    .footer .col ul li {
-        font-size: 13px;
-    }
-}
-@media only screen and (max-width: 500px) {
-    .footer .col {
-        width: 50%;
-    }
-    .footer .col h1 {
-        font-size: 14px;
-    }
-    .footer .col ul li {
-        font-size: 13px;
-    }
-}
-@media only screen and (max-width: 340px) {
-    .footer .col {
-        width: 100%;
-    }
-}
 
 /* Store Grid Layout */
 .grid-container {
@@ -245,11 +129,11 @@ input[type=submit]:hover
     font-size: 30px;
     text-align: center;
 }
-
 .phone_image {
     max-width: 500px;
     max-height:500px;
 }
+
 /*register Page*/
 .form-control {
     font-size: 15px;
@@ -375,3 +259,238 @@ max-height:500px;
 	background-color: #518acb;
 }
 
+/*======================================
+  21. Contact CSS
+========================================*/
+.contact-us {
+    position: relative;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    z-index: 43;
+}
+.contact-us .title{
+    margin-bottom: 30px;
+}
+.contact-us .title h4 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #F7941D;
+}
+.contact-us .title h3 {
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.contact-us .single-head {
+    padding: 50px;
+    box-shadow: 0px 0px 15px #0000001a;
+    height: 50%;
+}
+.contact-us .single-info {
+    text-align: left;
+    margin-bottom:30px;
+}
+.contact-us .single-info i {
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 15px;
+    height: 40px;
+    width: 40px;
+    display: block;
+    text-align: center;
+    border-radius: 3px;
+    line-height: 40px;
+    background:#F7941D;
+}
+.contact-us .single-info ul
+.contact-us .single-info ul li{
+    margin-bottom:5px;
+}
+.contact-us .single-info ul li:last-child{
+    margin-bottom:0;
+}
+.contact-us .single-info ul li a{
+    font-weight:400;
+}
+.contact-us .single-info ul li a:hover{
+    color:#F7941D;
+}
+.contact-us .single-info .title {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #333;
+    font-size: 18px;
+}
+.contact-us .form-main {
+    box-shadow: 0px 0px 15px #0000001a;
+    padding: 50px;
+}
+.contact-us .form .form-group input {
+    height: 48px;
+    line-height: 48px;
+    width: 100%;
+    border: 1px solid #e6e2f5;
+    padding: 0px 20px;
+    color: #333;
+    border-radius: 0px;
+    font-weight: 400;
+}
+.contact-us .form .form-group textarea {
+    height: 180px;
+    width: 100%;
+    border: 1px solid #e6e2f5;
+    padding: 15px 20px;
+    color: #333;
+    border-radius: 0px;
+    resize: none;
+    font-weight:400;
+}
+.contact-us .form .form-group label {
+    color: #333;
+    position: relative;
+}
+.contact-us .form .form-group label span {
+    color: #ff2c18;
+    display: inline-block;
+    position: absolute;
+    right: -12px;
+    top: 4px;
+    font-size: 16px;
+}
+.contact-us .form .button {
+    margin:0;
+}
+.contact-us .form .button .btn {
+    height: 50px;
+    border: none;
+}
+#myMap {
+    height: 500px;
+    width: 100%;
+}
+/*======================================
+  End Contact CSS
+========================================*/
+
+/*=============================
+	20. Start Footer CSS
+===============================*/
+
+.footer {
+    border-top-style: solid;
+    text-align: center;
+    font-style: italic;
+    padding: 30px ;
+    width: 100%;
+    position: absolute;
+    height: auto;
+    background-color: #A9D4C5;
+}
+.footer .col {
+    width: 190px;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0px 20px 20px 20px;
+}
+.footer .col h1 {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 17px;
+    padding: 20px 0px 5px 0px;
+    color: black;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.250em;
+}
+.footer .col ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.footer .col ul li {
+    color: #999999;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 5px 0px 5px 0px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+}
+.social ul li {
+    display: inline-block;
+    padding-right: 5px !important;
+}
+.footer .col ul li:hover {
+    color: #ffffff;
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+}
+.clearfix {
+    clear: both;
+}
+@media only screen and (min-width: 1280px) {
+    .contain {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 1139px) {
+    .contain .social {
+        width: 1000px;
+        display: block;
+    }
+    .social h1 {
+        margin: 0px;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .footer .col {
+        width: 33%;
+    }
+    .footer .col h1 {
+        font-size: 14px;
+    }
+    .footer .col ul li {
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .footer .col {
+        width: 50%;
+    }
+    .footer .col h1 {
+        font-size: 14px;
+    }
+    .footer .col ul li {
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 340px) {
+    .footer .col {
+        width: 100%;
+    }
+}
+
+/*=============================
+	End Footer CSS
+===============================*/
+
+.imgcontainer{
+    position: relative;
+    text-align: center;
+    width: 100% !important;
+    height: auto;
+    color: white;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}

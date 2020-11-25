@@ -5,17 +5,13 @@
             <div class="col">
                 <h1>Company</h1>
                 <ul>
-                    <li>About Us</li>                
-                    <li>Social</li>
-                    <li>Contact Us</li>
+                    <li>About Us</li>
                 </ul>
             </div>
             <div class="col">
                 <h1>Products</h1>
                 <ul>
-                    <li>About</li>
-                    <li>Social</li>
-                    <li>Get in touch</li>
+                    <li>Shop</li>
                 </ul>
             </div>           
             <div class="col">
@@ -38,3 +34,8 @@
     <!-- END OF FOOTER -->
 </footer>
 
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<!-- custom javascript -->
+<script defer src="../js/main.js"></script>

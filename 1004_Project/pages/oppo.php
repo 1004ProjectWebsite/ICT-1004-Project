@@ -17,6 +17,7 @@ $result = $con->query($sql);
 $products = $result->fetch_all(MYSQLI_ASSOC);
 $total_products = $result->num_rows;
 ?>
+
 <!doctype html>
 <html>
 <head>

@@ -33,6 +33,7 @@
     </header>
     <main class="container">
         <h3>Popular items</h3>
+
         <?php
 
 include "../page_incs/db_onetimelogin.php";
@@ -58,7 +59,8 @@ include "../page_incs/db_onetimelogin.php";
 
 // Get the total number of products
         $total_products = $result->num_rows;
-        ?> 
+        ?>
+
             <div class="row">
                 <div class="grid-container">
 
@@ -100,8 +102,8 @@ include "../page_incs/db_onetimelogin.php";
                 <a href="index.php?page=products&p=<?= $current_page + 1 ?>">Next</a>
             <?php endif; ?>
         </div>
-    </main>        
+    </main>
+    <?php
+    include "../page_incs/footer.inc.php";
+    ?>
 </body>
-<?php
-include "../page_incs/footer.inc.php";
-?>

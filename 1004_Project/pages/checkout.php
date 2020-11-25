@@ -19,8 +19,6 @@
             </h1>
             <p>Please select one method</p>
             <div class="form-check">
-                <input type="radio" id="selfcollect" name="method">
-                <label for="male">Self Collect</label><br>
                 <input type="radio" id="delivery" name="method">
                 <label for="female">Delivery</label><br>
             </div>

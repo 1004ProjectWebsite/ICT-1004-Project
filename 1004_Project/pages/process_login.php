@@ -1,5 +1,5 @@
 <?php
-session_start(); //start session
+//session_start(); //start session
 ?>
 
 <?php
@@ -43,16 +43,8 @@ function authenticateUser() {
     global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
 // Create database connection.   
 
-   // $servername = "localhost";
-   // $username = "root";
-    //$password = "kahwei";
-    //$dbname = "1004_Project";
-
-    //  Nicholas DB connect
-    $servername = "localhost";
-    $username = "root";
-   $password = "E*z?%-iD8#hr";
-    $dbname = "1004_Project";
+// DB Login
+    include "../page_incs/db_onetimelogin.php";
 
 // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

@@ -2,6 +2,8 @@
 if (!isset($_SESSION)) {
     session_start();
 }
+
+//DB Login
 include "../page_incs/db_onetimelogin.php";
 
 // Check to make sure the id parameter is specified in the URL
