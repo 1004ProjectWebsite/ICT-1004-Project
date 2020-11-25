@@ -1,31 +1,13 @@
 <?php
 
-//  Nicholas DB connect
-//    $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
-
-//  Kah Wei DB connect
-//    $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
-
-//sj db
-//$con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
-
-//  GC DB connect
-$con = mysqli_connect("localhost", "root", "password", "1004_project");
-
 function connect_mysql()
 {
 
 //  Nicholas DB connect
-//    $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+    $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
 //  Kah Wei DB connect
 //    $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
-
-//sj db
-//$con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
-
-//  GC DB connect
-    $con = mysqli_connect("localhost", "root", "password", "1004_project");
 
 
 // Check connection

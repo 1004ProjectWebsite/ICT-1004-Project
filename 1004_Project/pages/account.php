@@ -1,11 +1,14 @@
 <?php
+//session_start();
+//$mysqli = new mysqli("localhost", "root", "kahwei", "1004_project");
 
-include "../page_incs/db_connect.inc.php";
+//Nicholas db connect
+$mysqli = new mysqli("localhost", "root", "E*z?%-iD8#hr", "1004_project");
+
 
 $id = $_SESSION['id'];
 $query = mysqli_query($mysqli, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
 $row = mysqli_fetch_array($query);
-
 ?>
 <html>
     <head>

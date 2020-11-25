@@ -2,9 +2,10 @@
  if(!isset($_SESSION)) 
     { 
         session_start(); 
-    }
-
-include "../page_incs/db_connect.inc.php";
+    } 
+  $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+//    $con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
+//$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
