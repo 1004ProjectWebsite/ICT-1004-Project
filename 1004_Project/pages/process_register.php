@@ -56,14 +56,14 @@ function saveMemberToDB() {
 
 
 // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+   // $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
-    if ($conn->connect_error) {
+    if ($con->connect_error) {
         $errorMsg = "Connection failed: " . $conn->connect_error;
         $success = false;
     } else {
         // Prepare the statement:
-        $stmt = $conn->prepare("INSERT INTO member (fname, lname, email, password) VALUES (?, ?, ?, ?)");
+        $stmt = $con->prepare("INSERT INTO member (fname, lname, email, password) VALUES (?, ?, ?, ?)");
         // $id = mysqli_insert_id($conn);
         $_SESSION['username'] = $fname; //get fname after registration 
         $_SESSION["loggedin"] = true;
@@ -80,7 +80,7 @@ function saveMemberToDB() {
         }
         $stmt->close();
     }
-    $conn->close();
+    $con->close();
 }
 ?>
 <html>

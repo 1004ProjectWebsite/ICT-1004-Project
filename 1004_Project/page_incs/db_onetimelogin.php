@@ -33,6 +33,4 @@ $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
 //GC db
 //$con = mysqli_connect("localhost", "root", "password", "1004_project");
-
-$mysqli = new mysqli("localhost", "root", "kahwei", "1004_project");
 ?>

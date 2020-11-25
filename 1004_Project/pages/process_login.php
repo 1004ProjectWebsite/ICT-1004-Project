@@ -47,14 +47,14 @@ function authenticateUser() {
     include "../page_incs/db_onetimelogin.php";
 
 // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    //$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection    
-    if ($conn->connect_error) {
+    if ($con->connect_error) {
         $errorMsg = "Connection failed: " . $conn->connect_error;
         $success = false;
     } else {
         // Prepare the statement:        
-        $stmt = $conn->prepare("SELECT * FROM member WHERE email=?");
+        $stmt = $con->prepare("SELECT * FROM member WHERE email=?");
         // Bind & execute the query statement:        
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -84,7 +84,7 @@ function authenticateUser() {
         }
         $stmt->close();
     }
-    $conn->close();
+    $con->close();
 }
 ?>
 

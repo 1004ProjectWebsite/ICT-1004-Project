@@ -7,7 +7,7 @@
 include "../page_incs/db_onetimelogin.php";
 
 $id = $_SESSION['id'];
-$query = mysqli_query($mysqli, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
+$query = mysqli_query($con, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
 $row = mysqli_fetch_array($query);
 ?>
 <html>

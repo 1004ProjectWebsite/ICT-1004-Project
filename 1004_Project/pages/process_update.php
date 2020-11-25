@@ -60,9 +60,9 @@ function UpdateDB() {
 
 
 // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    //$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-    if ($conn->connect_error) {
+    if ($con->connect_error) {
         die("Connection failed: " . $conn->connect_error);
         $success = false;
     } else {
@@ -74,12 +74,12 @@ function UpdateDB() {
         $sql = ("UPDATE member SET fname ='$fname', lname ='$lname', email ='$email', address ='$address', pno ='$pno' WHERE member_id = '$id'");
 //        header('Location:index.php?page=account');
     }
-    if ($conn->query($sql) === TRUE) {
+    if ($con->query($sql) === TRUE) {
         echo "Record updated successfully";
     } else {
         echo "Error updating record: " . $conn->error;
     }
-    $conn->close();
+    $con->close();
 }
 ?>
 <html>
