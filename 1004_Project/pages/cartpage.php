@@ -41,8 +41,7 @@ include "../page_incs/nav.inc.php";
                            <th width="20%">Price</th>  
                            <th width="15%">Total</th>  
                            <th width="5%">Action</th>  
-			</th>
-                        
+                           </th>
                       </tr>  
                     
                       <?php   
@@ -54,7 +53,6 @@ include "../page_incs/nav.inc.php";
                       ?>  
                       <tr>
                            <td>
-  
                                <?php echo $values["item_name"]; ?>
                                <br/>
                                <img src="../phone_cases_img/<?=$values["item_image"]?>" alt="<?=$values["item_image"]?>" height="200px" width="100px">
@@ -76,7 +74,7 @@ include "../page_incs/nav.inc.php";
                       ?>  
                       <tr>  
                            <td colspan="3" align="right">Total</td>  
-                           <td align="right">$ <?php echo number_format($total, 2); ?></td>
+                           <td align="right">$<?php echo number_format($total, 2); ?></td>
 
                           <form method="POST">
 
