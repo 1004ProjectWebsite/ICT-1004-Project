@@ -46,7 +46,7 @@
                         <i class="material-icons" style="font-size:2em">account_circle</i>  
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.php?page=account">Account</a>
+                        <a class="dropdown-item" href="index.php?page=accountpage">Account</a>
                         <a class="dropdown-item" href="">Order History</a>
                     </div>
                 </li>         

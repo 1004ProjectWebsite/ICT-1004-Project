@@ -98,12 +98,12 @@ function UpdateDB() {
             if ($success) {
                 UpdateDB();
                 echo "<h3>Update successful!</h3>"; 
-                echo "<a class=\"btn btn-success\" href=index.php?page=account>Return to Account</a>";
+                echo "<a class=\"btn btn-success\" href=index.php?page=accountpage>Return to Account</a>";
             } else {
                 echo "<h3>Oops!</h3>";
                 echo "<h4>The following input errors were detected:</h4>";
                 echo "<p>" . $errorMsg . "</p>";
-                echo "<a class=\"btn btn-danger\" href=index.php?page=account>Return to Account</a>";
+                echo "<a class=\"btn btn-danger\" href=index.php?page=accountpage>Return to Account</a>";
             }
             ?>           
         </main>
