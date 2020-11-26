@@ -15,10 +15,16 @@
 //  $dbname = "1004_Project";
 
 //GC DB connect
+//$servername = "localhost";
+//$username = "root";
+//$password = "password";
+//$dbname = "1004_project";
+
+//sj DB connect
 $servername = "localhost";
 $username = "root";
-$password = "password";
-$dbname = "1004_project";
+$password = "SJTey99607";
+$dbname = "1004_proj";
 
 // Login for database
 
