@@ -3,10 +3,10 @@
 //connection details for database
 
 //  KahWei DB connect
-   $servername = "localhost";
-   $username = "root";
-   $password = "kahwei";
-  $dbname = "1004_Project";
+//   $servername = "localhost";
+//   $username = "root";
+//   $password = "kahwei";
+//  $dbname = "1004_Project";
 
 //  Nicholas DB connect
 //   $servername = "localhost";
@@ -15,10 +15,10 @@
 //  $dbname = "1004_Project";
 
 //GC DB connect
-//$servername = "localhost";
-//$username = "root";
-//$password = "password";
-//$dbname = "1004_project";
+$servername = "localhost";
+$username = "root";
+$password = "password";
+$dbname = "1004_project";
 
 // Login for database
 
@@ -26,11 +26,11 @@
 //$con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
 //Kah Wei db connect
-$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+//$con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
 //sj db
 //$con = mysqli_connect("localhost", "root", "SJTey99607", "1004_proj");
 
 //GC db
-//$con = mysqli_connect("localhost", "root", "password", "1004_project");
+$con = mysqli_connect("localhost", "root", "password", "1004_project");
 ?>
