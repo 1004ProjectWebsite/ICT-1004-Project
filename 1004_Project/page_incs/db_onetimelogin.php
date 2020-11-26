@@ -9,10 +9,10 @@
 //  $dbname = "1004_Project";
 
 //  Nicholas DB connect
-   $servername = "localhost";
-  $username = "root";
-   $password = "E*z?%-iD8#hr";
-  $dbname = "1004_Project";
+$servername = "localhost";
+$username = "root";
+$password = "E*z?%-iD8#hr";
+$dbname = "1004_Project";
 
 //GC DB connect
 //$servername = "localhost";
