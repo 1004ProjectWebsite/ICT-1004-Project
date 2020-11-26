@@ -56,7 +56,6 @@ include "../page_incs/nav.inc.php";
                                         </div>
                                         <div class="card-body">
                                             <div class="layout-form">
-
                                                 <form action="process_update.php" method="post">
                                                     <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label form-control-label">First name</label>

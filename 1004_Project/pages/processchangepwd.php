@@ -62,7 +62,7 @@ include "../page_incs/head.inc.php";
         echo "<br>";
         echo $message;
         echo "<br>";
-        echo "<a class=\"btn btn-success\" href=index.php?page=accountpage>Return to Account</a>";
+        echo "<a class=\"btn btn-success\" href=index.php?page=changepwd>Return to Account</a>";
         ?>
         </div>
             </main>
