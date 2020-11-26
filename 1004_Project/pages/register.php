@@ -8,7 +8,6 @@
             include "../page_incs/nav.inc.php";
         ?>
 
-
         <main role="main" class="row flex-grow-1 w-100 align-items-center">
             <div class="mx-auto">
                 <div class="layout-form">
@@ -64,7 +63,7 @@
                             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
                         </div>
                     </form>
-                    <div class="text-center my-2">Already have an account? <a href="index.php?page=login" style="color:black">Login here</a></div>
+                    <div class="text-center" style="margin-bottom: 85%;">Already have an account? <a href="index.php?page=login" style="color:black">Login here</a></div>
                 </div>
             </div>
         </main>

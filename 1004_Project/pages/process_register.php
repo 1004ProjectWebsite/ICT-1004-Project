@@ -59,7 +59,7 @@ function saveMemberToDB() {
    // $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
     if ($con->connect_error) {
-        $errorMsg = "Connection failed: " . $conn->connect_error;
+        $errorMsg = "Connection failed: " . $con->connect_error;
         $success = false;
     } else {
         // Prepare the statement:
