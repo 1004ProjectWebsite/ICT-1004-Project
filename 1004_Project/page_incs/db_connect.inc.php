@@ -7,10 +7,10 @@ function connect_mysql()
 //    $con = mysqli_connect("localhost", "root", "E*z?%-iD8#hr", "1004_project");
 
 //  Kah Wei DB connect
-    $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
+//    $con = mysqli_connect("localhost", "root", "kahwei", "1004_project");
 
     //GC db
-   // $con = mysqli_connect("localhost", "root", "password", "1004_project");
+    $con = mysqli_connect("localhost", "root", "password", "1004_project");
 
 
 // Check connection
