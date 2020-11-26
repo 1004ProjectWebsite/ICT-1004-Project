@@ -5,6 +5,7 @@
    // }
 
 $id = $_SESSION['id'];
+$message="";
 $fname = $lname = $email = $pno = $address = $pwd_hashed = $errorMsg = "";
 $success = true;
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
@@ -75,9 +76,13 @@ function UpdateDB() {
 //        header('Location:index.php?page=account');
     }
     if ($con->query($sql) === TRUE) {
-        echo "Record updated successfully";
+       // echo "Record updated successfully";
+        $message = "Record updated successfully";
+        $_SESSION["message"]=$message;
     } else {
-        echo "Error updating record: " . $conn->error;
+        //echo "Error updating record: " . $conn->error;
+        $message = "Error updating record";
+        $_SESSION["message"]=$message;
     }
     $con->close();
 }
@@ -97,8 +102,22 @@ function UpdateDB() {
             <?php
             if ($success) {
                 UpdateDB();
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
                 echo "<h3>Update successful!</h3>"; 
-                echo "<a class=\"btn btn-success\" href=index.php?page=account>Return to Account</a>";
+               // echo "<a class=\"btn btn-success\" href=index.php?page=account>Return to Account</a>";
+                ?>
+                <script type = "text/javascript">
+         <!--
+            function Redirect() {
+               window.location = "index.php?page=account";
+            }            
+            document.write("You will be redirected back to account page.");
+            setTimeout('Redirect()', 1000);
+         //-->
+      </script>
+      <?php
             } else {
                 echo "<h3>Oops!</h3>";
                 echo "<h4>The following input errors were detected:</h4>";

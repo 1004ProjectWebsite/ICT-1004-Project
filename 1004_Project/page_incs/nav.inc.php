@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../pages/index.php">Home</a>
+                <a class="nav-link" href="../pages/home.php">Home</a>
             </li>
             <li class="dropdown">
                 <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>                 
@@ -29,13 +29,13 @@
              <a class="nav-link" title="Shopping Cart" href="index.php?page=cartpage">
                      <i class="material-icons" style="font-size:2em">shopping_cart</i>
                      <?php
-            if (!empty($_SESSION["shopping_cart"])) {
-                $cart_count = count(array_keys($_SESSION["shopping_cart"]));
-                ?>
-                     <span><?php echo $cart_count; ?></span></a>
-                <?php
-            }
-               ?>    
+                        if (!empty($_SESSION["shopping_cart"])) {
+                            $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+                            ?>
+                                 <span><?php echo $cart_count; ?></span></a>
+                            <?php
+                        }
+                     ?>
                 </a>
             </li>
             <?php
@@ -47,6 +47,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="index.php?page=account">Account</a>
+                        <a class="dropdown-item" href="index.php?page=changepwd">Change Password</a>
                         <a class="dropdown-item" href="">Order History</a>
                     </div>
                 </li>         
