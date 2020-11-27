@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(isset($_GET["action"]))
 {
     if($_GET["action"] == "delete")
@@ -19,9 +18,7 @@ if(isset($_GET["action"]))
 ?>
 
 
-
-
-<html>
+<html lang="en">
     <head>
     <title>Phone Case Shop</title>
     <link rel='stylesheet' href='../css/checkoutcss.css' type='text/css' media='all' />
@@ -47,12 +44,8 @@ if(isset($_GET["action"]))
             </div>
 
 
-
 <!--            User's checkout Cart -->
-
-
             <div class="row">
-
                 <div class="col-md-4 order-md-2 mb-4">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-muted">Your cart</span>
@@ -88,14 +81,6 @@ if(isset($_GET["action"]))
                             <span class="text-muted">$<?php echo $values["item_price"]; ?></span>
                         </li>
 
-<!--                        <li class="list-group-item d-flex justify-content-between bg-light">-->
-<!--                            <div class="text-success">-->
-<!--                                <h6 class="my-0">Promo code</h6>-->
-<!--                                <small>EXAMPLECODE</small>-->
-<!--                            </div>-->
-<!--                            <span class="text-success">-$5</span>-->
-<!--                        </li>-->
-
                         <?php
                             $total = $total + ($values["item_quantity"] * $values["item_price"]);
                             }
@@ -106,62 +91,34 @@ if(isset($_GET["action"]))
                             <strong>$<?php echo number_format($total, 2); ?></strong>
                         </li>
                     </ul>
-
-
-<!--                    <form class="card p-2" action="process_checkout.php" method="post">-->
-<!--                        <div class="input-group">-->
-<!--                            <input type="text" class="form-control" placeholder="Promo code">-->
-<!--                            <div class="input-group-append">-->
-<!--                                <button type="submit" class="btn btn-secondary">Redeem</button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </form>-->
-
+<!--                Checkout form-->
                 </div>
                 <div class="col-md-8 order-md-1">
                     <h4 class="mb-3">Billing address</h4>
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation" action="process_checkout.php" method="post" novalidate>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="firstName">First name</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                                <div class="invalid-feedback">
-                                    Valid first name is required.
-                                </div>
+                                <label for="firstName">First name</label>                              
+                                <input type="text" class="form-control" id="fname"name="fname">                          
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="lastName">Last name</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                <input type="text" class="form-control" id="lname" name="lname" required>
                                 <div class="invalid-feedback">
                                     Valid last name is required.
                                 </div>
                             </div>
                         </div>
-
                         <div class="mb-3">
-                            <label for="username">Username</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">@</span>
-                                </div>
-                                <input type="text" class="form-control" id="username" placeholder="Username" required>
-                                <div class="invalid-feedback" style="width: 100%;">
-                                    Your username is required.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
-
                         <div class="mb-3">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required>
                             <div class="invalid-feedback">
                                 Please enter your shipping address.
                             </div>
@@ -169,14 +126,20 @@ if(isset($_GET["action"]))
 
                         <div class="mb-3">
                             <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                            <input type="text" class="form-control" name="address2" id="address2" placeholder="Apartment or suite">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone_number">Contact Number <span class="text-muted">(Optional)</span></label>
+                            <input type="text" class="form-control" name="pno" id="phone_number" placeholder="Mobile number">
                         </div>
 
                         <div class="row">
                             <div class="col-md-5 mb-3">
                                 <label for="country">Country</label>
-                                <select class="custom-select d-block w-100" id="country" required>
+                                <select class="custom-select d-block w-100" name="country" id="country" required>
                                     <option value="">Choose...</option>
+                                    <option>Singapore</option>
                                     <option>United States</option>
                                 </select>
                                 <div class="invalid-feedback">
@@ -185,8 +148,9 @@ if(isset($_GET["action"]))
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="state">State</label>
-                                <select class="custom-select d-block w-100" id="state" required>
+                                <select class="custom-select d-block w-100" name="state" id="state" required>
                                     <option value="">Choose...</option>
+                                    <option>Singapore</option>
                                     <option>California</option>
                                 </select>
                                 <div class="invalid-feedback">
@@ -195,7 +159,7 @@ if(isset($_GET["action"]))
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label for="zip">Zip</label>
-                                <input type="text" class="form-control" id="zip" placeholder="" required>
+                                <input type="text" class="form-control" name="zip" id="zip" placeholder="" required>
                                 <div class="invalid-feedback">
                                     Zip code required.
                                 </div>
@@ -224,6 +188,7 @@ if(isset($_GET["action"]))
                                 <label class="custom-control-label" for="debit">Debit card</label>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="cc-name">Name on card</label>
@@ -233,6 +198,7 @@ if(isset($_GET["action"]))
                                     Name on card is required
                                 </div>
                             </div>
+
                             <div class="col-md-6 mb-3">
                                 <label for="cc-number">Credit card number</label>
                                 <input type="text" class="form-control" id="cc-number" placeholder="" required>
@@ -241,6 +207,7 @@ if(isset($_GET["action"]))
                                 </div>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <label for="cc-expiration">Expiration</label>
@@ -249,6 +216,7 @@ if(isset($_GET["action"]))
                                     Expiration date required
                                 </div>
                             </div>
+
                             <div class="col-md-3 mb-3">
                                 <label for="cc-expiration">CVV</label>
                                 <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
@@ -256,9 +224,10 @@ if(isset($_GET["action"]))
                                     Security code required
                                 </div>
                             </div>
+
                         </div>
                         <hr class="mb-4">
-                        <button class="btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+                        <button class="btn btn-primary btn-lg" type="submit">Checkout</button>
                         &nbsp;
                         <a class="btn btn-warning btn-lg" type="submit" href="index.php?page=cartpage">Back to cart</a>
 

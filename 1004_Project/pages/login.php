@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+     <title>Login Account</title>
 <!--HEAD-->
     <?php
     include "../page_incs/head.inc.php";
@@ -26,13 +27,13 @@
                     <div class="form-group">
                         <div class="input-group">
                             <input class ="form-control" type="email" id="email" required name="email"
-                                   placeholder="Enter email">
+                                   aria-label="email" placeholder="Enter email">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <input class="form-control" type="password" id="pwd" required name="pwd"
-                                   placeholder="Enter password">
+                                   aria-label="pwd" placeholder="Enter password">
                         </div>
                     </div>
                     <div class="form-group">

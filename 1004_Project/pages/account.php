@@ -9,11 +9,12 @@ $id = $_SESSION['id'];
 $query = mysqli_query($con, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
 $row = mysqli_fetch_array($query);
 ?>
-<html>
+<html lang="en">
     <head>
         <?php
         include "../page_incs/head.inc.php";
         ?>
+        <title>Update Account Information</title>
     </head>
     <body>
         <?php
@@ -29,31 +30,31 @@ $row = mysqli_fetch_array($query);
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">First name</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="fname"  placeholder="Enter your First Name" value="<?php echo $row['fname']; ?>"/>
+                                    <input type="text" class="form-control" name="fname" aria-label="fname" placeholder="Enter your First Name" value="<?php echo $row['fname']; ?>"/>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Last name</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="lname"  placeholder="Enter your Last Name" value="<?php echo $row['lname']; ?>"/>
+                                    <input type="text" class="form-control" name="lname" aria-label="lname"  placeholder="Enter your Last Name" value="<?php echo $row['lname']; ?>"/>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Email</label>
                                 <div class="col-lg-9">
-                                    <input type="email" class="form-control" name="email"  placeholder="Enter your Email" value="<?php echo $row['email']; ?>"/>
+                                    <input type="email" class="form-control" name="email" aria-label="email" placeholder="Enter your Email" value="<?php echo $row['email']; ?>"/>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Contact Number</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="pno"  placeholder="Enter your Contact No" value="<?php echo $row['pno']; ?>"/>
+                                    <input type="text" class="form-control" name="pno" aria-label="pno"  placeholder="Enter your Contact No" value="<?php echo $row['pno']; ?>"/>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Address</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="address"  placeholder="Enter your Address" value="<?php echo $row['address']; ?>"/>
+                                    <input type="text" class="form-control" name="address" aria-label="address" placeholder="Enter your Address" value="<?php echo $row['address']; ?>"/>
                                 </div>
                             </div>
 

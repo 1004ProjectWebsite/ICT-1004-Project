@@ -88,7 +88,8 @@ function authenticateUser() {
 }
 ?>
 
-<html>
+<html lang="en">
+     <title>Login Status</title>
     <head>
 <?php
 include "../page_incs/head.inc.php";

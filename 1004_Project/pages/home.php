@@ -6,8 +6,6 @@
     <?php
     include "../page_incs/head.inc.php";
     ?>
-    <link rel="stylesheet" href="../css/owl-carousel.css">
-    <script src="../js/owl-carousel.js"></script>
     <style>
         article {
             text-align: center;
@@ -77,15 +75,22 @@ include "../page_incs/db_onetimelogin.php";
 
                                     <h5 class="text-body"><?= $product['p_name'] ?></h5>
                                     <h5 class="text-info">&dollar;<?= $product['p_price'] ?></h5>
+
+                                    <div class="form-group">
+                                        <label for="quantity"></label>
+                                        <input class="form-control" type="number" id="quantity" name="quantity" min="1.00"
+                                               placeholder="1">
+                                    </div>
+
                                     <input type="hidden" name="hidden_name" value="<?= $product['p_name'] ?>">
                                     <input type="hidden" name="hidden_price" value="<?= $product['p_price'] ?>">
+                                    <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-success" value="Add to Cart">
                                 </figure>
                             </article>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
-
         </div>
 
         <div class="buttons">
