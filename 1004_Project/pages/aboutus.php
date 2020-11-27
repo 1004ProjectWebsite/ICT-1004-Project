@@ -44,46 +44,45 @@ include "../page_incs/nav.inc.php";
         </article>
     </section>
 
-    <section class="container">
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <hr>
         <article>
-            <h2>Get in Touch</h2>
-            <hr>
+
             <div id="contactusRow" class="row">
-                <div id="contactmap" class="col-sm-7">
+                <div id="contactmap" class="col-md-8" style="height:400px;">
                     <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.665252371279!2d103.8466486145811!3d1.3775233989953357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da16e96db0a1ab%3A0x3d0be54fbbd6e1cd!2sSingapore%20Institute%20of%20Technology%20(SIT%40NYP)!5e0!3m2!1sen!2ssg!4v1570768423752!5m2!1sen!2ssg"
-                            width="600" height="400" frameborder="0" style="border:0;" allowfullscreen="" title="google map of Phonix">
+                            width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" title="google map of Phonix">
                     </iframe>
                 </div>
+                <form id="contactForm" action="process_contact.php" method="post" class="col-md-4 ">
+                    <div class="form-group">
+                        <label for="contactName">Name:</label>
+                        <input type="text" class="form-control" id="contactName" name="contactName" placeholder="Name" pattern="[A-z ]+" required>
+                    </div>
 
-                <div id="contactus" class="col-sm-5">
-                    <form id="contactForm" action="process_contact.php" method="post">
-                        <div class="form-group">
-                            <label for="contactName">Name:</label>
-                            <input type="text" class="form-control" id="contactName" name="contactName" placeholder="Name" pattern="[A-z ]+" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number:</label>
+                        <input type="tel" class="form-control" id="contactNumber" name="contactPhoneNumber" placeholder="Phone Number" pattern="/^([0-9]{8})$/" maxlength="8" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="contactNumber">Contact Number:</label>
-                            <input type="tel" class="form-control" id="contactNumber" name="contactPhoneNumber" placeholder="Phone Number" pattern="/^([0-9]{8})$/" maxlength="8" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="feedback">Feedback/Message:</label>
+                        <textarea class="form-control" id="feedback" name="contactMessage" placeholder="MESSAGE" required></textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="feedback">Feedback/Message:</label>
-                            <textarea class="form-control" id="feedback" name="contactMessage" placeholder="MESSAGE" required></textarea>
-                        </div>
+                    <button type="submit" id="btnSubmit" class="btn btn-default">SUBMIT</button>
+                </form>
 
-                        <button type="submit" id="btnSubmit" class="btn btn-default">SUBMIT</button>
-                    </form>
-                </div>
             </div>
         </article>
-    </section>
+    </div>
 </main>
 <?php
 include "../page_incs/footer.inc.php";
