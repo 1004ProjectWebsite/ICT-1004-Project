@@ -1,13 +1,11 @@
 <?php
-<<<<<<< Updated upstream
  if(!isset($_SESSION)) 
     { 
         session_start(); 
     }
  //DB Login
-=======
+
 //session_start();
->>>>>>> Stashed changes
 include "../page_incs/db_onetimelogin.php";
 
 if (mysqli_connect_errno()) {
@@ -19,18 +17,18 @@ if (mysqli_connect_errno()) {
 $num_results_on_page = 6;
 
 // The current page, in the URL this will appear as index.php?page=products&p=1, index.php?page=products&p=2, etc...
-<<<<<<< Updated upstream
+
 // 
 //$current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int)$_GET['p'] : 1;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 
 $total_products = $con->query('SELECT * FROM products')->num_rows;
-=======
+
 $current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int) $_GET['p'] : 1;
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
->>>>>>> Stashed changes
+
 
 // Select products ordered by the date added
 $sql = "SELECT * from products WHERE p_type='apple'";
@@ -38,7 +36,7 @@ $result = $con->query($sql);
 
 $products = $result->fetch_all(MYSQLI_ASSOC);
 $total_products = $result->num_rows;
-<<<<<<< Updated upstream
+
 
 
  if(isset($_POST["add_to_cart"]))  
@@ -184,7 +182,6 @@ include "../page_incs/nav.inc.php";
 include "../page_incs/footer.inc.php";
 ?>
 
-=======
 ?>
 <!doctype html>
 <html>
@@ -254,4 +251,4 @@ include "../page_incs/footer.inc.php";
     include "../page_incs/footer.inc.php";
     ?>
 </html>
->>>>>>> Stashed changes
+

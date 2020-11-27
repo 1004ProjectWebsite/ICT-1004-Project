@@ -15,16 +15,13 @@ if (mysqli_connect_errno()) {
 $num_results_on_page = 6;
 
 // The current page, in the URL this will appear as index.php?page=products&p=1, index.php?page=products&p=2, etc...
-<<<<<<< Updated upstream
 // 
 //$current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int)$_GET['p'] : 1;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
-=======
 $current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int) $_GET['p'] : 1;
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
->>>>>>> Stashed changes
 
 $total_products = $con->query('SELECT * FROM products')->num_rows;
 
@@ -75,7 +72,6 @@ $total_products = $result->num_rows;
       }  
  }  
 ?>
-<<<<<<< Updated upstream
       <!doctype html>
 <html lang="en">
 <head>
@@ -179,7 +175,6 @@ include "../page_incs/nav.inc.php";
 include "../page_incs/footer.inc.php";
 ?>
 
-=======
 <!doctype html>
 <html>
     <head>
@@ -248,4 +243,4 @@ include "../page_incs/footer.inc.php";
     include "../page_incs/footer.inc.php";
     ?>
 </html>
->>>>>>> Stashed changes
+
