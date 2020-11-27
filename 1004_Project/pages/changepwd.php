@@ -46,7 +46,7 @@ $message="";
     }
 ?>
 
-
+<html lang="en">
 <head>
     <title>Phone Case Shop</title>
 <?php
@@ -68,19 +68,19 @@ include "../page_incs/nav.inc.php";
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Current password</label>
                             <div class="col-lg-9">
-                                <input type="password" class="form-control" required name="current_password"  placeholder="Current password">
+                                <input type="password" class="form-control" aria-label="current_password" required name="current_password"  placeholder="Current password">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">New password</label>
                             <div class="col-lg-9">
-                                <input type="password" class="form-control" required name="new_password"  placeholder="New password">
+                                <input type="password" class="form-control" aria-label="new_password" required name="new_password"  placeholder="New password">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Confirm password </label>
                             <div class="col-lg-9">
-                                <input type="password" class="form-control" required name="confirm_password"  placeholder="Confirm password">
+                                <input type="password" class="form-control" aria-label="confirm_password" required name="confirm_password"  placeholder="Confirm password">
                             </div>
                         </div>
                         <button type="submit" name="change_password" class="btn btn-primary btn-lg">Change password</button>                      

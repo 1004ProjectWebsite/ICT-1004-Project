@@ -69,7 +69,7 @@ $total_products = $result->num_rows;
  }  
 ?>
       <!doctype html>
-<html>
+<html lang="en">
 <head>
     <title>Phone Case Shop</title>
     <?php
@@ -117,9 +117,9 @@ include "../page_incs/nav.inc.php";
                             <h5 class="text-info">&dollar;<?=$product['p_price']?></h5>
                             <form method="post" action="apple.php?action=add&id=<?php echo $product["product_id"]; ?>&page=<?php echo $page ?>">
                                 <div class="form-group">
-                                    <label for="quantity"></label>
+                        
                                     <input class="form-control" type="number" id="quantity" name="quantity"
-                                           value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required>
+                                           value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required aria-label="quantity">
                                 </div> 
                                <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />

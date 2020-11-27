@@ -18,7 +18,7 @@ if(isset($_GET["action"]))
 ?>
 
 
-<html>
+<html lang="en">
     <head>
     <title>Phone Case Shop</title>
     <link rel='stylesheet' href='../css/checkoutcss.css' type='text/css' media='all' />

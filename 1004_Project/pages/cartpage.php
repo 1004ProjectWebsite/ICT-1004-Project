@@ -16,7 +16,7 @@ if (isset($_GET["action"])) {
 }
 
 ?>
-<html>
+<html lang="en">
 <head>
     <title>Phone Case Shop</title>
     <?php
@@ -28,7 +28,7 @@ if (isset($_GET["action"])) {
 <?php
 include "../page_incs/nav.inc.php";
 ?>
-<div class="container" style="text-align: center; margin-top: 5%;">
+<div class="container" role="banner" style="text-align: center; margin-top: 5%;">
     <h3>Order Details</h3>
 </div>
 
