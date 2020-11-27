@@ -1,10 +1,8 @@
 body {
     margin-top: 60px;
-    padding-top: 10px;
     height: 100vh;
     z-index: 1;
 }
-
 
 figure {
     display: inline-block;
@@ -59,7 +57,7 @@ input[type=submit]:hover {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/wallpaper.jpg);
 
     /* Set a specific height */
-    min-height: 350px;
+    /*min-height: 350px;*/
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -91,22 +89,20 @@ input[type=submit]:hover {
 /*navigation bar settings*/
 #navbar {
     background-color: #A9D4C5;
-    position: fixed;
     top: 0;
     width: 100%;
-    display: block;
     transition: top 0.5s;
     z-index: 2;
 }
-#navbar a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 5px;
-    text-decoration: none;
-    font-size: 15px;
-}
+/*#navbar a {*/
+/*    float: left;*/
+/*    display: block;*/
+/*    color: black;*/
+/*    text-align: center;*/
+/*    padding: 5px;*/
+/*    text-decoration: none;*/
+/*    font-size: 15px;*/
+/*}*/
 #navbar a:hover {
     background-color: #F4BCB8;
     color: black;
@@ -141,7 +137,7 @@ input[type=submit]:hover {
 .form-control, .form-control:focus, .input-group-text {
     border-color: #e1e1e1;
 }
-.form-control, .btn {        
+.form-control, .btn {
     border-radius: 3px;
 }
 .layout-form {
@@ -176,12 +172,12 @@ input[type=submit]:hover {
 .layout-form .form-control {
     min-height: 38px;
     box-shadow: none !important;
-}	
+}
 .layout-form .input-group-addon {
     max-width: 42px;
     text-align: center;
-}	
-.layout-form .btn, .signup-form .btn:active {        
+}
+.layout-form .btn, .signup-form .btn:active {
     font-size: 16px;
     font-weight: bold;
     background: #19aa8d !important;
@@ -192,7 +188,7 @@ input[type=submit]:hover {
     background: #179b81 !important;
 }
 .layout-form a {
-    color: #fff;	
+    color: #fff;
     text-decoration: underline;
 }
 .layout-form a:hover {
@@ -201,7 +197,7 @@ input[type=submit]:hover {
 .layout-form form a {
     color: #19aa8d;
     text-decoration: none;
-}	
+}
 .layout-form form a:hover {
     text-decoration: underline;
 }
