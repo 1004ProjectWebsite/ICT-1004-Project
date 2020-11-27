@@ -132,7 +132,7 @@ input[type=submit]:hover {
 }
 /*home page grid end*/
 
-/* Store Grid Layout */
+/* Store Grid Layout Start */
 .grid-container {
     display: grid;
     padding: 10px;
@@ -147,6 +147,7 @@ input[type=submit]:hover {
     font-size: 30px;
     text-align: center;
 }
+/* Store Grid Layout End*/
 
 /*register Page*/
 .form-control {
