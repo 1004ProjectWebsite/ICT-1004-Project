@@ -48,7 +48,6 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="index.php?page=account">Account</a>
                         <a class="dropdown-item" href="index.php?page=changepwd">Change Password</a>
-                        <a class="dropdown-item" href="">Order History</a>
                     </div>
                 </li>         
                 <li class="nav-item">

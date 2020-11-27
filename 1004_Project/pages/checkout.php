@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(isset($_GET["action"]))
 {
     if($_GET["action"] == "delete")
@@ -17,8 +16,6 @@ if(isset($_GET["action"]))
     }
 }
 ?>
-
-
 
 
 <html>
@@ -94,8 +91,6 @@ if(isset($_GET["action"]))
                             <strong>$<?php echo number_format($total, 2); ?></strong>
                         </li>
                     </ul>
-
-
 <!--                Checkout form-->
                 </div>
                 <div class="col-md-8 order-md-1">
@@ -103,10 +98,9 @@ if(isset($_GET["action"]))
                     <form class="needs-validation" action="process_checkout.php" method="post" novalidate>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="firstName">First name</label>
-                                <input type="text" class="form-control" id="fname" name="fname">
+                                <label for="firstName">First name</label>                              
+                                <input type="text" class="form-control" id="fname"name="fname">                          
                             </div>
-
                             <div class="col-md-6 mb-3">
                                 <label for="lastName">Last name</label>
                                 <input type="text" class="form-control" id="lname" name="lname" required>
@@ -115,7 +109,6 @@ if(isset($_GET["action"]))
                                 </div>
                             </div>
                         </div>
-
                         <div class="mb-3">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
@@ -123,7 +116,6 @@ if(isset($_GET["action"]))
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
-
                         <div class="mb-3">
                             <label for="address">Address</label>
                             <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required>
