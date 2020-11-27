@@ -33,9 +33,3 @@
         </div>  
     <!-- END OF FOOTER -->
 </footer>
-
-<!--jQuery-->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-<!-- custom javascript -->
-<script defer src="../js/main.js"></script>

@@ -90,7 +90,7 @@ input[type=submit]:hover {
     color: white;
 }
 
-/*navigation bar settings*/
+/*navigation bar settings start*/
 #navbar {
     background-color: #A9D4C5;
     top: 0;
@@ -109,8 +109,31 @@ input[type=submit]:hover {
     background-color: #F4BCB8;
     color: black;
 }
+/*navigation bar settings end*/
 
-
+/*home page grid start*/
+#product-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin:0px;
+    padding: 15px;
+    border:1px solid #cecece;
+}
+#product-container > * {
+    flex: 0 0 16rem; /*13rem represent the width of the */
+    margin:0px;
+}
+#product-content{
+    text-align: center;
+    margin: 10px;
+    border: 1px solid;
+}
+}
+.phone_image {
+    max-width: 500px;
+    max-height:500px;
+}
+/*home page grid end*/
 
 /* Store Grid Layout */
 .grid-container {
@@ -126,10 +149,6 @@ input[type=submit]:hover {
     padding: 20px;
     font-size: 30px;
     text-align: center;
-}
-.phone_image {
-    max-width: 500px;
-    max-height:500px;
 }
 
 /*register Page*/
