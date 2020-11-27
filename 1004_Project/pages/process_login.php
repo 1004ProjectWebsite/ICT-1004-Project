@@ -27,7 +27,6 @@ if (isset($_POST['login-submit'])) {
 
 authenticateUser();
 
-
 function sanitize_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -42,7 +41,6 @@ function sanitize_input($data) {
 function authenticateUser() {
     global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
 // Create database connection.   
-
 // DB Login
     include "../page_incs/db_onetimelogin.php";
 
@@ -65,10 +63,10 @@ function authenticateUser() {
             $row = $result->fetch_assoc();
             $fname = $row["fname"];
             $lname = $row["lname"];
-            $_SESSION["id"]=$row['member_id'];
-            $_SESSION["email"]=$row['email'];
+            $_SESSION["id"] = $row['member_id'];
+            $_SESSION["email"] = $row['email'];
             $pwd_hashed = $row["password"];
-            $_SESSION['username']=$fname;
+            $_SESSION['username'] = $fname;
             $_SESSION["loggedin"] = true;
             // Check if the password matches:            
             if (!password_verify($_POST["pwd"], $pwd_hashed)) {
@@ -91,33 +89,38 @@ function authenticateUser() {
 <html lang="en">
      <title>Login Status</title>
     <head>
-<?php
-include "../page_incs/head.inc.php";
-?>
+        <?php
+        include "../page_incs/head.inc.php";
+        ?>
     </head>
     <body>
-        <?php
-        include "../page_incs/nav.inc.php";
-        ?>
-        <main class="container">
-        <?php
-        if ($success) {
-            echo "<h1>Login successful!</h1>";
-            echo "<h3>Welcome back $fname</h3>";
-            echo "<a class=\"btn btn-success\" href=index.php?page=home>Return to Home</a>";
-        }
-            else 
-    {
-            echo "<h1>Oops!</h1>";
-            echo "<h3>The following input errors were detected:</h3>";
-            echo "<p>" . $errorMsg . "</p>";
-            echo "<a class=\"btn btn-warning\" href=index.php?page=login>Return to Login</a>";
-        }                    
-        ?>                  
-        </main>
-
+        <div id="container">
+            <div id="header">
+                <?php
+                include "../page_incs/nav.inc.php";
+                ?>
+            </div>
+            <div id="body">
+                <main class="container">
+                    <?php
+                    if ($success) {
+                        echo "<h1>Login successful!</h1>";
+                        echo "<h3>Welcome back $fname</h3>";
+                        echo "<a class=\"btn btn-success\" href=index.php?page=home>Return to Home</a>";
+                    } else {
+                        echo "<h1>Oops!</h1>";
+                        echo "<h3>The following input errors were detected:</h3>";
+                        echo "<p>" . $errorMsg . "</p>";
+                        echo "<a class=\"btn btn-warning\" href=index.php?page=login>Return to Login</a>";
+                    }
+                    ?>                  
+                </main>
+            </div>
+            <div id="footer">
+                <?php
+                include "../page_incs/footer.inc.php";
+                ?>
+            </div>
+        </div>
     </body>
-<?php
-include "../page_incs/footer.inc.php";
-?>
 </html>

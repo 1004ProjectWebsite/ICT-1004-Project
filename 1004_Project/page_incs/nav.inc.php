@@ -12,6 +12,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.php?page=aboutus">About Us</a>
             </li>
+<<<<<<< Updated upstream
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Shop
@@ -30,13 +31,41 @@
                     Cart
                     <?php
                     if (!empty($_SESSION["shopping_cart"])) {
+=======
+            <li class="dropdown">
+                <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>                 
+                <i class="material-icons" style="font-size:1em">store</i>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="index.php?page=products">All</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=apple">Apple</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=huawei">Huawei</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=oppo">Oppo</a></li>
+                    <li><a class="dropdown-item" href="index.php?page=samsung">Samsung</a></li>
+                </ul>
+            </li>
+            <div class="nav-item">
+                <li><a class="dropdown-item" href="index.php?page=aboutus">About Us</a></li>
+            </div>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <a class="nav-link" title="Shopping Cart" href="index.php?page=cartpage">
+                <i class="material-icons" style="font-size:2em">shopping_cart</i>
+                <?php
+                if (!empty($_SESSION["shopping_cart"])) {
+>>>>>>> Stashed changes
                     $cart_count = count(array_keys($_SESSION["shopping_cart"]));
                     ?>
                     <span><?php echo $cart_count; ?></span></a>
                 <?php
+<<<<<<< Updated upstream
                 }
                 ?>
                 </a>
+=======
+            }
+            ?>
+            </a>
+>>>>>>> Stashed changes
             </li>
 
             <?php
@@ -44,7 +73,11 @@
                 ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<<<<<<< Updated upstream
                         <i class="material-icons" style="font-size:2em">account_circle</i>
+=======
+                        <i class="material-icons" style="font-size:2em">account_circle</i>  
+>>>>>>> Stashed changes
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="index.php?page=account">Account</a>
@@ -56,10 +89,16 @@
                     <a class="nav-link" title="Log out" href="index.php?page=logout">
                         <i class="material-icons" style="font-size:2em">exit_to_app</i>
                     </a>
+<<<<<<< Updated upstream
                 </li>
                 <?php
             } else //User is not logged in diplay login/register
             {
+=======
+                </li> 
+                <?php
+            } else { //User is not logged in diplay login/register
+>>>>>>> Stashed changes
                 ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

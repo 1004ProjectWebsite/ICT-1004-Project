@@ -56,7 +56,7 @@ function saveMemberToDB() {
 
 
 // Create connection
-   // $conn = new mysqli($servername, $username, $password, $dbname);
+    // $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
     if ($con->connect_error) {
         $errorMsg = "Connection failed: " . $con->connect_error;
@@ -91,29 +91,37 @@ function saveMemberToDB() {
         ?>
     </head>
     <body>
-        <?php
-        include "../page_incs/nav.inc.php";
-        ?>       
-        <main class="container">           
-            <?php
-            if ($success) {
-                saveMemberToDB();
-                   ?>
-                <script type="text/javascript">
-                    window.location.href = "index.php?page=welcome";
-                </script>
+        <div id="container">
+            <div id="header">
                 <?php
-            } else {
-                echo "<h3>Oops!</h3>";
-                echo "<h4>The following input errors were detected:</h4>";
-                echo "<p>" . $errorMsg . "</p>";
-                echo "<a class=\"btn btn-danger\" href=index.php?page=register>Return to Account</a>";
-               //echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
-            }
-            ?>            
-        </main>
+                include "../page_incs/nav.inc.php";
+                ?>     
+            </div>
+            <div id="body">
+                <main class="container">           
+                    <?php
+                    if ($success) {
+                        saveMemberToDB();
+                        ?>
+                        <script type="text/javascript">
+                            window.location.href = "index.php?page=welcome";
+                        </script>
+                        <?php
+                    } else {
+                        echo "<h3>Oops!</h3>";
+                        echo "<h4>The following input errors were detected:</h4>";
+                        echo "<p>" . $errorMsg . "</p>";
+                        echo "<a class=\"btn btn-danger\" href=index.php?page=register>Return to Account</a>";
+                        //echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
+                    }
+                    ?>            
+                </main>
+            </div>
+            <div id="footer">
+                <?php
+                include "../page_incs/footer.inc.php";
+                ?>
+            </div>
+        </div>
     </body>
-    <?php
-    include "../page_incs/footer.inc.php";
-    ?>
 </html>

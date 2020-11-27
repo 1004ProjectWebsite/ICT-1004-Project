@@ -88,3 +88,8 @@ include "../page_incs/nav.inc.php";
                 </div>
             </div>
     </div>
+</body>
+<?php
+include "../page_incs/footer.inc.php";
+?>
+</html>

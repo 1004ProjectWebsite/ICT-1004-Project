@@ -15,9 +15,16 @@ if (mysqli_connect_errno()) {
 $num_results_on_page = 6;
 
 // The current page, in the URL this will appear as index.php?page=products&p=1, index.php?page=products&p=2, etc...
+<<<<<<< Updated upstream
 // 
 //$current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int)$_GET['p'] : 1;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
+=======
+$current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int) $_GET['p'] : 1;
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+}
+>>>>>>> Stashed changes
 
 $total_products = $con->query('SELECT * FROM products')->num_rows;
 
@@ -68,6 +75,7 @@ $total_products = $result->num_rows;
       }  
  }  
 ?>
+<<<<<<< Updated upstream
       <!doctype html>
 <html lang="en">
 <head>
@@ -171,3 +179,73 @@ include "../page_incs/nav.inc.php";
 include "../page_incs/footer.inc.php";
 ?>
 
+=======
+<!doctype html>
+<html>
+    <head>
+        <title>Phone Case Shop</title>
+        <?php
+        include "../page_incs/head.inc.php";
+        ?>
+    </head>
+
+    <body>
+
+        <?php
+        include "../page_incs/nav.inc.php";
+        ?>
+
+        <div class="container">
+            <div class="row">
+                <h1>&nbsp;Phone Cases and Accessories</h1>
+            </div>
+
+            <div class="row">
+                <h6>&nbsp;<?= $total_products ?> Products</h6>
+            </div>
+            <div class="row">
+                <div id="wrap">
+                    <?php foreach ($products as $product): ?>
+                        <div class="item">
+                            <article>
+                                <figure>
+                                    <a href="index.php?page=product&id=<?= $product['product_id'] ?>" class="product">
+                                        <img src="../phone_cases_img/<?= $product['p_img'] ?>" width="80px" height="150px" class="phone_image" alt="<?= $product['p_name'] ?>">
+                                    </a>
+
+                                    <h5 class="text-body"><?= $product['p_name'] ?></h5>
+                                    <h5 class="text-info">&dollar;<?= $product['p_price'] ?></h5>
+
+                                    <div class="form-group">
+                                        <label for="quantity"></label>
+                                        <input class="form-control" type="number" id="quantity" name="quantity" min="1.00"
+                                               placeholder="1">
+                                    </div>
+
+                                    <input type="hidden" name="hidden_name" value="<?= $product['p_name'] ?>">
+                                    <input type="hidden" name="hidden_price" value="<?= $product['p_price'] ?>">
+                                    <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-success" value="Add to Cart">
+                                </figure>
+                            </article>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <?php if ($current_page > 1): ?>
+                <a href="index.php?page=products&p=<?= $current_page - 1 ?>">Prev</a>
+            <?php endif; ?>
+
+            <?php if ($total_products > ($current_page * $num_products_on_each_page) - $num_products_on_each_page + count($products)): ?>
+                <a href="index.php?page=products&p=<?= $current_page + 1 ?>">Next</a>
+            <?php endif; ?>
+        </div>
+
+    </body>
+    <?php
+    include "../page_incs/footer.inc.php";
+    ?>
+</html>
+>>>>>>> Stashed changes
