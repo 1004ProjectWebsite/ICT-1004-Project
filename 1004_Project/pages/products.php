@@ -89,17 +89,18 @@ include "../page_incs/nav.inc.php";
 ?>
  <main class="container">
 
-    <div class="row">
-        <h1>&nbsp;Phone Cases and Accessories</h1>
-    </div>
+     <div class="container">
+            <div class="row">
+                <h1>&nbsp;Phone Cases and Accessories</h1>
+            </div>
 
-    <div class="row">
-        <h6>&nbsp;<?=$total_products?> Products</h6>
-    </div>
+            <div class="row">
+                <h6>&nbsp;<?= $total_products ?> Products</h6>
+            </div>
 
-    <body>
-      <div class="row">
-        <div class="grid-container">
+            <div class="row">
+                <div id="wrap">
+
 
             <?php
             if (!empty($_SESSION["shopping_cart"])) {
@@ -112,7 +113,7 @@ include "../page_incs/nav.inc.php";
            foreach ($products as $product):
                ?>          
           
-                <div class="grid-item">
+                <div class="item">
                     <article>
                         <figure>
                             <a href="index.php?page=product&id=<?=$product['product_id']?>" class="product">
