@@ -1,6 +1,7 @@
 <?php
 //session_start(); //start session
 ?>
+<html lang="en">
 <head>
     <title>Phone Case Shop</title>
     <?php
@@ -28,7 +29,7 @@
         <div>
             <h1 class="display-4">Welcome to <img id="logo" src="../images/phonix_logo.PNG" alt="phonix_logo"></h1>
             <br/>
-            <h4 id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</h4>
+            <h2 id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</h2>
         </div>
     </header>
     <main class="container">
@@ -73,8 +74,8 @@ include "../page_incs/db_onetimelogin.php";
                                         <img src="../phone_cases_img/<?= $product['p_img'] ?>" width="80px" height="150px" class="phone_image" alt="<?= $product['p_name'] ?>">
                                     </a>
 
-                                    <h5 class="text-body"><?= $product['p_name'] ?></h5>
-                                    <h5 class="text-info">&dollar;<?= $product['p_price'] ?></h5>
+                                    <h3 class="text-body"><?= $product['p_name'] ?></h3>
+                                    <h3 class="text-info">&dollar;<?= $product['p_price'] ?></h3>
                                 </figure>
                             </article>
                         </div>
