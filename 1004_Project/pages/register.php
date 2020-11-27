@@ -1,3 +1,5 @@
+<html lang="en">
+     <title>Register Account</title>
 <?php
 
     include "../page_incs/head.inc.php";
@@ -19,14 +21,14 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <input class="form-control" type="text" id="fname"
-                                       maxlength="45" name="fname" placeholder="Enter first name">
+                                       maxlength="45" name="fname" aria-label="fname" placeholder="Enter first name">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <input class="form-control" type="text" id="lname"
-                                       required maxlength="45" name="lname"
+                                       required maxlength="45" name="lname" aria-label="lname"
                                        placeholder="Enter last name">
                             </div>
                         </div>
@@ -34,14 +36,14 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
                                 <input class ="form-control" type="email" id="email" required name="email"
-                                       placeholder="Enter email">
+                                       aria-label="email" placeholder="Enter email">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                                 <input class="form-control" type="password" id="pwd" required name="pwd"
-                                       placeholder="Enter password" minlength="6">
+                                       aria-label="pwd" placeholder="Enter password" minlength="6">
 
                             </div>
                             <p class="help-block"> Password should be at least 6 characters</p>
@@ -53,7 +55,7 @@
                             <i class="fa fa-check"></i>
                         </span>
                                 <input class="form-control" type="password" id="pwd_confirm" required name="pwd_confirm"
-                                       placeholder="Confirm password">
+                                       aria-label="pwd_confirm" placeholder="Confirm password">
                             </div>
                         </div>
                         <div class="form-group">
