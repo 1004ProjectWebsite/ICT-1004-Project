@@ -29,13 +29,13 @@
              <a class="nav-link" title="Shopping Cart" href="index.php?page=cartpage">
                      <i class="material-icons" style="font-size:2em">shopping_cart</i>
                      <?php
-            if (!empty($_SESSION["shopping_cart"])) {
-                $cart_count = count(array_keys($_SESSION["shopping_cart"]));
-                ?>
-                     <span><?php echo $cart_count; ?></span></a>
-                <?php
-            }
-               ?>    
+                        if (!empty($_SESSION["shopping_cart"])) {
+                            $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+                            ?>
+                                 <span><?php echo $cart_count; ?></span></a>
+                            <?php
+                        }
+                     ?>
                 </a>
             </li>
             <?php
