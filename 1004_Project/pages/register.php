@@ -63,7 +63,7 @@
                             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
                         </div>
                     </form>
-                    <div class="text-center" style="margin-bottom: 85%;">Already have an account? <a href="index.php?page=login" style="color:black">Login here</a></div>
+                    <div class="text-center" style="margin-bottom: 5%;">Already have an account? <a href="index.php?page=login" style="color:black">Login here</a></
                 </div>
             </div>
         </main>

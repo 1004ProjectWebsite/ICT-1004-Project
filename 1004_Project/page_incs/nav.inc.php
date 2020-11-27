@@ -12,37 +12,35 @@
             </li>
             <li class="dropdown">
                 <a class="nav-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>                 
-                    <i class="material-icons" style="font-size:1em">store</i>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <i class="material-icons" style="font-size:1em">store</i>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="index.php?page=products">All</a></li>
                     <li><a class="dropdown-item" href="index.php?page=huawei">Huawei</a></li>
                     <li><a class="dropdown-item" href="index.php?page=apple">Apple</a></li>
                     <li><a class="dropdown-item" href="index.php?page=oppo">Oppo</a></li>
                     <li><a class="dropdown-item" href="index.php?page=samsung">Samsung</a></li>
-                    </ul>
+                </ul>
             </li>
-            <div class="nav-item">
-                    <li><a class="dropdown-item" href="index.php?page=aboutus">About Us</a></li>
-            </div>
+
+            <li><a class="dropdown-item" href="index.php?page=aboutus">About Us</a></li>
+
         </ul>
         <ul class="navbar-nav ml-auto">
-             <a class="nav-link" title="Shopping Cart" href="index.php?page=cartpage">
-                     <i class="material-icons" style="font-size:2em">shopping_cart</i>
-                     <?php
-                        if (!empty($_SESSION["shopping_cart"])) {
-                            $cart_count = count(array_keys($_SESSION["shopping_cart"]));
-                            ?>
-                                 <span><?php echo $cart_count; ?></span></a>
-                            <?php
-                        }
-                     ?>
-                </a>
-            </li>
+            <a class="nav-link" title="Shopping Cart" href="index.php?page=cartpage">
+                <i class="material-icons" style="font-size:2em">shopping_cart</i>
+                <?php
+                if (!empty($_SESSION["shopping_cart"])) {
+                    $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+                    ?>
+                    <span><?php echo $cart_count; ?></span></a>
+                <?php
+            }
+            ?>
             <?php
             if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) { //Means user is logged in display logout
-            ?>
+                ?>
                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="material-icons" style="font-size:2em">account_circle</i>  
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -55,9 +53,8 @@
                         <i class="material-icons" style="font-size:2em">exit_to_app</i>
                     </a>
                 </li> 
-                <?php 
-            } else //User is not logged in diplay login/register
-            { 
+                <?php
+            } else { //User is not logged in diplay login/register
                 ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -68,8 +65,8 @@
                         <a class="dropdown-item" href="index.php?page=register">Register</a>
                     </div>
                 </li>
-<?php 
-            } 
+                <?php
+            }
             ?>
         </ul>
     </div>  
