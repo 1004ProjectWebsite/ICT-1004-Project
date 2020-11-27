@@ -65,7 +65,8 @@ $total_products = $result->num_rows;
         <div class="owl-carousel owl-theme">
             <?php foreach ($products as $product): ?>
                 <div class="item">
-                    <img src="../phone_cases_img/<?= $product['p_img'] ?>" width="10%" height="26%" class="phone_image" alt="<?= $product['p_name'] ?>">
+                    <span class="out-of-stock">Hot</span>
+                    <img src="../phone_cases_img/<?= $product['p_img'] ?>" width="10%" height="20%" class="phone_image" alt="<?= $product['p_name'] ?>">
                 </div>
             <?php endforeach; ?>
         </div>
@@ -114,15 +115,18 @@ $total_products = $result->num_rows;
         loop:true,
         margin:10,
         nav:true,
+        autoplay:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true,
         responsive:{
             0:{
-                items:1
+                items:2
             },
             600:{
                 items:3
             },
             1000:{
-                items:5
+                items:6
             }
         }
     })
