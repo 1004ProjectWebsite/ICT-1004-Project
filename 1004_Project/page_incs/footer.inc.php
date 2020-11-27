@@ -23,9 +23,9 @@
             <div class="col social">
                 <h1>Social</h1>
                 <ul>
-                    <li><img src="../images/email-footer.png" width="32" style="width: 32px;"></li>
-                    <li><img src="../images/instagram-footer.png" width="32" style="width: 32px;"></li>
-                    <li><img src="../images/facebook-footer.png" width="32" style="width: 32px;"></li>
+                    <li><img src="../images/email-footer.png" alt="email icon" width="32" style="width: 32px;"></li>
+                    <li><img src="../images/instagram-footer.png" alt="instagram icon" width="32" style="width: 32px;"></li>
+                    <li><img src="../images/facebook-footer.png" alt="facebook icon" width="32" style="width: 32px;"></li>
                 </ul>
             </div>
             </div>

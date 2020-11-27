@@ -23,7 +23,7 @@ and open the template in the editor.
 include "../page_incs/nav.inc.php";
 ?>
 <main>
-    <section class="jumbotron parallax text-center";>
+    <section class="jumbotron parallax text-center">
         <div>
             <h1 class="display-4">ABOUT US </h1>
             <br/>
@@ -33,7 +33,7 @@ include "../page_incs/nav.inc.php";
 
     <section class="container">
         <article>
-            <h1>About us</h1>
+            <h2>About us</h2>
             <hr>
             <p>
                 Phonix, located in Ang Mo Kio, sells different types of phone cases for your phone protection<br>
@@ -46,13 +46,13 @@ include "../page_incs/nav.inc.php";
 
     <section class="container">
         <article>
-            <h1>Get in Touch</h1>
+            <h2>Get in Touch</h2>
             <hr>
             <div id="contactusRow" class="row">
                 <div id="contactmap" class="col-sm-7">
                     <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.665252371279!2d103.8466486145811!3d1.3775233989953357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da16e96db0a1ab%3A0x3d0be54fbbd6e1cd!2sSingapore%20Institute%20of%20Technology%20(SIT%40NYP)!5e0!3m2!1sen!2ssg!4v1570768423752!5m2!1sen!2ssg"
-                            width="600" height="400" frameborder="0" style="border:0;" allowfullscreen="" title="google map of YUM YUM location">
+                            width="600" height="400" frameborder="0" style="border:0;" allowfullscreen="" title="google map of Phonix">
                     </iframe>
                 </div>
 
@@ -60,22 +60,22 @@ include "../page_incs/nav.inc.php";
                     <form id="contactForm" action="process_contact.php" method="post">
                         <div class="form-group">
                             <label for="contactName">Name:</label>
-                            <input type="text" class="form-control" id="contactName" name="contactName" placeholder="Name" pattern="[A-z ]+" required="true">
+                            <input type="text" class="form-control" id="contactName" name="contactName" placeholder="Name" pattern="[A-z ]+" required>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" required="true">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" required>
                         </div>
 
                         <div class="form-group">
                             <label for="contactNumber">Contact Number:</label>
-                            <input type="tel" class="form-control" id="contactPhoneNumber" name="contactPhoneNumber" placeholder="Phone Number" pattern="/^([0-9]{8})$/" maxlength="8" required="true">
+                            <input type="tel" class="form-control" id="contactNumber" name="contactPhoneNumber" placeholder="Phone Number" pattern="/^([0-9]{8})$/" maxlength="8" required>
                         </div>
 
                         <div class="form-group">
                             <label for="feedback">Feedback/Message:</label>
-                            <textarea class="form-control" id="contactMessage" name="contactMessage" placeholder="MESSAGE" pattern="/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/" required="true"></textarea>
+                            <textarea class="form-control" id="feedback" name="contactMessage" placeholder="MESSAGE" required></textarea>
                         </div>
 
                         <button type="submit" id="btnSubmit" class="btn btn-default">SUBMIT</button>

@@ -24,7 +24,7 @@
     <?php
     include "../page_incs/nav.inc.php";
     ?>
-    <header class="jumbotron parallax text-center";">
+    <header class="jumbotron parallax text-center">
         <div>
             <h1 class="display-4">Welcome to <img id="logo" src="../images/phonix_logo.PNG"></h1>
             <br/>
@@ -70,17 +70,12 @@ include "../page_incs/db_onetimelogin.php";
                             <article>
                                 <figure>
                                     <a href="index.php?page=product&id=<?= $product['product_id'] ?>" class="product">
-                                        <img src="../phone_cases_img/<?= $product['p_img'] ?>" width="80px" height="150px" class="phone_image" alt="<?= $product['p_name'] ?>">
+                                        <img src="../phone_cases_img/<?= $product['p_img'] ?>" width="80" height="150" class="phone_image" alt="<?= $product['p_name'] ?>">
                                     </a>
 
                                     <h5 class="text-body"><?= $product['p_name'] ?></h5>
                                     <h5 class="text-info">&dollar;<?= $product['p_price'] ?></h5>
 
-                                    <div class="form-group">
-                                        <label for="quantity"></label>
-                                        <input class="form-control" type="number" id="quantity" name="quantity" min="1.00"
-                                               placeholder="1">
-                                    </div>
 
                                     <input type="hidden" name="hidden_name" value="<?= $product['p_name'] ?>">
                                     <input type="hidden" name="hidden_price" value="<?= $product['p_price'] ?>">
@@ -91,7 +86,7 @@ include "../page_incs/db_onetimelogin.php";
                     <?php endforeach; ?>
                 </div>
             </div>
-        </div>
+
 
         <div class="buttons">
             <?php if ($current_page > 1): ?>
