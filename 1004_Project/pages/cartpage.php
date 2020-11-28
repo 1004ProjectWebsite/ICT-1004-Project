@@ -56,11 +56,7 @@ if (isset($_GET["action"])) {
                                                 <img src="../phone_cases_img/<?= $values["item_image"] ?>"
                                                      alt="<?= $values["item_image"] ?>" height="200px" width="100px">
                                             </td>
-
-                                            <td><input type="number" name="quantity" value="<?php echo $values["item_quantity"]; ?>"
-                                                       min="1"
-                                                       required></td>
-
+                                            <td><?php echo $values["item_quantity"]; ?></td>
                                             <td>$ <?php echo $values["item_price"]; ?></td>
                                             <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
 
