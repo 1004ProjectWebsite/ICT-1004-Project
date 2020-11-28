@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-light text-right" id="navbar" >
-    <a class="navbar-brand" href="../pages/index.php"><img src="../images/phonix_logo_black.png" alt="phonix" height="40"></a>
+    <a class="navbar-brand" href="../pages/home.php"><img src="../images/phonix_logo_black.png" alt="phonix" height="40"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
