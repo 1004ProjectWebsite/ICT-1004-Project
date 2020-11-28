@@ -13,21 +13,30 @@ if (isset($_GET["action"])) {
         }
     }
 }
+
+if (isset($_POST['action']) && $_POST['action'] == "change") {
+    foreach ($_SESSION["shopping_cart"] as &$value) {
+        if ($value['item_id'] === $_POST["item_id"]) {
+            $value['item_quantity'] = $_POST["quantity"];
+            break; // Stop the loop after we've found the product
+        }
+    }
+}
 ?>
 <html lang="en">
     <head>
         <title>Phone Case Shop</title>
-        <?php
-        include "../page_incs/head.inc.php";
-        ?>
+<?php
+include "../page_incs/head.inc.php";
+?>
     </head>
 
     <body>
         <div id="container">
             <div id="header">
-                <?php
-                include "../page_incs/nav.inc.php";
-                ?>
+<?php
+include "../page_incs/nav.inc.php";
+?>
             </div>
             <div id="body">
                 <div class="container" role="banner" style="text-align: center; margin-top: 5%;">
@@ -44,31 +53,37 @@ if (isset($_GET["action"])) {
                                     <th width="15%">Total</th>
                                     <th width="5%">Action</th>
                                 </tr>
-                                <?php
-                                if (!empty($_SESSION["shopping_cart"])) {
-                                    $total = 0;
-                                    foreach ($_SESSION["shopping_cart"] as $keys => $values) {
-                                        ?>
+<?php
+if (!empty($_SESSION["shopping_cart"])) {
+    $total = 0;
+    foreach ($_SESSION["shopping_cart"] as $keys => $values) {
+        ?>
                                         <tr>
                                             <td>
-                                                <?php echo $values["item_name"]; ?>
+        <?php echo $values["item_name"]; ?>
                                                 <br/>
                                                 <img src="../phone_cases_img/<?= $values["item_image"] ?>"
                                                      alt="<?= $values["item_image"] ?>" height="200px" width="100px">
                                             </td>
-                                            <td><?php echo $values["item_quantity"]; ?></td>
-                                            <td>$ <?php echo $values["item_price"]; ?></td>
-                                            <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
-
                                             <td>
-                                                <a href="cartpage.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span
-                                                        class="text-danger">Remove</span></a>
-                                            </td>
+                                        <form method='post' action=''>
+                                            <input type='hidden' name='item_id' value="<?php echo $values["item_id"]; ?>" />
+                                            <input type='hidden' name='action' value="change" />
+                                            <input type="number" name="quantity" class='quantity' value="<?php echo $values["item_quantity"]; ?>"min="1"required onChange="this.form.submit()"></td>
+                                        </form>
+                                        </td>
+                                        <td>$ <?php echo $values["item_price"]; ?></td>
+                                        <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
+
+                                        <td>
+                                            <a href="cartpage.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span
+                                                    class="text-danger">Remove</span></a>
+                                        </td>
                                         </tr>
-                                        <?php
-                                        $total = $total + ($values["item_quantity"] * $values["item_price"]);
-                                    }
-                                    ?>
+        <?php
+        $total = $total + ($values["item_quantity"] * $values["item_price"]);
+    }
+    ?>
                                     <tr>
                                         <td colspan="3" align="right">Total</td>
                                         <td align="right">$ <?php echo number_format($total, 2); ?></td>
@@ -80,13 +95,14 @@ if (isset($_GET["action"])) {
                                         </td>
                                     </form>
 
-                                    <?php
-                                    // Clears shopping cart
-                                    if (isset($_POST['remove_cart'])) {
-                                        unset($_SESSION['shopping_cart']);
-                                        echo "<meta http-equiv='refresh' content='0'>";
-                                    }
-                                    ?>
+
+    <?php
+    // Clears shopping cart
+    if (isset($_POST['remove_cart'])) {
+        unset($_SESSION['shopping_cart']);
+        echo "<meta http-equiv='refresh' content='0'>";
+    }
+    ?>
                                     </tr>
                                     <?php
                                 }
@@ -104,9 +120,9 @@ if (isset($_GET["action"])) {
                 </main>
             </div>
             <div id="footer">
-                <?php
-                include "../page_incs/footer.inc.php";
-                ?>
+<?php
+include "../page_incs/footer.inc.php";
+?>
             </div>
         </div>
     </body>
