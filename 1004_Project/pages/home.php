@@ -66,7 +66,7 @@ $total_products = $result->num_rows;
             <?php foreach ($products as $product): ?>
                 <div class="item">
                     <span class="out-of-stock">Hot</span>
-                    <img src="../phone_cases_img/<?= $product['p_img'] ?>" width="10%" height="20%" class="phone_image" alt="<?= $product['p_name'] ?>">
+                    <img src="../phone_cases_img/<?= $product['p_img'] ?>" class="phone_image" alt="<?= $product['p_name'] ?>">
                 </div>
             <?php endforeach; ?>
         </div>
