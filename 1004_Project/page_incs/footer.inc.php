@@ -1,23 +1,29 @@
 <footer class="footer z-2">
     <!-- FOOTER START -->
         <div class="contain" style="align-content: center;">
-            <div class="row">
+            <div class="row" id="words">
             <div class="col">
                 <h1>Company</h1>
                 <ul>
-                    <li>About Us</li>
+                    <li>
+                    <a class="link" href="index.php?page=aboutus">About Us</a>
+                    </li>
                 </ul>
             </div>
             <div class="col">
                 <h1>Products</h1>
                 <ul>
-                    <li>Shop</li>
+                    <li>
+                        <a class="link" href="index.php?page=products">Shop</a>
+                    </li>
                 </ul>
             </div>           
             <div class="col">
                 <h1>Support</h1>
                 <ul>
-                    <li>Contact us</li>
+                    <li>
+                        <a class="link" href="index.php?page=aboutus">Contact Us</a>
+                    </li>
                 </ul>
             </div>
             <div class="col social">

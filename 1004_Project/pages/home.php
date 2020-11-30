@@ -62,7 +62,7 @@ $total_products = $result->num_rows;
 
         <h3>Hot items</h3>
         <hr>
-        <div class="owl-carousel owl-theme">
+        <div class="owl-carousel owl-theme" id="mycarosell" >
             <?php foreach ($products as $product): ?>
                 <div class="item">
                     <span class="out-of-stock">Hot</span>
