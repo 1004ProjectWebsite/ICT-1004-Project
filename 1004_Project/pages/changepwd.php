@@ -63,22 +63,22 @@ include "../page_incs/nav.inc.php";
                 <div class="layout-form">
 
                     <form method="post" action="">
-                         <h3 class="mb-0">Change Password</h3>
+                         <h3 class="mb-0 text-body" >Change Password</h3>
                          <?php echo $message; ?>
                         <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Current password</label>
+                            <label class="col-lg-3 col-form-label text-body form-control-label">Current password</label>
                             <div class="col-lg-9">
                                 <input type="password" class="form-control" aria-label="current_password" required name="current_password"  placeholder="Current password">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">New password</label>
+                            <label class="col-lg-3 col-form-label text-body form-control-label">New password</label>
                             <div class="col-lg-9">
                                 <input type="password" class="form-control" aria-label="new_password" required name="new_password"  placeholder="New password">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Confirm password </label>
+                            <label class="col-lg-3 col-form-label text-body form-control-label">Confirm password </label>
                             <div class="col-lg-9">
                                 <input type="password" class="form-control" aria-label="confirm_password" required name="confirm_password"  placeholder="Confirm password">
                             </div>

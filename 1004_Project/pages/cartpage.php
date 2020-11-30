@@ -69,7 +69,7 @@ if (!empty($_SESSION["shopping_cart"])) {
                                         <form method='post' action=''>
                                             <input type='hidden' name='item_id' value="<?php echo $values["item_id"]; ?>" />
                                             <input type='hidden' name='action' value="change" />
-                                            <input type="number" name="quantity" class='quantity' value="<?php echo $values["item_quantity"]; ?>"min="1"required onChange="this.form.submit()"></td>
+                                            <input type="number" name="quantity" class='quantity' aria-label="Search" value="<?php echo $values["item_quantity"]; ?>"min="1"required onChange="this.form.submit()"></td>
                                         </form>
                                         </td>
                                         <td>$ <?php echo $values["item_price"]; ?></td>
@@ -111,9 +111,9 @@ if (!empty($_SESSION["shopping_cart"])) {
                         </div>
                         <br/>
                         <div class="form-group">
-                            <a href="products.php" id="cart1" class="btn btn-info">Back to shop</a>
+                            <a href="products.php" class="btn btn-info">Back to shop</a>
                             <div class="float-right">
-                                <a href="checkout.php" id="cart1" class="btn btn-info">Proceed to Payment</a>
+                                <a href="checkout.php" class="btn btn-info">Proceed to Payment</a>
                             </div>
                         </div>
                     </div>

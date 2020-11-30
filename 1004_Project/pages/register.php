@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
      <title>Register Account</title>
 <?php
@@ -15,7 +16,7 @@
                 <div class="layout-form">
                     <form action="process_register.php" method="post">
                         <h2>Sign Up</h2>
-                        <p>Please fill in this form to create an account!</p>
+                        <p class="text-body">Please fill in this form to create an account!</p>
                         <hr>
                         <div class="form-group">
                             <div class="input-group">
@@ -46,7 +47,7 @@
                                        aria-label="pwd" placeholder="Enter password" minlength="6">
 
                             </div>
-                            <p class="help-block"> Password should be at least 6 characters</p>
+                            <p class="help-block text-body"> Password should be at least 6 characters</p>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
@@ -59,7 +60,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+                            <label class="checkbox-inline text-body"><input type="checkbox" required="required"> I accept the Terms of Use &amp; Privacy Policy</label>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
@@ -67,10 +68,10 @@
                     </form>
                     <div class="text-center" style="margin-bottom: 5%;">Already have an account? <a href="index.php?page=login" style="color:black">Login here</a></
                 </div>
+                </div>
             </div>
         </main>
     </body>
-
 <?php
 include "../page_incs/footer.inc.php";
 ?>

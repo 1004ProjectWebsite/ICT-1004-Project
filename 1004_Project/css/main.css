@@ -200,18 +200,15 @@ span.out-of-stock {
     text-align: center;
 }
 .layout-form .btn, .signup-form .btn:active {
+    color: #000000;
     font-size: 16px;
     font-weight: bold;
-    background: #19aa8d !important;
+    background: #19aa8d;
     border: none;
     min-width: 140px;
 }
 .layout-form .btn:hover, .signup-form .btn:focus {
-    background: #179b81 !important;
-}
-.layout-form a {
-    color: #fff;
-    text-decoration: underline;
+    background: #179b81;
 }
 .layout-form a:hover {
     text-decoration: none;
