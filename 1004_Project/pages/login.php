@@ -40,7 +40,6 @@
                         <button type="Login" class="btn btn-primary btn-lg" name="login-submit">Login</button>
                     </div>
                 </form>
-                <div class="text-center"><a href="#" style="color:black">Forgot Password</a></div>
             </div>
         </div>
     </main>
