@@ -127,11 +127,13 @@ span.out-of-stock {
     flex: 0 0 16rem; /*13rem represent the width of the */
     margin:0px;
 }
-#product-content{
+#product-container .product-content{
     text-align: center;
     margin: 10px;
     border: 1px solid;
 }
+
+
 .phone_image {
     max-width: 500px;
     max-height:500px;

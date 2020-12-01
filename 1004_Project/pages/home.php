@@ -1,12 +1,11 @@
 <?php
-//session_start(); //start session
-?>
-<!--    DB connection-->
-<?php
-
+if (!isset($_SESSION)) {
+    session_start();
+}
+//   DB connection
 include "../page_incs/db_onetimelogin.php";
 
-//// The amounts of products to show on each page
+// The amounts of products to show on each page
 $num_products_on_each_page = 9;
 
 // The current page, in the URL this will appear as index.php?page=products&p=1, index.php?page=products&p=2, etc...
@@ -28,7 +27,10 @@ $products = $result->fetch_all(MYSQLI_ASSOC);
 // Get the total number of products
 $total_products = $result->num_rows;
 ?>
+
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Phone Case Shop</title>
     <?php
@@ -68,7 +70,7 @@ $total_products = $result->num_rows;
         <hr>
         <div class="d-flex flex-row flex-wrap justify-content-center my-flex-container" id="product-container">
         <?php foreach ($products as $product): ?>
-            <div class="p-2 my-flex-item" id="product-content">
+            <div class="p-2 my-flex-item product-content">
                 <div class="d-flex flex-column my-flex-container-column" >
                     <div class="p-2 my-flex-item">
                         <a href="index.php?page=product&id=<?= $product['product_id'] ?>" class="product">
@@ -120,5 +122,4 @@ $total_products = $result->num_rows;
                 items:6
             }
         }
-    })
-</script>
+    })</script>
