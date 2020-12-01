@@ -110,13 +110,13 @@ if (!empty($_SESSION["shopping_cart"])) {
                             </table>
                         </div>
                         <br/>
+                       
                         <div class="form-group">
-                            <a href="products.php" class="btn btn-info">Back to shop</a>
-                            <div class="float-right">
-                                <a href="checkout.php" class="btn btn-info">Proceed to Payment</a>
-                            </div>
+                            <a href="products.php" class="btn btn-info">Back to shop</a>            
+                             <a href="checkout.php" class="btn btn-info pull right">Proceed to Payment</a>
+                            
                         </div>
-                    </div>
+                 
                 </main>
             </div>
             <div id="footer">
