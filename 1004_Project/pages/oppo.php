@@ -113,8 +113,8 @@ include "../page_incs/nav.inc.php";
                                 <img src="../phone_cases_img/<?=$product['p_img']?>" width="80px" height="150px" class="phone_image" alt="<?=$product['p_name']?>">
                             </a>
 
-                            <h3 class="text-body"><?=$product['p_name']?></h3>
-                            <h3 class="text-danger">&dollar;<?=$product['p_price']?></h3>
+                            <p class="text-body"><?=$product['p_name']?></p>
+                            <p class="text-danger">&dollar;<?=$product['p_price']?></p>
                             <form method="post" action="oppo.php?action=add&id=<?php echo $product["product_id"]; ?>&page=<?php echo $page ?>">
                                 <div class="form-group">
                                     <input class="form-control" type="number" id="quantity" name="quantity"

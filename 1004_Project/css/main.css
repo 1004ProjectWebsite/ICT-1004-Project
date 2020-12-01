@@ -317,10 +317,9 @@ max-height:500px;
     padding: 0;
 }
 .footer .col ul li a{
-    color: #999999;
+    color: #333333;
     font-size: 14px;
     font-family: inherit;
-    font-weight: bold;
     padding: 5px 0px 5px 0px;
     cursor: pointer;
     transition: .2s;
