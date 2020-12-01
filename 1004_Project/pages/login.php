@@ -16,7 +16,7 @@
         ?>
 
 <!--MEMBER LOGIN FORM-->
-<div class="container-fluid h-100 d-flex flex-column p-0">
+<div class="container-fluid d-flex flex-column justify-content-center" style="height: 90%!important;">
 
     <main role="main" class="row flex-grow-1 w-100 align-items-center">
         <div class="mx-auto">

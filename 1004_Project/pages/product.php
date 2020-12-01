@@ -72,11 +72,11 @@ include "../page_incs/head.inc.php";
 include "../page_incs/nav.inc.php";
 ?>
 
-    <div class="container-fluid d-flex flex-column justify-content-center" style="height: 85%!important;">
+    <div class="container-fluid d-flex flex-column justify-content-center flexbox"">
         <div class="row">
 
     <?php foreach ($products as $product): ?>
-                <div class="col">
+                <div class="col d-flex justify-content-center">
                      <img src="../phone_cases_img/<?=$product['p_img']?>" class="phone_image" alt="<?=$product['p_name']?>">
                 </div>
 

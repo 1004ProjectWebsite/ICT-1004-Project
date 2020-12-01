@@ -24,6 +24,11 @@ figure img {
 }
 /*Main settings end*/
 
+/*flex box CSS*/
+.flexbox {
+    height: 90% !important;
+    min-height: 900px;
+}
 /*mainpage id start*/
 #mainpage h2{
     text-align: center;
