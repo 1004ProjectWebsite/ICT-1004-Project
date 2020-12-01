@@ -223,19 +223,6 @@ span.out-of-stock {
 .layout-form form a:hover {
     text-decoration: underline;
 }
-.layout-form .fa {
-    font-size: 21px;
-}
-.layout-form .fa-paper-plane {
-    font-size: 18px;
-}
-.layout-form .fa-check {
-    color: #fff;
-    left: 17px;
-    top: 18px;
-    font-size: 7px;
-    position: absolute;
-}
 /*register Page end*/
 
 /*=======

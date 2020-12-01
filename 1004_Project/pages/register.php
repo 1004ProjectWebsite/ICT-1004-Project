@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-     <title>Register Account</title>
-<?php
-
+    <title>Register Account</title>
+    <?php
     include "../page_incs/head.inc.php";
-?>
+    ?>
 
     <body>
         <?php
-            include "../page_incs/nav.inc.php";
+        include "../page_incs/nav.inc.php";
         ?>
 
         <main role="main" class="row flex-grow-1 w-100 align-items-center">
@@ -20,14 +19,14 @@
                         <hr>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
                                 <input class="form-control" type="text" id="fname"
                                        maxlength="45" name="fname" aria-label="fname" placeholder="Enter first name">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
                                 <input class="form-control" type="text" id="lname"
                                        required maxlength="45" name="lname" aria-label="lname"
                                        placeholder="Enter last name">
@@ -35,14 +34,14 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+
                                 <input class ="form-control" type="email" id="email" required name="email"
                                        aria-label="email" placeholder="Enter email">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+
                                 <input class="form-control" type="password" id="pwd" required name="pwd"
                                        aria-label="pwd" placeholder="Enter password" minlength="6">
 
@@ -51,10 +50,7 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-lock"></i>
-                            <i class="fa fa-check"></i>
-                        </span>
+
                                 <input class="form-control" type="password" id="pwd_confirm" required name="pwd_confirm"
                                        aria-label="pwd_confirm" placeholder="Confirm password">
                             </div>
@@ -67,13 +63,13 @@
                         </div>
                     </form>
                     <div class="text-center" style="margin-bottom: 5%;">Already have an account? <a href="index.php?page=login" style="color:black">Login here</a></
-                </div>
+                    </div>
                 </div>
             </div>
         </main>
     </body>
-<?php
-include "../page_incs/footer.inc.php";
-?>
+    <?php
+    include "../page_incs/footer.inc.php";
+    ?>
 
 </html>
