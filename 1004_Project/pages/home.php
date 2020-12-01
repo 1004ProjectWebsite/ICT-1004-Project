@@ -48,14 +48,14 @@ $total_products = $result->num_rows;
         <div>
             <h1 class="display-4">Welcome to <img id="logo" src="../images/phonix_logo.PNG" alt="logo"></h1>
             <br/>
-            <h4 id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</h4>
+            <a id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</a>
         </div>
     </header>
-    <main class="container">
+    <main class="container" id="mainpage">
 
-        <h3>Hot items</h3>
+        <h2>Hot items</h2>
         <hr>
-        <div class="owl-carousel owl-theme" id="mycarosell" >
+        <div class="owl-carousel owl-theme" id="mycarosell">
             <?php foreach ($products as $product): ?>
                 <div class="item">
                     <span class="out-of-stock">Hot</span>
@@ -107,10 +107,11 @@ $total_products = $result->num_rows;
 <script type="text/javascript">$('.owl-carousel').owlCarousel({
         loop:true,
         margin:10,
-        nav:true,
+        nav:false,
         autoplay:true,
         autoplayTimeout:2000,
         autoplayHoverPause:true,
+        dots: false,
         responsive:{
             0:{
                 items:2

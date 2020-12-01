@@ -24,6 +24,15 @@ figure img {
 }
 /*Main settings end*/
 
+/*mainpage id start*/
+#mainpage h2{
+    text-align: center;
+}
+#mainpage h3{
+    text-align: center;
+}
+/*mainpage id end*/
+
 /*navigation bar settings start*/
 #navbar {
     position: fixed;
@@ -48,7 +57,7 @@ figure img {
 
 /*out of stock start*/
 span.out-of-stock {
-    background-color: #ed1b24;
+    background-color: #AF0E0E;
     display: inline-block;
     font-size: 11px;
     color: #fff;
