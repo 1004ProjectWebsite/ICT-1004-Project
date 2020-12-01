@@ -1,10 +1,11 @@
 
-section article{
+#aboutus p{
     background-color: white;
     margin: auto;
     padding: 50px;
     color: black;
     text-align: center;
+    font-style: italic;
 }
 
 /* form section */

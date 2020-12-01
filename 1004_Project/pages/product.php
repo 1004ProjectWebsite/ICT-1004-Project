@@ -60,8 +60,6 @@ if (isset($_POST["add_to_cart"])) {
 }
 ?>
 
-
-
 <head>
     <title>Phone Case Shop</title>
 <?php
@@ -73,8 +71,6 @@ include "../page_incs/head.inc.php";
 <?php
 include "../page_incs/nav.inc.php";
 ?>
-
-
 
     <div class="container">
         <div class="row">
@@ -114,7 +110,6 @@ include "../page_incs/nav.inc.php";
 <?php endforeach; ?>
         </div>
     </div>
-
 
 </body>
 

@@ -24,6 +24,15 @@ figure img {
 }
 /*Main settings end*/
 
+/*mainpage id start*/
+#mainpage h2{
+    text-align: center;
+}
+#mainpage h3{
+    text-align: center;
+}
+/*mainpage id end*/
+
 /*navigation bar settings start*/
 #navbar {
     position: fixed;
@@ -48,7 +57,7 @@ figure img {
 
 /*out of stock start*/
 span.out-of-stock {
-    background-color: #ed1b24;
+    background-color: #AF0E0E;
     display: inline-block;
     font-size: 11px;
     color: #fff;
@@ -127,11 +136,13 @@ span.out-of-stock {
     flex: 0 0 16rem; /*13rem represent the width of the */
     margin:0px;
 }
-#product-content{
+#product-container .product-content{
     text-align: center;
     margin: 10px;
     border: 1px solid;
 }
+
+
 .phone_image {
     max-width: 500px;
     max-height:500px;
