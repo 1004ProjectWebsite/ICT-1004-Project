@@ -64,7 +64,9 @@ include "../page_incs/nav.inc.php";
 
                     <form method="post" action="">
                          <h3 class="mb-0 text-body" >Change Password</h3>
-                         <?php echo $message; ?>
+                         <?php
+                         echo "<span style=\"color:#000000\">$message</span>";
+                         ?>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label text-body form-control-label">Current password</label>
                             <div class="col-lg-9">
