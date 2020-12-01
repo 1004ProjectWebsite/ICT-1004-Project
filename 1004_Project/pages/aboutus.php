@@ -16,12 +16,11 @@
 include "../page_incs/nav.inc.php";
 ?>
 <main>
-    <section class="jumbotron parallax text-center">
+    <div class="jumbotron parallax text-center">
         <div>
             <h1 class="display-4">About us </h1>
-
         </div>
-    </section>
+    </div>
 
     <div class="container" id="aboutus">
         <div>
@@ -39,8 +38,7 @@ include "../page_incs/nav.inc.php";
     <div class="container">
         <h2 style="text-align: center;">Get in Touch</h2>
         <hr>
-        <article>
-
+        <div>
             <div id="contactusRow" class="row">
                 <div id="contactmap" class="col-md-8" style="height:400px;">
                     <iframe
@@ -50,22 +48,22 @@ include "../page_incs/nav.inc.php";
                 </div>
                 <form id="contactForm" action="process_contact.php" method="post" class="col-md-4 ">
                     <div class="form-group">
-                        <a for="contactName">Name:</a>
+                        <a>Name:</a>
                         <input type="text" class="form-control" id="contactName" name="contactName" placeholder="Name" pattern="[A-z ]+" required>
                     </div>
 
                     <div class="form-group">
-                        <a for="email">Email:</a>
+                        <a>Email:</a>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" required>
                     </div>
 
                     <div class="form-group">
-                        <a for="contactNumber">Contact Number:</a>
+                        <a >Contact Number:</a>
                         <input type="tel" class="form-control" id="contactNumber" name="contactPhoneNumber" placeholder="Phone Number" pattern="/^([0-9]{8})$/" maxlength="8" required>
                     </div>
 
                     <div class="form-group">
-                        <a for="feedback">Feedback/Message:</a>
+                        <a>Feedback/Message:</a>
                         <textarea class="form-control" id="feedback" name="contactMessage" placeholder="Message" required></textarea>
                     </div>
 
@@ -73,7 +71,7 @@ include "../page_incs/nav.inc.php";
                 </form>
 
             </div>
-        </article>
+        </div>
     </div>
 </main>
 <?php
