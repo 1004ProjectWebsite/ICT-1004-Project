@@ -71,7 +71,7 @@ $total_products = $result->num_rows;
         <div class="d-flex flex-row flex-wrap justify-content-center my-flex-container" id="product-container">
         <?php foreach ($products as $product): ?>
             <div class="p-2 my-flex-item product-content">
-                <div class="d-flex flex-column my-flex-container-column box" >
+                <div class="d-flex flex-column my-flex-container-column box" onclick='location.href="index.php?page=product&id=<?= $product['product_id'] ?>"' style="cursor: pointer;" >
                     <div class="p-2 my-flex-item">
                         <a href="index.php?page=product&id=<?= $product['product_id'] ?>" class="product">
                             <img src="../phone_cases_img/<?= $product['p_img'] ?>" width="80" height="150" class="phone_image" alt="<?= $product['p_name'] ?>">
@@ -112,16 +112,24 @@ $total_products = $result->num_rows;
             dots: false,
             responsive:{
                 0:{
-                    items:2
+                    items:3
                 },
                 600:{
-                    items:3
+                    items:4
                 },
                 1000:{
                     items:6
                 }
             }
         })</script>
-
+    <script>
+        //highlight boxes on hover
+        $('.box').mouseover(function(){
+            $(this).css("background", "#A9D4C5");
+        });
+        $(".box").mouseout(function(){
+            $(".box").css("background", "white");
+        });
+    </script>
 </body>
 </html>
