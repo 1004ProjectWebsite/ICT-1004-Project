@@ -164,9 +164,10 @@ include "../page_incs/nav.inc.php";
 				<li class="next"><a href="apple.php?page=<?php echo $page+1 ?>">Next</a></li>
 				<?php endif; ?>
 			</ul>
-			<?php endif; ?>
+        </div>		<?php endif; ?>
    </main>        
 </body>
 <?php
 include "../page_incs/footer.inc.php";
 ?>
+</html>

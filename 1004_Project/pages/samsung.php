@@ -165,8 +165,10 @@ include "../page_incs/nav.inc.php";
 				<?php endif; ?>
 			</ul>
 			<?php endif; ?>
+        </div>
    </main>        
 </body>
 <?php
 include "../page_incs/footer.inc.php";
 ?>
+</html>
