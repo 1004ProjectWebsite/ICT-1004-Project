@@ -75,7 +75,7 @@ $products = $result->fetch_all(MYSQLI_ASSOC);
  }  
 ?>
       <!doctype html>
-<html>
+<html lang="en">
 <head>
     <title>Phone Case Shop</title>
     <?php

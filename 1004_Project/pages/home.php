@@ -28,6 +28,7 @@ $products = $result->fetch_all(MYSQLI_ASSOC);
 // Get the total number of products
 $total_products = $result->num_rows;
 ?>
+<html lang="en">
 <head>
     <title>Phone Case Shop</title>
     <?php
@@ -53,9 +54,9 @@ $total_products = $result->num_rows;
     ?>
     <header class="jumbotron parallax text-center">
         <div>
-            <h1 class="display-4">Welcome to <img id="logo" src="../images/phonix_logo.PNG"></h1>
+            <h1 class="display-4">Welcome to <img id="logo" src="../images/phonix_logo.PNG" alt="logo"></h1>
             <br/>
-            <h4 id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</h4>
+            <h2 id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</h2>
         </div>
     </header>
     <main class="container">
@@ -85,7 +86,7 @@ $total_products = $result->num_rows;
                         </a>
                     </div >
                     <div>
-                        <h5 class="text-body"><?= $product['p_name'] ?></h5>
+                        <h4 class="text-body"><?= $product['p_name'] ?></h4>
                     </div>
                     <div>
                         <p class="text-info">&dollar;<?= $product['p_price'] ?></p>

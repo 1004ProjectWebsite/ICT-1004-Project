@@ -69,7 +69,7 @@ $total_products = $result->num_rows;
  }  
 ?>
       <!doctype html>
-<html>
+<html lang="en">
 <head>
     <title>Phone Case Shop</title>
     <?php
