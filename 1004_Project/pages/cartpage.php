@@ -76,7 +76,7 @@ if (!empty($_SESSION["shopping_cart"])) {
                                         <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
 
                                         <td>
-                                            <a href="cartpage.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span
+                                            <a href="cartpage.php?action=delete&id=<?php echo $values["item_id"]; ?>" aria-label="Remove"><span
                                                     class="text-danger">Remove</span></a>
                                         </td>
                                         </tr>

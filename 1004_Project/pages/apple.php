@@ -117,7 +117,7 @@ include "../page_incs/nav.inc.php";
                             <p class="text-danger">&dollar;<?=$product['p_price']?></p>
                             <form method="post" action="apple.php?action=add&id=<?php echo $product["product_id"]; ?>&page=<?php echo $page ?>">
                                 <div class="form-group">
-                                    <input class="form-control" type="number" id="quantity" name="quantity"
+                                    <input class="form-control" type="number" name="quantity"
                                            value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required aria-label="quantity">
                                 </div> 
                                <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>" />  
