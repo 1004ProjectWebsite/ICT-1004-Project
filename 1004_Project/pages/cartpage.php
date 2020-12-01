@@ -25,7 +25,7 @@ if (isset($_POST['action']) && $_POST['action'] == "change") {
 ?>
 <html lang="en">
     <head>
-        <title>Phone Case Shop</title>
+        <title>Shopping Cart</title>
 <?php
 include "../page_incs/head.inc.php";
 ?>
