@@ -71,7 +71,7 @@ $total_products = $result->num_rows;
         <div class="d-flex flex-row flex-wrap justify-content-center my-flex-container" id="product-container">
         <?php foreach ($products as $product): ?>
             <div class="p-2 my-flex-item product-content">
-                <div class="d-flex flex-column my-flex-container-column" >
+                <div class="d-flex flex-column my-flex-container-column box" >
                     <div class="p-2 my-flex-item">
                         <a href="index.php?page=product&id=<?= $product['product_id'] ?>" class="product">
                             <img src="../phone_cases_img/<?= $product['p_img'] ?>" width="80" height="150" class="phone_image" alt="<?= $product['p_name'] ?>">
@@ -124,6 +124,4 @@ $total_products = $result->num_rows;
         })</script>
 
 </body>
-
-</html>
 </html>

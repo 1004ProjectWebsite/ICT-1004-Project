@@ -49,3 +49,11 @@ return false;
 }
 return true;
 }
+
+//highlight boxes on hover on main page
+$('.box').mouseover(function(){
+    $(this).css("background", "#A9D4C5");
+});
+$(".box").mouseout(function(){
+    $(".box").css("background", "white");
+});
