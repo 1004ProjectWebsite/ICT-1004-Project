@@ -35,17 +35,7 @@ $total_products = $result->num_rows;
     include "../page_incs/head.inc.php";
     ?>
     <style>
-        article {
-            text-align: center;
-        }
 
-        #companyInfo {
-            margin-top: -100px;
-        }
-
-        #logo {
-            height: 200px;
-        }
     </style>
 </head>
 <body>
@@ -56,7 +46,7 @@ $total_products = $result->num_rows;
         <div>
             <h1 class="display-4">Welcome to <img id="logo" src="../images/phonix_logo.PNG" alt="logo"></h1>
             <br/>
-            <h2 id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</h2>
+            <h4 id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</h4>
         </div>
     </header>
     <main class="container">
@@ -76,7 +66,7 @@ $total_products = $result->num_rows;
 
         <h3>Popular items</h3>
         <hr>
-        <div class="d-flex flex-row flex-wrap justify-content-between my-flex-container" id="product-container">
+        <div class="d-flex flex-row flex-wrap justify-content-center my-flex-container" id="product-container">
         <?php foreach ($products as $product): ?>
             <div class="p-2 my-flex-item" id="product-content">
                 <div class="d-flex flex-column my-flex-container-column" >
@@ -86,10 +76,10 @@ $total_products = $result->num_rows;
                         </a>
                     </div >
                     <div>
-                        <h4 class="text-body"><?= $product['p_name'] ?></h4>
+                        <a class="text-body"><?= $product['p_name'] ?></a>
                     </div>
                     <div>
-                        <p class="text-info">&dollar;<?= $product['p_price'] ?></p>
+                        <a class="text-danger">&dollar;<?= $product['p_price'] ?></a>
                     </div>
                 </div>
             </div>

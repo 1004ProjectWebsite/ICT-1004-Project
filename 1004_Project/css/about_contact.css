@@ -1,4 +1,12 @@
 
+section article{
+    background-color: white;
+    margin: auto;
+    padding: 50px;
+    color: black;
+    text-align: center;
+}
+
 /* form section */
 input[type=text], input[type=email], input[type=tel] {
     width: 95%;
@@ -24,12 +32,6 @@ input[type=text], input[type=email], input[type=tel] {
     text-align: center;
     margin-bottom: 10px;
 }
-article{
-    background-color: white;
-    margin: auto;
-    padding: 50px;
-    color: black;       
-}
 #form {
   position: relative;
   width: 500px;
@@ -43,15 +45,16 @@ article{
 }
 #contactmap{
     flex: 50%;
-    padding: 10px;
+    margin-bottom: 50px;
     overflow:hidden;
-    padding-bottom:56.25%;
     position:relative;
-    padding-bottom: 10px;
 }
 #contactmap iframe{
     left:0;
     top:0;
+    height: 100%;
+    width: 100%;
+
     position:absolute;
 }
 #contactus{
