@@ -72,7 +72,7 @@ include "../page_incs/head.inc.php";
 include "../page_incs/nav.inc.php";
 ?>
 
-    <div class="container">
+    <div class="container-fluid d-flex flex-column justify-content-center" style="height: 85%!important;">
         <div class="row">
 
     <?php foreach ($products as $product): ?>

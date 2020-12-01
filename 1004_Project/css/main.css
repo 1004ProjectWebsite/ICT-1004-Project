@@ -284,8 +284,6 @@ max-height:500px;
     font-style: italic;
     padding: 30px ;
     width: 100%;
-    position: absolute;
-    height: auto;
     background-color: #A9D4C5;
 }
 .footer .col {

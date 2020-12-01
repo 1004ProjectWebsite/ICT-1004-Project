@@ -15,7 +15,8 @@
 <?php
 include "../page_incs/nav.inc.php";
 ?>
-<main>
+<div class="container-fluid h-100 d-flex flex-column" style="padding: 0px;">
+<main class="flex-grow-1 w-100">
     <div class="jumbotron parallax text-center">
         <div>
             <h1 class="display-4">About us </h1>
@@ -77,5 +78,6 @@ include "../page_incs/nav.inc.php";
 <?php
 include "../page_incs/footer.inc.php";
 ?>
+</div>
 </body>
 </html>

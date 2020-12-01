@@ -125,3 +125,5 @@ $total_products = $result->num_rows;
 
 </body>
 
+</html>
+</html>
