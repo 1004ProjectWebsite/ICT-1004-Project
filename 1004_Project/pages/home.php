@@ -66,7 +66,7 @@ $total_products = $result->num_rows;
 
         <h3>Popular items</h3>
         <hr>
-        <div class="d-flex flex-row flex-wrap justify-content-between my-flex-container" id="product-container">
+        <div class="d-flex flex-row flex-wrap justify-content-center my-flex-container" id="product-container">
         <?php foreach ($products as $product): ?>
             <div class="p-2 my-flex-item" id="product-content">
                 <div class="d-flex flex-column my-flex-container-column" >
@@ -76,10 +76,10 @@ $total_products = $result->num_rows;
                         </a>
                     </div >
                     <div>
-                        <h4 class="text-body"><?= $product['p_name'] ?></h4>
+                        <a class="text-body"><?= $product['p_name'] ?></a>
                     </div>
                     <div>
-                        <p class="text-info">&dollar;<?= $product['p_price'] ?></p>
+                        <a class="text-danger">&dollar;<?= $product['p_price'] ?></a>
                     </div>
                 </div>
             </div>
