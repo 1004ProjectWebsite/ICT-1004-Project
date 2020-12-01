@@ -1,12 +1,7 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="en">
 <head>
-    <title>About Phnoix</title>
+    <title>About Phonix</title>
     <link rel="icon" href="../images/phonix_logo.PNG">
     <meta name="description" content="The best phone case out there">
     <meta name="keywords" content="Phone case, Contact, About">
@@ -23,24 +18,23 @@ include "../page_incs/nav.inc.php";
 <main>
     <section class="jumbotron parallax text-center">
         <div>
-            <h1 class="display-4">ABOUT US </h1>
-            <br/>
-            <h4 style="color:white">Let us know</h4>
+            <h1 class="display-4">About us </h1>
+
         </div>
     </section>
 
-    <section class="container">
-        <article>
-            <h2>About us</h2>
+    <div class="container" id="aboutus">
+        <div>
             <hr>
             <p>
-                Phonix, located in Ang Mo Kio, sells different types of phone cases for your phone protection<br>
-                needs. Our phone case are made from high quality materials sources from great manufacturers. <br>
-                Our products ensure environment sustainability and can be recycled. If there is no case to <br>
-                your liking, drop us a message and we will try our best to put that on our product page!<br>
+                Phonix, located in Ang Mo Kio, sells different types of phone cases for your phone protection
+                needs. Our phone case are made from high quality materials sources from great manufacturers.
+                Our products ensure environment sustainability and can be recycled. If there is no case to
+                your liking, drop us a message and we will try our best to put that on our product page!
             </p>
-        </article>
-    </section>
+            <hr>
+        </div>
+    </div>
 
     <div class="container">
         <h2 style="text-align: center;">Get in Touch</h2>
@@ -56,26 +50,26 @@ include "../page_incs/nav.inc.php";
                 </div>
                 <form id="contactForm" action="process_contact.php" method="post" class="col-md-4 ">
                     <div class="form-group">
-                        <h6 for="contactName">Name:</h6>
+                        <a for="contactName">Name:</a>
                         <input type="text" class="form-control" id="contactName" name="contactName" placeholder="Name" pattern="[A-z ]+" required>
                     </div>
 
                     <div class="form-group">
-                        <h6 for="email">Email:</h6>
+                        <a for="email">Email:</a>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" required>
                     </div>
 
                     <div class="form-group">
-                        <h6 for="contactNumber">Contact Number:</h6>
+                        <a for="contactNumber">Contact Number:</a>
                         <input type="tel" class="form-control" id="contactNumber" name="contactPhoneNumber" placeholder="Phone Number" pattern="/^([0-9]{8})$/" maxlength="8" required>
                     </div>
 
                     <div class="form-group">
-                        <h6 for="feedback">Feedback/Message:</h6>
-                        <textarea class="form-control" id="feedback" name="contactMessage" placeholder="MESSAGE" required></textarea>
+                        <a for="feedback">Feedback/Message:</a>
+                        <textarea class="form-control" id="feedback" name="contactMessage" placeholder="Message" required></textarea>
                     </div>
 
-                    <button type="submit" id="btnSubmit" class="btn btn-default">SUBMIT</button>
+                    <button type="submit" id="btnSubmit" class="btn btn-default">Submit</button>
                 </form>
 
             </div>
