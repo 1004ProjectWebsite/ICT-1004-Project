@@ -16,7 +16,7 @@
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="navbarDropdown">
                     Shop
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="navbarDropdown">
                     <a class="dropdown-item" href="index.php?page=products">All</a>
                     <a class="dropdown-item" href="index.php?page=apple">Apple</a>                    
                     <a class="dropdown-item" href="index.php?page=huawei">Huawei</a>

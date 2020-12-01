@@ -43,7 +43,7 @@ include "../page_incs/nav.inc.php";
                 <div id="contactmap" class="col-md-8" style="height:400px;">
                     <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.665252371279!2d103.8466486145811!3d1.3775233989953357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da16e96db0a1ab%3A0x3d0be54fbbd6e1cd!2sSingapore%20Institute%20of%20Technology%20(SIT%40NYP)!5e0!3m2!1sen!2ssg!4v1570768423752!5m2!1sen!2ssg"
-                            frameborder="0" style="border:0;" allowfullscreen="" title="google map of Phonix" alt="google maps">
+                            frameborder="0" style="border:0;" allowfullscreen="" title="google map of Phonix">
                     </iframe>
                 </div>
                 <form id="contactForm" action="process_contact.php" method="post" class="col-md-4 ">
