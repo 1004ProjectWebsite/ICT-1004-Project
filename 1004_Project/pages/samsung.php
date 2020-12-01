@@ -89,7 +89,7 @@ include "../page_incs/nav.inc.php";
             </div>
 
             <div class="row">
-                <h6>&nbsp;<?= $total_products ?> Products</h6>
+                <h2>&nbsp;<?= $total_products ?> Products</h2>
             </div>
 
             <div class="row">
@@ -113,13 +113,12 @@ include "../page_incs/nav.inc.php";
                                 <img src="../phone_cases_img/<?=$product['p_img']?>" width="80px" height="150px" class="phone_image" alt="<?=$product['p_name']?>">
                             </a>
 
-                            <h5 class="text-body"><?=$product['p_name']?></h5>
-                            <h5 class="text-info">&dollar;<?=$product['p_price']?></h5>
+                            <h3 class="text-body"><?=$product['p_name']?></h3>
+                            <h3 class="text-danger">&dollar;<?=$product['p_price']?></h3>
                             <form method="post" action="samsung.php?action=add&id=<?php echo $product["product_id"]; ?>&page=<?php echo $page ?>">
                                 <div class="form-group">
-                                    <label for="quantity"></label>
                                     <input class="form-control" type="number" id="quantity" name="quantity"
-                                           value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required>
+                                           value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required aria-label="quantity">
                                 </div> 
                                <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />

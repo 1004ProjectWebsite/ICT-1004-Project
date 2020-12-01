@@ -18,8 +18,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="index.php?page=products">All</a>
+                    <a class="dropdown-item" href="index.php?page=apple">Apple</a>                    
                     <a class="dropdown-item" href="index.php?page=huawei">Huawei</a>
-                    <a class="dropdown-item" href="index.php?page=apple">Apple</a>
                     <a class="dropdown-item" href="index.php?page=oppo">Oppo</a>
                     <a class="dropdown-item" href="index.php?page=samsung">Samsung</a>
                 </div>
