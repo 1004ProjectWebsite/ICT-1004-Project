@@ -35,17 +35,7 @@ $total_products = $result->num_rows;
     include "../page_incs/head.inc.php";
     ?>
     <style>
-        article {
-            text-align: center;
-        }
 
-        #companyInfo {
-            margin-top: -100px;
-        }
-
-        #logo {
-            height: 200px;
-        }
     </style>
 </head>
 <body>
@@ -56,7 +46,7 @@ $total_products = $result->num_rows;
         <div>
             <h1 class="display-4">Welcome to <img id="logo" src="../images/phonix_logo.PNG" alt="logo"></h1>
             <br/>
-            <h2 id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</h2>
+            <h4 id="companyInfo" style="color:white">The premier place to buy your mobile phones and accessories</h4>
         </div>
     </header>
     <main class="container">

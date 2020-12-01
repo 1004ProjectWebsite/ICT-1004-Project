@@ -22,11 +22,11 @@ function checkForms() {
     var txtEmail = email.value;
     var isEmailValid = false;
     
-    var contactPhoneNumber = document.getElementById("contactPhoneNumber");
+    var contactPhoneNumber = document.getElementById("contactNumber");
     var txtContactPhoneNumber = contactPhoneNumber.value;
     var isContactPhoneNumberValid = false;
     
-    var contactMessage = document.getElementById("contactMessage");
+    var contactMessage = document.getElementById("feedback");
     var txtContactMessage = contactMessage.value;
     var isContactMessageValid = false;
     

@@ -24,7 +24,29 @@ figure img {
 }
 /*Main settings end*/
 
-/*out of stock*/
+/*navigation bar settings start*/
+#navbar {
+    position: fixed;
+    background-color: #A9D4C5;
+    top: 0;
+    width: 100%;
+    transition: top 0.5s;
+    z-index: 999;
+}
+#navbar a {
+    color: black;
+    text-align: center;
+    padding: 10;
+    text-decoration: none;
+    font-size: 20px;
+}
+#navbar a:hover {
+    background-color: #F4BCB8;
+    color: black;
+}
+/*navigation bar settings end*/
+
+/*out of stock start*/
 span.out-of-stock {
     background-color: #ed1b24;
     display: inline-block;
@@ -43,8 +65,9 @@ span.out-of-stock {
     line-height: 24px;
 }
 #mycarosell{
-    z-index: -1;
+    /*z-index: -1;*/
 }
+/*out of stock end*/
 
 /*center icons on nav*/
 .center {
@@ -72,11 +95,6 @@ span.out-of-stock {
     text-align: center;
     position: relative;
     display: block;
-    margin-top: 50px;
-    padding-top: 30px;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: white;
 }
 .jumbotron p {
@@ -88,29 +106,14 @@ span.out-of-stock {
     transform: translate(-50%, -50%);
     color: white;
 }
-/*Jumbotron effect end*/
+#logo{
+    height: 150px;
+    width: 150px;
+}
+#companyInfo {
 
-/*navigation bar settings start*/
-#navbar {
-    position: fixed;
-    background-color: #A9D4C5;
-    top: 0;
-    width: 100%;
-    transition: top 0.5s;
-    z-index: 1;
 }
-#navbar a {
-    color: black;
-    text-align: center;
-    padding: 10;
-    text-decoration: none;
-    font-size: 20px;
-}
-#navbar a:hover {
-    background-color: #F4BCB8;
-    color: black;
-}
-/*navigation bar settings end*/
+/*Jumbotron effect end*/
 
 /*home page grid start*/
 #product-container{
