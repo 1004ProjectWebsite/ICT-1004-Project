@@ -458,3 +458,10 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
+
+table{
+    width: 50%
+}
+th{
+    height: 70px;
+}
