@@ -69,7 +69,7 @@ echo "<span style=\"color:#000000\">$message</span>";
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label text-body form-control-label">New password</label>
                                 <div class="col-lg-9">
-                                    <input type="password" class="form-control" aria-label="new_password" required name="new_password"  placeholder="New password">
+                                    <input type="password" class="form-control" aria-label="new_password" required name="new_password"  placeholder="New password" minlength="6">
                                 </div>
                             </div>
                             <div class="form-group row">

@@ -106,7 +106,18 @@ function authenticateUser() {
                     if ($success) {
                         echo "<h1>Login successful!</h1>";
                         echo "<h2>Welcome back $fname</h2>";
-                        echo "<a class=\"btn btn-success\" href=index.php?page=home>Return to Home</a>";
+                       // echo "<a class=\"btn btn-success\" href=index.php?page=home>Return to Home</a>";
+                        ?>
+                        <script type = "text/javascript">
+                            <!--
+                    function Redirect() {
+                                window.location = "index.php?page=home";
+                            }
+                            document.write("You will be redirected back to home page.");
+                            setTimeout('Redirect()', 1000);
+                            //-->
+                        </script>
+                        <?php
                     } else {
                         echo "<h1>Oops!</h1>";
                         echo "<h2>The following input errors were detected:</h2>";
