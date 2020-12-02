@@ -102,13 +102,11 @@ include "../page_incs/nav.inc.php";
                                 <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />
                                 <input type="hidden" name="hidden_image_url" value="<?php echo $product["p_img"]; ?>" />
                                 <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" /> 
-                            </form>
-
-                               
+                            </form>                              
                         </figure>
                     </article>
                 </div>
-<?php endforeach; ?>
+            <?php endforeach; ?>
         </div>
     </div>
     <?php
