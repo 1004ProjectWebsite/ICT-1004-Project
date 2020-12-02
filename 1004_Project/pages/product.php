@@ -94,10 +94,9 @@ include "../page_incs/nav.inc.php";
                                            value="1" min="1" placeholder="Quantity" required aria-label="quantity">
                                 </div>
                                 <p>
-                                    <br/>
                                     <h4>Product Description</h4>
                                     <?= $product['p_desc'] ?>
-                               
+                               <br/>
                                 <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>" />  
                                 <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />
                                 <input type="hidden" name="hidden_image_url" value="<?php echo $product["p_img"]; ?>" />
