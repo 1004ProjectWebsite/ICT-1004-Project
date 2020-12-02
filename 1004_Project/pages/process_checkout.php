@@ -3,6 +3,14 @@ session_start(); //start session
 $fname = $lname = $email = $address = $address2 = $pno = $country = $state = $zip = $errorMsg = "";
 $success = true;
 
+if(isset($_SESSION['id'])) {
+        $user_id = $_SESSION['id'];
+    }
+
+else {
+    $user_id = "0";
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["fname"])) {
         $fname = sanitize_input($_POST["fname"]);
@@ -70,7 +78,7 @@ function sanitize_input($data) {
 }
 
 function processCheckout() {
-    global $fname, $lname, $email, $address, $address2, $pno, $country, $state, $zip, $errorMsg, $success;
+    global $fname, $lname, $email, $address, $address2, $pno, $country, $state, $zip, $errorMsg, $success, $user_id;
 
 // DB Login
     include "../page_incs/db_onetimelogin.php";
@@ -82,12 +90,10 @@ function processCheckout() {
         $success = false;
     } else {
         // Prepare the statement:
-        $stmt = $con->prepare("INSERT INTO customer_purchases (fname, lname, email, address, address2, pno, country, state, zip) VALUES (?, ?, ?, ?, ?, ? ,?, ? ,?) ");
+        $stmt = $con->prepare("INSERT INTO customer_purchases (fname, lname, email, address, address2, pno, country, state, zip, member_id) VALUES (?, ?, ?, ?, ?, ? ,?, ? ,?, ?) ");
 
-//        $_SESSION['username'] = $fname; //get fname after registration
-//        $_SESSION["loggedin"] = true;
         // Bind & execute the query statement:
-        $stmt->bind_param("sssssssss", $fname, $lname, $email, $address, $address2, $pno, $country, $state, $zip);
+        $stmt->bind_param("ssssssssss", $fname, $lname, $email, $address, $address2, $pno, $country, $state, $zip, $user_id);
         $result = $stmt->execute();
         if ($result) {
             
@@ -125,7 +131,7 @@ include "../page_incs/nav.inc.php";
 <?php
     if ($success) { ?>
         <script type="text/javascript">
-                    setTimeout('Redirect()', 10000);
+                    setTimeout('Redirect()', 8000);
                     function Redirect() {
                         window.location.href = "index.php?page=checkout_success";
                     }
