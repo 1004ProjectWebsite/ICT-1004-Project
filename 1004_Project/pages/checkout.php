@@ -218,7 +218,7 @@ if(isset($_GET["action"]))
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <label for="cc-expiration">Expiration</label>
-                                <input type="text" class="form-control" id="cc-expiration" required>
+                                <input type="text" class="form-control" id="cc-expiration" maxlength = "4" required>
                                 <div class="invalid-feedback">
                                     Expiration date required
                                 </div>

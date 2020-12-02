@@ -113,9 +113,17 @@ include "../page_incs/nav.inc.php";
                         <br/>
                        
                         <div class="form-group">
-                            <a href="products.php" class="btn btn-info">Back to shop</a>            
-                             <a href="checkout.php" class="btn btn-info pull right">Proceed to Payment</a>
+                            <a href="products.php" class="btn btn-info">Back to shop</a>
+
+                            <?php
+
+                                if (!empty($_SESSION["shopping_cart"])) {
+                                    echo '<a href="checkout.php" class="btn btn-info pull right">Proceed to Payment</a>';
+                                }
+                            ?>
                         </div>
+
+
                     </div>
                 </main>
             </div>
