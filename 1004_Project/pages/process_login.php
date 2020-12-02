@@ -85,10 +85,10 @@ function authenticateUser() {
     $con->close();
 }
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
-     <title>Login Status</title>
     <head>
+     <title>Login Status</title>
         <?php
         include "../page_incs/head.inc.php";
         ?>
