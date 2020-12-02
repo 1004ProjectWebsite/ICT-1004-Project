@@ -117,7 +117,7 @@ include "../page_incs/nav.inc.php";
                     <article>
                         <figure>
                             <a href="index.php?page=product&id=<?=$product['product_id']?>" class="product">
-                                <img src="../phone_cases_img/<?=$product['p_img']?>" width="80px" height="150px" class="phone_image" alt="<?=$product['p_name']?>">
+                                <img src="../phone_cases_img/<?=$product['p_img']?>" width="80" height="150" class="phone_image" alt="<?=$product['p_name']?>">
                             </a>
 
                             <p class="text-body"><?=$product['p_name']?></p>
