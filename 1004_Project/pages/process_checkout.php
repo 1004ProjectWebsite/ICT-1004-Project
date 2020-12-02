@@ -101,26 +101,46 @@ function processCheckout() {
 }
 ?>
 
-
 <html>
-    <head>
-        <title>Checkout Results</title>
+<head>
+    <link rel='stylesheet' href='../css/checkoutcss.css' type='text/css' media='all' />
+    <title>Checkout Results</title>
+    <?php
+    include "../page_incs/head.inc.php";
+    ?>
+</head>
+<body>
+<?php
+include "../page_incs/nav.inc.php";
+?>
+<div class="container-fluid h-100 d-flex flex-column" style="padding: 0px;">
+    <main class="flex-grow-1 w-100">
+
+        <br class="row">
+        <div class="col-sm">
+        </div>
+
+
+<?php
+    if ($success) { ?>
+        <script type="text/javascript">
+                    setTimeout('Redirect()', 15000);
+                    function Redirect() {
+                        window.location.href = "index.php?page=checkout_success";
+                    }
+                    // document.write("You will be redirected back to account page.");
+        </script>
+
+                    <div class="col-sm">
+                        <div style="text-align:center;">
+                            <div class="loader"></div>
+                            <h1>Processing Transaction</h1>
+                                <br/>
+                            <h2>Please wait.</h2>
+                        </div>
+                    </div>
+
         <?php
-        include "../page_incs/head.inc.php";
-        ?>
-    </head>
-    <body>
-        <?php
-        include "../page_incs/nav.inc.php";
-        ?>
-        <main class="container">
-            <?php
-            if ($success) {
-                ?>
-                <script type="text/javascript">
-                    window.location.href = "index.php?page=checkout_success";
-                </script>
-                <?php
             } else {
                 echo "<h3>Oops!</h3>";
                 echo "<h4>The following input errors were detected:</h4>";
@@ -128,8 +148,12 @@ function processCheckout() {
                 echo "<a class=\"btn btn-danger\" href=index.php?page=cartpage>Return to Cart</a>";
                 //echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
             }
-            ?>
-        </main>
+        ?>
+
+                <div class="col-sm">
+                </div>
+            </main>
+        </div>
         <?php
         include "../page_incs/footer.inc.php";
         ?>

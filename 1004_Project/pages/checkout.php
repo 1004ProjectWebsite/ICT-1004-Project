@@ -53,7 +53,7 @@ $row = mysqli_fetch_array($query);
             <div class="row">
                 <div class="col-md-4 order-md-2 mb-4">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-muted">Your cart</span>
+                        <span class="text-dark">Your cart</span>
                         <?php
                         if (!empty($_SESSION["shopping_cart"])) {
                             $cart_count = count(array_keys($_SESSION["shopping_cart"]));
@@ -81,9 +81,9 @@ $row = mysqli_fetch_array($query);
 
                             <div>
                                 <h6 class="my-0"><?php echo $values["item_name"]; ?></h6>
-                                <small class="text-muted">Quantity: <?php echo $values["item_quantity"]; ?></small>
+                                <small class="text-dark">Quantity: <?php echo $values["item_quantity"]; ?></small>
                             </div>
-                            <span class="text-muted">$<?php echo $values["item_price"]; ?></span>
+                            <span class="text-dark">$<?php echo $values["item_price"]; ?></span>
                         </li>
 
                         <?php
@@ -131,12 +131,12 @@ $row = mysqli_fetch_array($query);
                         </div>
 
                         <div class="mb-3">
-                            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                            <label for="address2">Address 2 <span class="text-dark">(Optional)</span></label>
                             <input type="text" class="form-control" name="address2" id="address2" placeholder="Apartment or suite" value="<?php echo $row['address2']; ?>">
                         </div>
 
                         <div class="mb-3">
-                            <label for="phone_number">Contact Number <span class="text-muted">(Optional)</span></label>
+                            <label for="phone_number">Contact Number <span class="text-dark">(Optional)</span></label>
                             <input type="text" class="form-control" name="pno" id="phone_number" placeholder="Mobile number" value="<?php echo $row['pno']; ?>">
                         </div>
 
@@ -185,22 +185,11 @@ $row = mysqli_fetch_array($query);
 
                         <h4 class="mb-3">Payment</h4>
 
-                        <div class="d-block my-3">
-                            <div class="custom-control custom-radio">
-                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                                <label class="custom-control-label" for="credit">Credit card</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                                <label class="custom-control-label" for="debit">Debit card</label>
-                            </div>
-                        </div>
-
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="cc-name">Name on card</label>
                                 <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                                <small class="text-muted">Full name as displayed on card</small>
+                                <small class="text-dark">Full name as displayed on card</small>
                                 <div class="invalid-feedback">
                                     Name on card is required
                                 </div>
@@ -208,7 +197,8 @@ $row = mysqli_fetch_array($query);
 
                             <div class="col-md-6 mb-3">
                                 <label for="cc-number">Credit card number</label>
-                                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                                <input type="number" class="form-control" id="cc-number" placeholder=""
+                                       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength = "19" required>
                                 <div class="invalid-feedback">
                                     Credit card number is required
                                 </div>
@@ -218,15 +208,16 @@ $row = mysqli_fetch_array($query);
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <label for="cc-expiration">Expiration</label>
-                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                                <input type="month" class="form-control" id="cc-expiration" placeholder="" required>
                                 <div class="invalid-feedback">
                                     Expiration date required
                                 </div>
                             </div>
 
                             <div class="col-md-3 mb-3">
-                                <label for="cc-expiration">CVV</label>
-                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                                <label for="cc-security-code">CVV</label>
+                                <input type="number" class="form-control" id="cc-cvv" placeholder=""
+                                       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength = "3" required>
                                 <div class="invalid-feedback">
                                     Security code required
                                 </div>
@@ -234,13 +225,15 @@ $row = mysqli_fetch_array($query);
 
                         </div>
                         <hr class="mb-4">
-                        <button class="btn btn-primary btn-lg" type="submit">Checkout</button>
+
                         &nbsp;
                         <a class="btn btn-warning btn-lg" type="submit" href="index.php?page=cartpage">Back to cart</a>
+                        <button class="btn btn-primary btn-lg" type="submit" color="black">Checkout</button>
 
                     </form>
                 </div>
             </div>
+
         </div>
     </body>
 

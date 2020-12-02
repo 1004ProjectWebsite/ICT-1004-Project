@@ -95,6 +95,7 @@ function UpdateDB() {
     }
     $con->close();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -125,7 +126,7 @@ function UpdateDB() {
                                     <h3>Update successful!</h3>
                                     <p>You will be redirected back to account page.</p>
                                 </div>";
-                            // echo "<a class=\"btn btn-success\" href=index.php?page=account>Return to Account</a>";
+
                             ?>
                         </div>
 
@@ -134,7 +135,7 @@ function UpdateDB() {
                     </div>
 
                         <script type = "text/javascript">
-                            <!--
+
                     function Redirect() {
                                 window.location = "index.php?page=account";
                             }
