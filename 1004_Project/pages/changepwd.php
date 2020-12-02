@@ -6,10 +6,6 @@ $message = "";
 include "../page_incs/db_onetimelogin.php";
 $id = $_SESSION['id'];
 
-$message = "";
-include "../page_incs/db_onetimelogin.php";
-$id = $_SESSION['id'];
-
 // This will be called once form is submitted
 if (isset($_POST["change_password"])) {
     // Get all input fields
@@ -38,7 +34,7 @@ if (isset($_POST["change_password"])) {
     }
 }
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Phone Case Shop</title>
@@ -51,11 +47,11 @@ include "../page_incs/head.inc.php";
 include "../page_incs/nav.inc.php";
 ?>  
         <div class="container-fluid h-100 d-flex flex-column p-0">
-            <main role="main" class="row flex-grow-1 w-100 align-items-center">
+            <main class="row flex-grow-1 w-100 align-items-center">
                 <div class="mx-auto">
                     <div class="layout-form">
 
-                        <form method="post" action="">
+                        <form method="post">
                             <h3 class="mb-0 text-body" >Change Password</h3>
 <?php
 echo "<span style=\"color:#000000\">$message</span>";
@@ -82,6 +78,7 @@ echo "<span style=\"color:#000000\">$message</span>";
                         </form>
                     </div>
                 </div>
+            </main>
         </div>
 <?php
 include "../page_incs/footer.inc.php";
