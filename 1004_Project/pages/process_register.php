@@ -83,6 +83,7 @@ function saveMemberToDB() {
     $con->close();
 }
 ?>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Registration Results</title>
