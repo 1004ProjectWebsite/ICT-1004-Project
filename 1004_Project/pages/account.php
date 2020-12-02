@@ -74,10 +74,9 @@ $row = mysqli_fetch_array($query);
 </div>
 </div>
 </div>
-
-</body>
 <?php
 include "../page_incs/footer.inc.php";
 ?>
+</body>
 </html>
 

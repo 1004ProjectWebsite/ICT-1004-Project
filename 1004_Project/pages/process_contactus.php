@@ -46,22 +46,21 @@ function sanitize_input($data) {
     <head>
         <title>Feedback in progress</title>
         <?php
-            include "../page_incs/head.inc.php";
+        include "../page_incs/head.inc.php";
         ?>
     </head>
     <body>
         <?php
-            include "../page_incs/nav.inc.php";
+        include "../page_incs/nav.inc.php";
         ?>
         <main class="container">         
-        <?php
-
+            <?php
             /* Namespace alias. */
 
             use PHPMailer\PHPMailer\PHPMailer;
             use PHPMailer\PHPMailer\SMTP;
 
-            /* Include the Composer generated autoload.php file. */
+/* Include the Composer generated autoload.php file. */
             require 'C:\Users\tshuj\Desktop\SJ work\1004-web sys & tech\php-7.4.11-nts-Win32-vc15-x64\composer\vendor\autoload.php';
 
             /* Create a new PHPMailer object. Passing TRUE to the constructor enables exceptions. */
@@ -86,20 +85,18 @@ function sanitize_input($data) {
                 $mail->Subject = 'Enquiry';
 
                 /* Set the mail message body. */
-                $mail->Body = "Sender's Name: " . $_POST["name"] . "\n" . "Sender's contact: " . $_POST["phoneno"] . 
+                $mail->Body = "Sender's Name: " . $_POST["name"] . "\n" . "Sender's contact: " . $_POST["phoneno"] .
                         "\n" . "Sender's email: " . $_POST["email"] . "\n" . "Sender's comment: " . $_POST["comment"];
 
                 /* Finally send the mail. */
                 $mail->send();
-                if ($success){
+                if ($success) {
                     echo "<h4>Email Sent! Thank you for your feedback!<br></h4>";
                     echo "<a class=\"btn btn-success\" href=\"\pages\home.php\">Return to Home</a>";
-                }
-                else{
+                } else {
                     echo "<h4>Sorry, an error had occurred, Return to Contact Us.<br></h4>";
                     echo "<a class=\"btn btn-danger\" href=\"\pages\contactus.php\">Return to Contact Us</a>";
                 }
-
             } catch (Exception $e) {
                 /* PHPMailer exception. */
                 echo $e->errorMessage();
@@ -109,11 +106,11 @@ function sanitize_input($data) {
             }
             ?>
         </main>
-    </body>
-            
-        <?php
+
+            <?php
             include "../page_incs/footer.inc.php";
-        ?>
+            ?>
+    </body>
 </html>
 
 

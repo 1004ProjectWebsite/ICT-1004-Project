@@ -53,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $zip = sanitize_input($_POST["zip"]);
     }
-
 } else {
     echo "<h2>This page is not meant to be run directly.</h2>";
     echo "<a href='index.php?page=home'>Go back to the homepage</a>";
@@ -91,7 +90,7 @@ function processCheckout() {
         $stmt->bind_param("sssssssss", $fname, $lname, $email, $address, $address2, $pno, $country, $state, $zip);
         $result = $stmt->execute();
         if ($result) {
-
+            
         } else {
             $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
             $success = false;
@@ -104,35 +103,35 @@ function processCheckout() {
 
 
 <html>
-<head>
-    <title>Checkout Results</title>
-    <?php
-    include "../page_incs/head.inc.php";
-    ?>
-</head>
-<body>
-<?php
-include "../page_incs/nav.inc.php";
-?>
-<main class="container">
-    <?php
-    if ($success) {
-        ?>
-        <script type="text/javascript">
-            window.location.href = "index.php?page=checkout_success";
-        </script>
+    <head>
+        <title>Checkout Results</title>
         <?php
-    } else {
-        echo "<h3>Oops!</h3>";
-        echo "<h4>The following input errors were detected:</h4>";
-        echo "<p>" . $errorMsg . "</p>";
-        echo "<a class=\"btn btn-danger\" href=index.php?page=cartpage>Return to Cart</a>";
-        //echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
-    }
-    ?>
-</main>
-</body>
-<?php
-include "../page_incs/footer.inc.php";
-?>
+        include "../page_incs/head.inc.php";
+        ?>
+    </head>
+    <body>
+        <?php
+        include "../page_incs/nav.inc.php";
+        ?>
+        <main class="container">
+            <?php
+            if ($success) {
+                ?>
+                <script type="text/javascript">
+                    window.location.href = "index.php?page=checkout_success";
+                </script>
+                <?php
+            } else {
+                echo "<h3>Oops!</h3>";
+                echo "<h4>The following input errors were detected:</h4>";
+                echo "<p>" . $errorMsg . "</p>";
+                echo "<a class=\"btn btn-danger\" href=index.php?page=cartpage>Return to Cart</a>";
+                //echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
+            }
+            ?>
+        </main>
+        <?php
+        include "../page_incs/footer.inc.php";
+        ?>
+    </body>
 </html>

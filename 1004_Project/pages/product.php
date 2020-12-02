@@ -112,10 +112,9 @@ include "../page_incs/nav.inc.php";
 <?php endforeach; ?>
         </div>
     </div>
-
-</body>
-
-<?php
+    <?php
 include "../page_incs/footer.inc.php";
 ?>
+
+</body>
 </html>
