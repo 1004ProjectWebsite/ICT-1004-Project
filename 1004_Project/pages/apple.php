@@ -110,7 +110,7 @@ include "../page_incs/nav.inc.php";
                     <article>
                         <figure>
                             <a href="index.php?page=product&id=<?=$product['product_id']?>" class="product">
-                                <img src="../phone_cases_img/<?=$product['p_img']?>" width="80px" height="150px" class="phone_image" alt="<?=$product['p_name']?>">
+                                <img src="../phone_cases_img/<?=$product['p_img']?>" width="80" height="150" class="phone_image" alt="<?=$product['p_name']?>">
                             </a>
 
                             <p class="text-body"><?=$product['p_name']?></p>
@@ -118,7 +118,7 @@ include "../page_incs/nav.inc.php";
                             <form method="post" action="apple.php?action=add&id=<?php echo $product["product_id"]; ?>&page=<?php echo $page ?>">
                                 <div class="form-group">
                                     <input class="form-control" type="number" name="quantity"
-                                           value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required aria-label="quantity">
+                                           value="1" min="1" placeholder="Quantity" required aria-label="quantity">
                                 </div> 
                                <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />

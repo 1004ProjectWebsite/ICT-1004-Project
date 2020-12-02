@@ -126,7 +126,7 @@ include "../page_incs/nav.inc.php";
                                 <div class="form-group">
                                   
                                     <input class="form-control" type="number" name="quantity"
-                                           value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required aria-label="quantity">
+                                           value="1" min="1" placeholder="Quantity" required aria-label="quantity">
                                 </div> 
                                <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />

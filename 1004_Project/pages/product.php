@@ -60,6 +60,8 @@ if (isset($_POST["add_to_cart"])) {
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Phone Case Shop</title>
 <?php
@@ -72,7 +74,7 @@ include "../page_incs/head.inc.php";
 include "../page_incs/nav.inc.php";
 ?>
 
-    <div class="container-fluid d-flex flex-column justify-content-center flexbox"">
+    <div class="container-fluid d-flex flex-column justify-content-center flexbox">
         <div class="row">
 
     <?php foreach ($products as $product): ?>
@@ -90,13 +92,13 @@ include "../page_incs/nav.inc.php";
                                 <div class="form-group">
                                     <label for="quantity"></label>
                                     <input class="form-control" type="number" id="quantity" name="quantity"
-                                           value="1" min="1" max="<?=$product['p_qty']?>" placeholder="Quantity" required>
+                                           value="1" min="1" placeholder="Quantity" required>
                                 </div>
-                                 <p>
+                                <p>
                                     <br/>
                                     <h4>Product Description</h4>
                                     <?= $product['p_desc'] ?>
-                                </p>
+                               
                                 <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>" />  
                                 <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />
                                 <input type="hidden" name="hidden_image_url" value="<?php echo $product["p_img"]; ?>" />
@@ -116,3 +118,4 @@ include "../page_incs/nav.inc.php";
 <?php
 include "../page_incs/footer.inc.php";
 ?>
+</html>
