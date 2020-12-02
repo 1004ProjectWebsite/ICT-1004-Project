@@ -86,13 +86,12 @@ include "../page_incs/nav.inc.php";
                     <article>
                         <figure>
                             <h5 class="text-body"><?= $product['p_name'] ?></h5>
-                            <h5 class="text-info">&dollar;<?= $product['p_price'] ?></h5>
+                            <h5 class="text-danger">&dollar;<?= $product['p_price'] ?></h5>
 
                             <form method="post" action="product.php?action=add&id=<?php echo $product["product_id"]; ?>">
                                 <div class="form-group">
-                                    <label for="quantity"></label>
                                     <input class="form-control" type="number" id="quantity" name="quantity"
-                                           value="1" min="1" placeholder="Quantity" required>
+                                           value="1" min="1" placeholder="Quantity" required aria-label="quantity">
                                 </div>
                                 <p>
                                     <br/>
