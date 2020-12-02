@@ -96,7 +96,8 @@ function UpdateDB() {
     $con->close();
 }
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>Update Results</title>
         <?php
@@ -104,29 +105,40 @@ function UpdateDB() {
         ?>
     </head>
     <body>
-        <div id="container">
-            <div id="header">
-                <?php
-                include "../page_incs/nav.inc.php";
-                ?>   
-            </div>
-            <div id="body">
-                <main class="container">
-                    <?php
-                    if ($success) {
-                        UpdateDB();
-//                echo "<br>";
-//                echo "<br>";
-//                echo "<br>";
-                        echo "<h3>Update successful!</h3>";
-                        // echo "<a class=\"btn btn-success\" href=index.php?page=account>Return to Account</a>";
-                        ?>
+    <div id="header">
+        <?php
+        include "../page_incs/nav.inc.php";
+        ?>
+    </div>
+    <div class="container-fluid h-100 d-flex flex-column p-0">
+
+                    <div class="row" style="margin-top: 200px;">
+                        <div class="col-sm">
+                        </div>
+
+                        <div class="col-sm" >
+                            <?php
+                            if ($success) {
+                            UpdateDB();
+                            echo "
+                                <div>
+                                    <h3>Update successful!</h3>
+                                    <p>You will be redirected back to account page.</p>
+                                </div>";
+                            // echo "<a class=\"btn btn-success\" href=index.php?page=account>Return to Account</a>";
+                            ?>
+                        </div>
+
+                        <div class="col-sm">
+                        </div>
+                    </div>
+
                         <script type = "text/javascript">
                             <!--
                     function Redirect() {
                                 window.location = "index.php?page=account";
                             }
-                            document.write("You will be redirected back to account page.");
+                            // document.write("You will be redirected back to account page.");
                             setTimeout('Redirect()', 1000);
                             //-->
                         </script>
@@ -137,14 +149,14 @@ function UpdateDB() {
                         echo "<p>" . $errorMsg . "</p>";
                         echo "<a class=\"btn btn-danger\" href=index.php?page=account>Return to Account</a>";
                     }
-                    ?>           
-                </main>
+                    ?>
+
+                    <div id="footer">
+                        <?php
+                        include "../page_incs/footer.inc.php";
+                        ?>
+                    </div>
             </div>
-            <div id="footer">
-                <?php
-                include "../page_incs/footer.inc.php";
-                ?>
-            </div>
-        </div>
+        </main>
     </body>
 </html>

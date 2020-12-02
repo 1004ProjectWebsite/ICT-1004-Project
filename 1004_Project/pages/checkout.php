@@ -15,6 +15,11 @@ if(isset($_GET["action"]))
         }
     }
 }
+
+include "../page_incs/db_onetimelogin.php";
+$id = $_SESSION['id'];
+$query = mysqli_query($con, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
+$row = mysqli_fetch_array($query);
 ?>
 
 
@@ -91,6 +96,7 @@ if(isset($_GET["action"]))
                             <strong>$<?php echo number_format($total, 2); ?></strong>
                         </li>
                     </ul>
+
 <!--                Checkout form-->
                 </div>
                 <div class="col-md-8 order-md-1">
@@ -99,11 +105,11 @@ if(isset($_GET["action"]))
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">First name</label>                              
-                                <input type="text" class="form-control" id="fname"name="fname">                          
+                                <input type="text" class="form-control" id="fname"name="fname" value="<?php echo $row['fname']; ?>">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="lastName">Last name</label>
-                                <input type="text" class="form-control" id="lname" name="lname" required>
+                                <input type="text" class="form-control" id="lname" name="lname" value="<?php echo $row['lname']; ?>" required>
                                 <div class="invalid-feedback">
                                     Valid last name is required.
                                 </div>
@@ -111,14 +117,14 @@ if(isset($_GET["action"]))
                         </div>
                         <div class="mb-3">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" value="<?php echo $row['email']; ?>"required>
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" value="<?php echo $row['address']; ?>"required>
                             <div class="invalid-feedback">
                                 Please enter your shipping address.
                             </div>
@@ -126,12 +132,12 @@ if(isset($_GET["action"]))
 
                         <div class="mb-3">
                             <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                            <input type="text" class="form-control" name="address2" id="address2" placeholder="Apartment or suite">
+                            <input type="text" class="form-control" name="address2" id="address2" placeholder="Apartment or suite" value="<?php echo $row['address2']; ?>">
                         </div>
 
                         <div class="mb-3">
                             <label for="phone_number">Contact Number <span class="text-muted">(Optional)</span></label>
-                            <input type="text" class="form-control" name="pno" id="phone_number" placeholder="Mobile number">
+                            <input type="text" class="form-control" name="pno" id="phone_number" placeholder="Mobile number" value="<?php echo $row['pno']; ?>">
                         </div>
 
                         <div class="row">
@@ -139,8 +145,8 @@ if(isset($_GET["action"]))
                                 <label for="country">Country</label>
                                 <select class="custom-select d-block w-100" name="country" id="country" required>
                                     <option value="">Choose...</option>
-                                    <option>Singapore</option>
-                                    <option>United States</option>
+                                    <option value="Singapore" <?php if($row['country']=="Singapore") echo "selected"; ?> >Singapore</option>
+                                    <option value="United States" <?php if($row['country']=="United States") echo "selected"; ?> >United States</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please select a valid country.
@@ -150,8 +156,8 @@ if(isset($_GET["action"]))
                                 <label for="state">State</label>
                                 <select class="custom-select d-block w-100" name="state" id="state" required>
                                     <option value="">Choose...</option>
-                                    <option>Singapore</option>
-                                    <option>California</option>
+                                    <option value="Singapore" <?php if($row['state']=="Singapore") echo "selected"; ?> >Singapore</option>
+                                    <option value="California" <?php if($row['state']=="California") echo "selected"; ?> >California</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid state.
@@ -159,7 +165,7 @@ if(isset($_GET["action"]))
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label for="zip">Zip</label>
-                                <input type="text" class="form-control" name="zip" id="zip" placeholder="" required>
+                                <input type="text" class="form-control" name="zip" id="zip" placeholder="" value="<?php echo $row['zip']; ?>" required>
                                 <div class="invalid-feedback">
                                     Zip code required.
                                 </div>
@@ -167,15 +173,15 @@ if(isset($_GET["action"]))
                         </div>
 
                         <hr class="mb-4">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="same-address">
-                            <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="save-info">
-                            <label class="custom-control-label" for="save-info">Save this information for next time</label>
-                        </div>
-                        <hr class="mb-4">
+<!--                        <div class="custom-control custom-checkbox">-->
+<!--                            <input type="checkbox" class="custom-control-input" id="same-address">-->
+<!--                            <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>-->
+<!--                        </div>-->
+<!--                        <div class="custom-control custom-checkbox">-->
+<!--                            <input type="checkbox" class="custom-control-input" id="save-info">-->
+<!--                            <label class="custom-control-label" for="save-info">Save this information for next time</label>-->
+<!--                        </div>-->
+<!--                        <hr class="mb-4">-->
 
                         <h4 class="mb-3">Payment</h4>
 
