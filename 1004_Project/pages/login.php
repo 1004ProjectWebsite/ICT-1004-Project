@@ -18,7 +18,7 @@
 <!--MEMBER LOGIN FORM-->
 <div class="container-fluid d-flex flex-column justify-content-center" style="height: 90%!important;">
 
-    <main role="main" class="row flex-grow-1 w-100 align-items-center">
+    <main class="row flex-grow-1 w-100 align-items-center">
         <div class="mx-auto">
             <div class="layout-form">
                 <form action="process_login.php" method="post">
@@ -37,13 +37,12 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="Login" class="btn btn-primary btn-lg" name="login-submit">Login</button>
+                        <button class="btn btn-primary btn-lg" name="login-submit">Login</button>
                     </div>
                 </form>
             </div>
         </div>
     </main>
-
 </div>
         <?php
         include "../page_incs/footer.inc.php";
