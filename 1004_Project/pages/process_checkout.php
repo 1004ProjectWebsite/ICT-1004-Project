@@ -113,8 +113,9 @@ function processCheckout() {
 <?php
 include "../page_incs/nav.inc.php";
 ?>
-<div class="container-fluid h-100 d-flex flex-column" style="padding: 0px;">
-    <main class="flex-grow-1 w-100">
+
+<div class="container-fluid h-100 d-flex flex-column">
+    <main >
 
         <br class="row">
         <div class="col-sm">
@@ -124,20 +125,21 @@ include "../page_incs/nav.inc.php";
 <?php
     if ($success) { ?>
         <script type="text/javascript">
-                    setTimeout('Redirect()', 15000);
+                    setTimeout('Redirect()', 10000);
                     function Redirect() {
                         window.location.href = "index.php?page=checkout_success";
                     }
-                    // document.write("You will be redirected back to account page.");
         </script>
 
                     <div class="col-sm">
-                        <div style="text-align:center;">
+                        <div class="vcenter"></div>
+                        <div style="text-align:center">
                             <div class="loader"></div>
-                            <h1>Processing Transaction</h1>
                                 <br/>
+                            <h1>Processing Transaction</h1>
                             <h2>Please wait.</h2>
                         </div>
+                    </div>
                     </div>
 
         <?php

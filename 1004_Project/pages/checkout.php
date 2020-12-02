@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <?php
 session_start();
 if(isset($_GET["action"]))
@@ -16,14 +19,20 @@ if(isset($_GET["action"]))
     }
 }
 
-include "../page_incs/db_onetimelogin.php";
-$id = $_SESSION['id'];
-$query = mysqli_query($con, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
-$row = mysqli_fetch_array($query);
+
+    if(isset($_SESSION['id'])) {
+            include "../page_incs/db_onetimelogin.php";
+            $id = $_SESSION['id'];
+            $query = mysqli_query($con, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
+            $row = mysqli_fetch_array($query);
+        }
+
+    else {
+        $row['fname'] = $row['lname'] = $row['email'] = $row['address'] = $row['address2'] = $row['pno'] = $row['country'] = $row['state'] = $row['zip'] = "";
+    }
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
     <head>
     <title>Phone Case Shop</title>
     <link rel='stylesheet' href='../css/checkoutcss.css' type='text/css' media='all' />
@@ -33,6 +42,7 @@ $row = mysqli_fetch_array($query);
         </head>
 
         <body class="bg-light">
+        <main>
 
         <?php
             include "../page_incs/nav.inc.php";
@@ -52,7 +62,7 @@ $row = mysqli_fetch_array($query);
 <!--            User's checkout Cart -->
             <div class="row">
                 <div class="col-md-4 order-md-2 mb-4">
-                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-dark">Your cart</span>
                         <?php
                         if (!empty($_SESSION["shopping_cart"])) {
@@ -62,7 +72,7 @@ $row = mysqli_fetch_array($query);
                             <?php
                         }
                         ?>
-                    </h4>
+                    </h3>
 
                     <?php
                         if(!empty($_SESSION["shopping_cart"]))
@@ -80,7 +90,7 @@ $row = mysqli_fetch_array($query);
                             </div>
 
                             <div>
-                                <h6 class="my-0"><?php echo $values["item_name"]; ?></h6>
+                                <p><?php echo $values["item_name"]; ?></p>
                                 <small class="text-dark">Quantity: <?php echo $values["item_quantity"]; ?></small>
                             </div>
                             <span class="text-dark">$<?php echo $values["item_price"]; ?></span>
@@ -100,8 +110,8 @@ $row = mysqli_fetch_array($query);
 <!--                Checkout form-->
                 </div>
                 <div class="col-md-8 order-md-1">
-                    <h4 class="mb-3">Billing address</h4>
-                    <form class="needs-validation" action="process_checkout.php" method="post" novalidate>
+                    <h3 class="mb-3">Billing address</h3>
+                    <form name="checkout_form" class="needs-validation" action="process_checkout.php" method="post" novalidate>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="fname">First name</label>
@@ -165,7 +175,7 @@ $row = mysqli_fetch_array($query);
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label for="zip">Zip</label>
-                                <input type="text" class="form-control" name="zip" id="zip" placeholder="" value="<?php echo $row['zip'];?>" required>
+                                <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip Code" value="<?php echo $row['zip'];?>" required>
                                 <div class="invalid-feedback">
                                     Zip code required.
                                 </div>
@@ -197,8 +207,8 @@ $row = mysqli_fetch_array($query);
 
                             <div class="col-md-6 mb-3">
                                 <label for="cc-number">Credit card number</label>
-                                <input type="number" class="form-control" id="cc-number" placeholder=""
-                                       oninput="javascript: if (this.value.length > this.maxlength) this.value = this.value.slice(0, this.maxlength);" maxlength = "19" required>
+                                <input type="text" class="form-control" id="cc-number" placeholder=""  maxlength = "19"
+                                       required>
                                 <div class="invalid-feedback">
                                     Credit card number is required
                                 </div>
@@ -208,7 +218,7 @@ $row = mysqli_fetch_array($query);
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <label for="cc-expiration">Expiration</label>
-                                <input type="month" class="form-control" id="cc-expiration" required>
+                                <input type="text" class="form-control" id="cc-expiration" required>
                                 <div class="invalid-feedback">
                                     Expiration date required
                                 </div>
@@ -216,8 +226,7 @@ $row = mysqli_fetch_array($query);
 
                             <div class="col-md-3 mb-3">
                                 <label for="cc-cvv">CVV</label>
-                                <input type="number" class="form-control" id="cc-cvv" placeholder=""
-                                       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength = "3" required>
+                                <input type="text" class="form-control" id="cc-cvv" placeholder="" maxlength = "3" required>
                                 <div class="invalid-feedback">
                                     Security code required
                                 </div>
@@ -228,13 +237,14 @@ $row = mysqli_fetch_array($query);
 
                         <a class="btn btn-warning btn-lg" href="index.php?page=cartpage">Back to cart</a>
                         &nbsp;
-                        <button class="btn btn-primary btn-lg" type="submit" >Checkout</button>
+                        <button class="btn btn-info btn-lg" type="submit" >Checkout</button>
 
                     </form>
                     <br/>
                 </div>
             </div>
 
+            </main>
         </div>
     </body>
 
@@ -243,7 +253,7 @@ $row = mysqli_fetch_array($query);
     ?>
 
     <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        // JavaScript for disabling form submissions if there are invalid fields
         (function() {
             'use strict';
 
@@ -258,11 +268,14 @@ $row = mysqli_fetch_array($query);
                             event.preventDefault();
                             event.stopPropagation();
                         }
+
                         form.classList.add('was-validated');
                     }, false);
                 });
             }, false);
         })();
+
+
     </script>
 
     <?php
