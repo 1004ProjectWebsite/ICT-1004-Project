@@ -165,6 +165,7 @@ if(isset($_GET["action"]))
                                 </div>
                             </div>
                         </div>
+
                         <hr class="mb-4">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="same-address">

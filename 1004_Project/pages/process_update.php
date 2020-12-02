@@ -6,7 +6,7 @@ session_start();
 
 $id = $_SESSION['id'];
 $message = "";
-$fname = $lname = $email = $pno = $address = $pwd_hashed = $errorMsg = "";
+$fname = $lname = $email = $pno = $address = $pwd_hashed = $errorMsg = $address2 =  "";
 $success = true;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["fname"])) {
@@ -31,8 +31,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["address"])) {
         $address = sanitize_input($_POST["address"]);
     }
+    if (empty($_POST["address2"])) {
+        $address2 = sanitize_input($_POST["address2"]);
+    }
     if (empty($_POST["pno"])) {
         $pno = sanitize_input($_POST["pno"]);
+    }
+    if (empty($_POST["country"])) {
+        $pno = sanitize_input($_POST["country"]);
+    }
+    if (empty($_POST["state"])) {
+        $pno = sanitize_input($_POST["state"]);
+    }
+    if (empty($_POST["zip"])) {
+        $pno = sanitize_input($_POST["zip"]);
     }
 }
 
@@ -45,7 +57,7 @@ function sanitize_input($data) {
 }
 
 function UpdateDB() {
-    global $id, $fname, $lname, $email, $address, $pno, $pwd_hashed, $errorMsg, $success;
+    global $id, $fname, $lname, $email, $address, $address2, $pno, $country, $state, $zip, $pwd_hashed, $errorMsg, $success;
 
 //Login DB
     include "../page_incs/db_onetimelogin.php";
@@ -62,8 +74,14 @@ function UpdateDB() {
         $lname = $_POST['lname'];
         $email = $_POST['email'];
         $address = $_POST['address'];
+        $address2 = $_POST['address2'];
         $pno = $_POST['pno'];
-        $sql = ("UPDATE member SET fname ='$fname', lname ='$lname', email ='$email', address ='$address', pno ='$pno' WHERE member_id = '$id'");
+        $country = $_POST['country'];
+        $state = $_POST['state'];
+        $zip = $_POST['zip'];
+
+        $sql = ("UPDATE member SET fname ='$fname', lname ='$lname', email ='$email', address ='$address', address2 = '$address2',pno ='$pno',country = '$country',state = '$state',zip = '$zip' WHERE member_id = '$id'");
+
 //        header('Location:index.php?page=account');
     }
     if ($con->query($sql) === TRUE) {

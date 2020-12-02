@@ -9,6 +9,7 @@ $id = $_SESSION['id'];
 $query = mysqli_query($con, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
 $row = mysqli_fetch_array($query);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,6 +57,38 @@ $row = mysqli_fetch_array($query);
                                 <label class="col-lg-3 col-form-label text-body form-control-label">Address</label>
                                 <div class="col-lg-9">
                                     <input type="text" class="form-control" name="address" aria-label="address" placeholder="Enter your Address" value="<?php echo $row['address']; ?>"/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label text-body form-control-label">Address 2</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" name="address2" aria-label="address2" placeholder="Apartment or Suite" value="<?php echo $row['address2']; ?>"/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label text-body form-control-label">Country</label>
+                                <div class="col-lg-9">
+                                    <select class="custom-select d-block w-100" name="country" id="country">
+                                        <option value="">Choose...</option>
+                                        <option value="Singapore" <?php if($row['country']=="Singapore") echo "selected"; ?> >Singapore</option>
+                                        <option value="United States" <?php if($row['country']=="United States") echo "selected"; ?> >United States</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label text-body form-control-label">State</label>
+                                <div class="col-lg-9">
+                                    <select class="custom-select d-block w-100" name="state" id="state" required>
+                                        <option value="">Choose...</option>
+                                        <option value="Singapore" <?php if($row['state']=="Singapore") echo "selected"; ?> >Singapore</option>
+                                        <option value="California" <?php if($row['state']=="California") echo "selected"; ?> >California</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label text-body form-control-label">Zip</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" name="zip" aria-label="zip" placeholder="Enter your zipcode" value="<?php echo $row['zip']; ?>"/>
                                 </div>
                             </div>
 
