@@ -10,7 +10,7 @@
         include "../page_incs/nav.inc.php";
         ?>
 
-        <main role="main" class="row flex-grow-1 w-100 align-items-center">
+        <main class="row flex-grow-1 w-100 align-items-center">
             <div class="mx-auto">
                 <div class="layout-form">
                     <form action="process_register.php" method="post">
@@ -62,14 +62,14 @@
                             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
                         </div>
                     </form>
-                    <div class="text-center" style="margin-bottom: 5%;">Already have an account? <a href="index.php?page=login" style="color:black">Login here</a></
+                    <div class="text-center" style="margin-bottom: 5%;">
+                        Already have an account? <a href="index.php?page=login" style="color:black">Login here</a>
                     </div>
                 </div>
             </div>
         </main>
+        <?php
+        include "../page_incs/footer.inc.php";
+        ?>
     </body>
-    <?php
-    include "../page_incs/footer.inc.php";
-    ?>
-
 </html>
