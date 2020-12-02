@@ -9,6 +9,7 @@ $id = $_SESSION['id'];
 $query = mysqli_query($con, "SELECT * FROM member where member_id='$id'")or die(mysqli_error());
 $row = mysqli_fetch_array($query);
 ?>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <?php
@@ -68,12 +69,8 @@ $row = mysqli_fetch_array($query);
                     </div>
                 </div>
         </div>
+</main>
         <!-- /form user info -->
-
-    </div>
-</div>
-</div>
-</div>
 <?php
 include "../page_incs/footer.inc.php";
 ?>
