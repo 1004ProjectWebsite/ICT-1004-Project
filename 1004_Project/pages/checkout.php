@@ -22,7 +22,7 @@ $query = mysqli_query($con, "SELECT * FROM member where member_id='$id'")or die(
 $row = mysqli_fetch_array($query);
 ?>
 
-
+<!DOCTYPE html>
 <html lang="en">
     <head>
     <title>Phone Case Shop</title>
@@ -76,7 +76,7 @@ $row = mysqli_fetch_array($query);
                         <li class="list-group-item d-flex justify-content-between lh-condensed">
 
                             <div>
-                                <img src="../phone_cases_img/<?=$values["item_image"]?>" alt="<?=$values["item_image"]?>" height="100px" width="50px">
+                                <img src="../phone_cases_img/<?=$values["item_image"]?>" alt="<?=$values["item_image"]?>" height="100" width="50">
                             </div>
 
                             <div>
@@ -104,11 +104,11 @@ $row = mysqli_fetch_array($query);
                     <form class="needs-validation" action="process_checkout.php" method="post" novalidate>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="firstName">First name</label>                              
-                                <input type="text" class="form-control" id="fname"name="fname" value="<?php echo $row['fname']; ?>">
+                                <label for="fname">First name</label>
+                                <input type="text" class="form-control" id="fname" name="fname" value="<?php echo $row['fname']; ?>">
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="lastName">Last name</label>
+                                <label for="lname">Last name</label>
                                 <input type="text" class="form-control" id="lname" name="lname" value="<?php echo $row['lname']; ?>" required>
                                 <div class="invalid-feedback">
                                     Valid last name is required.
@@ -117,14 +117,14 @@ $row = mysqli_fetch_array($query);
                         </div>
                         <div class="mb-3">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" value="<?php echo $row['email']; ?>"required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" value="<?php echo $row['email']; ?>" required>
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" value="<?php echo $row['address']; ?>"required>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" value="<?php echo $row['address']; ?>" required>
                             <div class="invalid-feedback">
                                 Please enter your shipping address.
                             </div>
@@ -165,7 +165,7 @@ $row = mysqli_fetch_array($query);
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label for="zip">Zip</label>
-                                <input type="text" class="form-control" name="zip" id="zip" placeholder="" value="<?php echo $row['zip']; ?>" required>
+                                <input type="text" class="form-control" name="zip" id="zip" placeholder="" value="<?php echo $row['zip'];?>" required>
                                 <div class="invalid-feedback">
                                     Zip code required.
                                 </div>
@@ -198,7 +198,7 @@ $row = mysqli_fetch_array($query);
                             <div class="col-md-6 mb-3">
                                 <label for="cc-number">Credit card number</label>
                                 <input type="number" class="form-control" id="cc-number" placeholder=""
-                                       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength = "19" required>
+                                       oninput="javascript: if (this.value.length > this.maxlength) this.value = this.value.slice(0, this.maxlength);" maxlength = "19" required>
                                 <div class="invalid-feedback">
                                     Credit card number is required
                                 </div>
@@ -208,14 +208,14 @@ $row = mysqli_fetch_array($query);
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <label for="cc-expiration">Expiration</label>
-                                <input type="month" class="form-control" id="cc-expiration" placeholder="" required>
+                                <input type="month" class="form-control" id="cc-expiration" required>
                                 <div class="invalid-feedback">
                                     Expiration date required
                                 </div>
                             </div>
 
                             <div class="col-md-3 mb-3">
-                                <label for="cc-security-code">CVV</label>
+                                <label for="cc-cvv">CVV</label>
                                 <input type="number" class="form-control" id="cc-cvv" placeholder=""
                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength = "3" required>
                                 <div class="invalid-feedback">
@@ -226,11 +226,12 @@ $row = mysqli_fetch_array($query);
                         </div>
                         <hr class="mb-4">
 
+                        <a class="btn btn-warning btn-lg" href="index.php?page=cartpage">Back to cart</a>
                         &nbsp;
-                        <a class="btn btn-warning btn-lg" type="submit" href="index.php?page=cartpage">Back to cart</a>
-                        <button class="btn btn-primary btn-lg" type="submit" color="black">Checkout</button>
+                        <button class="btn btn-primary btn-lg" type="submit" >Checkout</button>
 
                     </form>
+                    <br/>
                 </div>
             </div>
 

@@ -16,7 +16,7 @@
             include "../page_incs/nav.inc.php";
         ?>
 
-        <div class="container-fluid h-100 d-flex flex-column" style="padding: 0px;">
+        <div class="container-fluid h-100 d-flex flex-column">
             <main class="flex-grow-1 w-100">
 
                 <br class="row">
@@ -25,8 +25,8 @@
 
                     <div class="col-sm">
 
-                        <div style="text-align:center;">
-                            <img src="../images/checkout.gif" alt="checkout_success" height="300px" width="400px">
+                        <div style="text-align:center">
+                            <img src="../images/checkout.gif" alt="checkout_success" height="300" width="400">
 
                             <h1>Thank you for your purchase!</h1>
                             <p>We'll email you an order confirmation email with details and tracking info very soon.</p>
@@ -41,9 +41,9 @@
 
                 </div>
             </main>
-        <?php
-        include "../page_incs/footer.inc.php";
-        ?>
+            <?php
+            include "../page_incs/footer.inc.php";
+            ?>
     </body>
 
 </html>
