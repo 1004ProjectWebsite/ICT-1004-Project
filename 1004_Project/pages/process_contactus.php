@@ -56,54 +56,55 @@ function sanitize_input($data) {
         <main class="container">         
             <?php
             /* Namespace alias. */
-
-            use PHPMailer\PHPMailer\PHPMailer;
-            use PHPMailer\PHPMailer\SMTP;
+//
+//            use PHPMailer\PHPMailer\PHPMailer;
+//            use PHPMailer\PHPMailer\SMTP;
 
 /* Include the Composer generated autoload.php file. */
-            require 'C:\Users\tshuj\Desktop\SJ work\1004-web sys & tech\php-7.4.11-nts-Win32-vc15-x64\composer\vendor\autoload.php';
+//            require 'C:\Users\tshuj\Desktop\SJ work\1004-web sys & tech\php-7.4.11-nts-Win32-vc15-x64\composer\vendor\autoload.php';
+//
+//            /* Create a new PHPMailer object. Passing TRUE to the constructor enables exceptions. */
+//            $mail = new PHPMailer(TRUE);
+//            $mail->isSMTP();                                            // Send using SMTP
+//            $mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
+//            $mail->SMTPAuth = true;                                   // Enable SMTP authentication
+//            $mail->Username = 'tshujuan07@gmail.com';                     // SMTP username
+//            $mail->Password = 'S.Jay99607';                               // SMTP password
+//            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+//            $mail->Port = 587;
+//
+//            /* Open the try/catch block. */
+//            try {
+//                /* Set the mail sender. */
+//                $mail->setFrom($_POST["email"], $_POST["name"]);
+//
+//                /* Add a recipient. */
+//                $mail->addAddress('tshujuan07@gmail.com', 'Shu Juan');
+//
+//                /* Set the subject. */
+//                $mail->Subject = 'Enquiry';
+//
+//                /* Set the mail message body. */
+//                $mail->Body = "Sender's Name: " . $_POST["name"] . "\n" . "Sender's contact: " . $_POST["phoneno"] .
+//                        "\n" . "Sender's email: " . $_POST["email"] . "\n" . "Sender's comment: " . $_POST["comment"];
+//
+//                /* Finally send the mail. */
+//                $mail->send();
 
-            /* Create a new PHPMailer object. Passing TRUE to the constructor enables exceptions. */
-            $mail = new PHPMailer(TRUE);
-            $mail->isSMTP();                                            // Send using SMTP
-            $mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
-            $mail->SMTPAuth = true;                                   // Enable SMTP authentication
-            $mail->Username = 'tshujuan07@gmail.com';                     // SMTP username
-            $mail->Password = 'S.Jay99607';                               // SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port = 587;
-
-            /* Open the try/catch block. */
-            try {
-                /* Set the mail sender. */
-                $mail->setFrom($_POST["email"], $_POST["name"]);
-
-                /* Add a recipient. */
-                $mail->addAddress('tshujuan07@gmail.com', 'Shu Juan');
-
-                /* Set the subject. */
-                $mail->Subject = 'Enquiry';
-
-                /* Set the mail message body. */
-                $mail->Body = "Sender's Name: " . $_POST["name"] . "\n" . "Sender's contact: " . $_POST["phoneno"] .
-                        "\n" . "Sender's email: " . $_POST["email"] . "\n" . "Sender's comment: " . $_POST["comment"];
-
-                /* Finally send the mail. */
-                $mail->send();
-                if ($success) {
-                    echo "<h4>Email Sent! Thank you for your feedback!<br></h4>";
-                    echo "<a class=\"btn btn-success\" href=\"\pages\home.php\">Return to Home</a>";
-                } else {
-                    echo "<h4>Sorry, an error had occurred, Return to Contact Us.<br></h4>";
-                    echo "<a class=\"btn btn-danger\" href=\"\pages\contactus.php\">Return to Contact Us</a>";
-                }
-            } catch (Exception $e) {
-                /* PHPMailer exception. */
-                echo $e->errorMessage();
-            } catch (\Exception $e) {
-                /* PHP exception (note the backslash to select the global namespace Exception class). */
-                echo $e->getMessage();
-            }
+//                if ($success) {
+//                    echo "<h4>Email Sent! Thank you for your feedback!<br></h4>";
+//                    echo "<a class=\"btn btn-success\" href=\"\pages\home.php\">Return to Home</a>";
+//                } else {
+//                    echo "<h4>Sorry, an error had occurred, Return to Contact Us.<br></h4>";
+//                    echo "<a class=\"btn btn-danger\" href=\"\pages\contactus.php\">Return to Contact Us</a>";
+//                }
+//            } catch (Exception $e) {
+//                /* PHPMailer exception. */
+//                echo $e->errorMessage();
+//            } catch (\Exception $e) {
+//                /* PHP exception (note the backslash to select the global namespace Exception class). */
+//                echo $e->getMessage();
+//            }
             ?>
         </main>
 
