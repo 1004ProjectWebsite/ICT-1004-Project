@@ -50,8 +50,7 @@ $total_products = $result->num_rows;
            }  
            else  
            {  
-                echo '<script>alert("Item Already Added")</script>';  
-                //echo '<script>window.location="index.php"</script>';  
+                echo '<script>alert("Item Already Added")</script>';              
            }  
       }  
       else  
@@ -65,6 +64,7 @@ $total_products = $result->num_rows;
                 
            );  
            $_SESSION["shopping_cart"][0] = $item_array;  
+            echo '<script>alert("Item Added")</script>';
       }  
  }  
 ?>

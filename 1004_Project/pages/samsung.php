@@ -41,10 +41,10 @@ if (isset($_POST["add_to_cart"])) {
                 'item_image' => $_POST["hidden_image_url"]
             );
             $_SESSION["shopping_cart"][$count] = $item_array;
-            echo '<script>alert("Item Added")</script>';
+           echo '<script>alert("Item Added")</script>';
         } else {
             echo '<script>alert("Item Already Added")</script>';
-            //echo '<script>window.location="index.php"</script>';  
+           
         }
     } else {
         $item_array = array(
@@ -55,6 +55,7 @@ if (isset($_POST["add_to_cart"])) {
             'item_image' => $_POST["hidden_image_url"]
         );
         $_SESSION["shopping_cart"][0] = $item_array;
+         echo '<script>alert("Item Added")</script>';
     }
 }
 ?>

@@ -65,6 +65,7 @@ $total_products = $result->num_rows;
                 
            );  
            $_SESSION["shopping_cart"][0] = $item_array;  
+            echo '<script>alert("Item Added")</script>';
       }  
  }  
 ?>
