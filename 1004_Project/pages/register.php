@@ -21,7 +21,7 @@
                             <div class="input-group">
 
                                 <input class="form-control" type="text" id="fname"
-                                       maxlength="45" name="fname" aria-label="fname" placeholder="Enter first name">
+                                       required maxlength="45" name="fname" aria-label="fname" placeholder="Enter first name">
                             </div>
                         </div>
                         <div class="form-group">
