@@ -41,14 +41,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Helper function that checks input for malicious or unwanted content.
-function sanitize_input($data) {
+function sanitize_input($data)
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
 
-function saveMemberToDB() {
+function saveMemberToDB()
+{
     global $id, $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
 
 // DB Login
@@ -82,47 +84,48 @@ function saveMemberToDB() {
     }
     $con->close();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Registration Results</title>
+<head>
+    <title>Registration Results</title>
+    <?php
+    include "../page_incs/head.inc.php";
+    ?>
+</head>
+<body>
+<div id="container">
+    <div id="header">
         <?php
-        include "../page_incs/head.inc.php";
+        include "../page_incs/nav.inc.php";
         ?>
-    </head>
-    <body>
-        <div id="container">
-            <div id="header">
-                <?php
-                include "../page_incs/nav.inc.php";
-                ?>     
-            </div>
-            <div id="body">
-                <main class="container">           
-                    <?php
-                    if ($success) {
-                        saveMemberToDB();
-                        ?>
-                        <script type="text/javascript">
-                            window.location.href = "index.php?page=welcome";
-                        </script>
-                        <?php
-                    } else {
-                        echo "<h3>Oops!</h3>";
-                        echo "<h4>The following input errors were detected:</h4>";
-                        echo "<p>" . $errorMsg . "</p>";
-                        echo "<a class=\"btn btn-danger\" href=index.php?page=register>Return to Account</a>";
-                        //echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
-                    }
-                    ?>            
-                </main>
-            </div>
-            <div id="footer">
-                <?php
-                include "../page_incs/footer.inc.php";
+    </div>
+    <div id="body">
+        <main class="container">
+            <?php
+            if ($success) {
+                saveMemberToDB();
                 ?>
-            </div>
-        </div>
-    </body>
+                <script type="text/javascript">
+                    window.location.href = "index.php?page=welcome";
+                </script>
+                <?php
+            } else {
+                echo "<h3>Oops!</h3>";
+                echo "<h4>The following input errors were detected:</h4>";
+                echo "<p>" . $errorMsg . "</p>";
+                echo "<a class=\"btn btn-danger\" href=index.php?page=register>Return to Account</a>";
+                //echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
+            }
+            ?>
+        </main>
+    </div>
+    <div id="footer">
+        <?php
+        include "../page_incs/footer.inc.php";
+        ?>
+    </div>
+</div>
+</body>
 </html>

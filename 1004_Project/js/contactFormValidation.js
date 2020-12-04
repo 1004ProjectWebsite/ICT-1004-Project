@@ -1,8 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 window.onload = function() {
     attachListeners();
 };
@@ -13,28 +8,28 @@ function attachListeners() {
 
 function checkForms() {
     var contactForm = document.getElementById("contactForm");
-    
+
     var contactName = document.getElementById("contactName");
     var txtContactName = contactName.value;
     var isContactNameValid = false;
-    
+
     var email = document.getElementById("email");
     var txtEmail = email.value;
     var isEmailValid = false;
-    
+
     var contactPhoneNumber = document.getElementById("contactNumber");
     var txtContactPhoneNumber = contactPhoneNumber.value;
     var isContactPhoneNumberValid = false;
-    
+
     var contactMessage = document.getElementById("feedback");
     var txtContactMessage = contactMessage.value;
     var isContactMessageValid = false;
-    
+
     if (txtContactName === "") {
         contactName.style.borderColor = "red";
         contactName.setCustomValidity("This is a required field!");
         isContactNameValid = false;
-    } 
+    }
     else {
         if (!chkNameSyntax(txtContactName)) {
             contactName.style.borderColor = "red";
@@ -45,8 +40,8 @@ function checkForms() {
             contactName.setCustomValidity("");
             isContactNameValid = true;
         }
-    } 
-    
+    }
+
     if (txtEmail === "") {
         email.style.borderColor = "red";
         email.setCustomValidity("This is a required field!");
@@ -60,9 +55,9 @@ function checkForms() {
             email.style.borderColor = "green";
             email.setCustomValidity("");
             isEmailValid = true;
-        } 
-    } 
-    
+        }
+    }
+
     if (txtContactPhoneNumber === "") {
         contactPhoneNumber.style.borderColor = "red";
         contactPhoneNumber.setCustomValidity("This is a required field!");
@@ -76,9 +71,9 @@ function checkForms() {
             contactPhoneNumber.style.borderColor = "green";
             contactPhoneNumber.setCustomValidity("");
             isContactPhoneNumberValid = true;
-        } 
-    } 
-    
+        }
+    }
+
     if (txtContactMessage === "") {
         contactMessage.style.borderColor = "red";
         contactMessage.setCustomValidity("This is a required field!");
@@ -92,9 +87,9 @@ function checkForms() {
             contactMessage.style.borderColor = "green";
             contactMessage.setCustomValidity("");
             isContactMessageValid = true;
-        } 
-    } 
-    
+        }
+    }
+
     if (isContactNameValid && isEmailValid && isContactPhoneNumberValid && isContactMessageValid) {
         contactForm.submit();
     }

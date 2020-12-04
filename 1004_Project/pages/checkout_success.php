@@ -1,6 +1,7 @@
 <?php
     unset($_SESSION['shopping_cart']);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
