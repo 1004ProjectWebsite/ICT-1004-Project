@@ -1,6 +1,7 @@
-window.onload = function() {
+window.onload = function () {
     attachListeners();
 };
+
 function attachListeners() {
     btnSubmit = document.getElementById("btnSubmit");
     btnSubmit.addEventListener("click", checkForms);
@@ -29,8 +30,7 @@ function checkForms() {
         contactName.style.borderColor = "red";
         contactName.setCustomValidity("This is a required field!");
         isContactNameValid = false;
-    }
-    else {
+    } else {
         if (!chkNameSyntax(txtContactName)) {
             contactName.style.borderColor = "red";
             contactName.setCustomValidity("Please enter a proper first name!");

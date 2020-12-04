@@ -3,11 +3,9 @@ session_start(); //start session
 $fname = $lname = $email = $address = $address2 = $pno = $country = $state = $zip = $errorMsg = "";
 $success = true;
 
-if(isset($_SESSION['id'])) {
-        $user_id = $_SESSION['id'];
-    }
-
-else {
+if (isset($_SESSION['id'])) {
+    $user_id = $_SESSION['id'];
+} else {
     $user_id = "0";
 }
 
@@ -70,14 +68,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 processCheckout();
 
 // Helper function that checks input for malicious or unwanted content.
-function sanitize_input($data) {
+function sanitize_input($data)
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
 
-function processCheckout() {
+function processCheckout()
+{
     global $fname, $lname, $email, $address, $address2, $pno, $country, $state, $zip, $errorMsg, $success, $user_id;
 
 // DB Login
@@ -96,7 +96,7 @@ function processCheckout() {
         $stmt->bind_param("ssssssssss", $fname, $lname, $email, $address, $address2, $pno, $country, $state, $zip, $user_id);
         $result = $stmt->execute();
         if ($result) {
-            
+
         } else {
             $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
             $success = false;
@@ -105,11 +105,12 @@ function processCheckout() {
     }
     $con->close();
 }
+
 ?>
 
 <html>
 <head>
-    <link rel='stylesheet' href='../css/checkoutcss.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='../css/checkoutcss.css' type='text/css' media='all'/>
     <title>Checkout Results</title>
     <?php
     include "../page_incs/head.inc.php";
@@ -121,49 +122,50 @@ include "../page_incs/nav.inc.php";
 ?>
 
 <div class="container-fluid h-100 d-flex flex-column">
-    <main >
+    <main>
 
         <br class="row">
         <div class="col-sm">
         </div>
 
 
-<?php
-    if ($success) { ?>
+        <?php
+        if ($success) { ?>
         <script type="text/javascript">
-                    setTimeout('Redirect()', 8000);
-                    function Redirect() {
-                        window.location.href = "index.php?page=checkout_success";
-                    }
+            setTimeout('Redirect()', 8000);
+
+            function Redirect() {
+                window.location.href = "index.php?page=checkout_success";
+            }
         </script>
 
-                    <div class="col-sm">
-                        <div class="vcenter"></div>
-                        <div style="text-align:center">
-                            <div class="loader"></div>
-                                <br/>
-                            <h1>Processing Transaction</h1>
-                            <h2>Please wait.</h2>
-                        </div>
-                    </div>
-                    </div>
-
-        <?php
-            } else {
-                echo "<h3>Oops!</h3>";
-                echo "<h4>The following input errors were detected:</h4>";
-                echo "<p>" . $errorMsg . "</p>";
-                echo "<a class=\"btn btn-danger\" href=index.php?page=cartpage>Return to Cart</a>";
-                //echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
-            }
-        ?>
-
-                <div class="col-sm">
-                </div>
-            </main>
+        <div class="col-sm">
+            <div class="vcenter"></div>
+            <div style="text-align:center">
+                <div class="loader"></div>
+                <br/>
+                <h1>Processing Transaction</h1>
+                <h2>Please wait.</h2>
+            </div>
         </div>
-        <?php
-        include "../page_incs/footer.inc.php";
-        ?>
-    </body>
+</div>
+
+<?php
+} else {
+    echo "<h3>Oops!</h3>";
+    echo "<h4>The following input errors were detected:</h4>";
+    echo "<p>" . $errorMsg . "</p>";
+    echo "<a class=\"btn btn-danger\" href=index.php?page=cartpage>Return to Cart</a>";
+    //echo '<button class="btn btn-danger hBack">Return to Sign Up</button>';
+}
+?>
+
+<div class="col-sm">
+</div>
+</main>
+</div>
+<?php
+include "../page_incs/footer.inc.php";
+?>
+</body>
 </html>

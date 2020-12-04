@@ -6,7 +6,7 @@ session_start();
 
 $id = $_SESSION['id'];
 $message = "";
-$fname = $lname = $email = $pno = $address = $pwd_hashed = $errorMsg = $address2 =  "";
+$fname = $lname = $email = $pno = $address = $pwd_hashed = $errorMsg = $address2 = "";
 $success = true;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["fname"])) {
@@ -49,14 +49,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Helper function that checks input for malicious or unwanted content.
-function sanitize_input($data) {
+function sanitize_input($data)
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
 
-function UpdateDB() {
+function UpdateDB()
+{
     global $id, $fname, $lname, $email, $address, $address2, $pno, $country, $state, $zip, $pwd_hashed, $errorMsg, $success;
 
 //Login DB
@@ -99,65 +101,66 @@ function UpdateDB() {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Update Results</title>
-        <?php
-        include "../page_incs/head.inc.php";
-        ?>
-    </head>
-    <body>
-    <div id="header">
-        <?php
-        include "../page_incs/nav.inc.php";
-        ?>
-    </div>
-    <div class="container-fluid h-100 d-flex flex-column p-0">
+<head>
+    <title>Update Results</title>
+    <?php
+    include "../page_incs/head.inc.php";
+    ?>
+</head>
+<body>
+<div id="header">
+    <?php
+    include "../page_incs/nav.inc.php";
+    ?>
+</div>
+<div class="container-fluid h-100 d-flex flex-column p-0">
 
-                    <div class="row" style="margin-top: 200px;">
-                        <div class="col-sm">
-                        </div>
+    <div class="row" style="margin-top: 200px;">
+        <div class="col-sm">
+        </div>
 
-                        <div class="col-sm" >
-                            <?php
-                            if ($success) {
-                            UpdateDB();
-                            echo "
+        <div class="col-sm">
+            <?php
+            if ($success) {
+            UpdateDB();
+            echo "
                                 <div>
                                     <h3>Update successful!</h3>
                                     <p>You will be redirected back to account page.</p>
                                 </div>";
 
-                            ?>
-                        </div>
+            ?>
+        </div>
 
-                        <div class="col-sm">
-                        </div>
-                    </div>
+        <div class="col-sm">
+        </div>
+    </div>
 
-                        <script type = "text/javascript">
+    <script type="text/javascript">
 
-                    function Redirect() {
-                                window.location = "index.php?page=account";
-                            }
-                            // document.write("You will be redirected back to account page.");
-                            setTimeout('Redirect()', 1000);
-                            //-->
-                        </script>
-                        <?php
-                    } else {
-                        echo "<h3>Oops!</h3>";
-                        echo "<h4>The following input errors were detected:</h4>";
-                        echo "<p>" . $errorMsg . "</p>";
-                        echo "<a class=\"btn btn-danger\" href=index.php?page=account>Return to Account</a>";
-                    }
-                    ?>
+        function Redirect() {
+            window.location = "index.php?page=account";
+        }
 
-                    <div id="footer">
-                        <?php
-                        include "../page_incs/footer.inc.php";
-                        ?>
-                    </div>
-            </div>
-        </main>
-    </body>
+        // document.write("You will be redirected back to account page.");
+        setTimeout('Redirect()', 1000);
+        //-->
+    </script>
+    <?php
+    } else {
+        echo "<h3>Oops!</h3>";
+        echo "<h4>The following input errors were detected:</h4>";
+        echo "<p>" . $errorMsg . "</p>";
+        echo "<a class=\"btn btn-danger\" href=index.php?page=account>Return to Account</a>";
+    }
+    ?>
+
+    <div id="footer">
+        <?php
+        include "../page_incs/footer.inc.php";
+        ?>
+    </div>
+</div>
+</main>
+</body>
 </html>

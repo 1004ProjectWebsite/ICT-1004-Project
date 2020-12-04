@@ -4,16 +4,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
-     <title>Login Account</title>
+<title>Login Account</title>
 <!--HEAD-->
-    <?php
-    include "../page_incs/head.inc.php";
-    ?>
-    <body>
+<?php
+include "../page_incs/head.inc.php";
+?>
+<body>
 <!--    NAV BAR-->
-    <?php
-        include "../page_incs/nav.inc.php";
-        ?>
+<?php
+include "../page_incs/nav.inc.php";
+?>
 
 <!--MEMBER LOGIN FORM-->
 <div class="container-fluid d-flex flex-column justify-content-center" style="height: 90%!important;">
@@ -26,7 +26,7 @@
                     <hr>
                     <div class="form-group">
                         <div class="input-group">
-                            <input class ="form-control" type="email" id="email" required name="email"
+                            <input class="form-control" type="email" id="email" required name="email"
                                    aria-label="email" placeholder="Enter email">
                         </div>
                     </div>
@@ -44,8 +44,8 @@
         </div>
     </main>
 </div>
-        <?php
-        include "../page_incs/footer.inc.php";
-        ?>
-    </body>
+<?php
+include "../page_incs/footer.inc.php";
+?>
+</body>
 </html>

@@ -27,7 +27,8 @@ if (isset($_POST['login-submit'])) {
 
 authenticateUser();
 
-function sanitize_input($data) {
+function sanitize_input($data)
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
@@ -38,7 +39,8 @@ function sanitize_input($data) {
  * Helper function to authenticate the login.
  */
 
-function authenticateUser() {
+function authenticateUser()
+{
     global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
 // Create database connection.   
 // DB Login
@@ -84,54 +86,56 @@ function authenticateUser() {
     }
     $con->close();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-     <title>Login Status</title>
+<head>
+    <title>Login Status</title>
+    <?php
+    include "../page_incs/head.inc.php";
+    ?>
+</head>
+<body>
+<div id="container">
+    <div id="header">
         <?php
-        include "../page_incs/head.inc.php";
+        include "../page_incs/nav.inc.php";
         ?>
-    </head>
-    <body>
-        <div id="container">
-            <div id="header">
-                <?php
-                include "../page_incs/nav.inc.php";
+    </div>
+    <div id="body">
+        <main class="container">
+            <?php
+            if ($success) {
+                echo "<h1>Login successful!</h1>";
+                echo "<h2>Welcome back $fname</h2>";
+                // echo "<a class=\"btn btn-success\" href=index.php?page=home>Return to Home</a>";
                 ?>
-            </div>
-            <div id="body">
-                <main class="container">
-                    <?php
-                    if ($success) {
-                        echo "<h1>Login successful!</h1>";
-                        echo "<h2>Welcome back $fname</h2>";
-                       // echo "<a class=\"btn btn-success\" href=index.php?page=home>Return to Home</a>";
-                        ?>
-                        <script type = "text/javascript">
-                            <!--
+                <script type="text/javascript">
+                    <!--
                     function Redirect() {
-                                window.location = "index.php?page=home";
-                            }
-                            document.write("You will be redirected back to home page.");
-                            setTimeout('Redirect()', 1000);
-                            //-->
-                        </script>
-                        <?php
-                    } else {
-                        echo "<h1>Oops!</h1>";
-                        echo "<h2>The following input errors were detected:</h2>";
-                        echo "<p>" . $errorMsg . "</p>";
-                        echo "<a class=\"btn btn-warning\" href=index.php?page=login>Return to Login</a>";
+                        window.location = "index.php?page=home";
                     }
-                    ?>                  
-                </main>
-            </div>
-            <div id="footer">
+
+                    document.write("You will be redirected back to home page.");
+                    setTimeout('Redirect()', 1000);
+                    //-->
+                </script>
                 <?php
-                include "../page_incs/footer.inc.php";
-                ?>
-            </div>
-        </div>
-    </body>
+            } else {
+                echo "<h1>Oops!</h1>";
+                echo "<h2>The following input errors were detected:</h2>";
+                echo "<p>" . $errorMsg . "</p>";
+                echo "<a class=\"btn btn-warning\" href=index.php?page=login>Return to Login</a>";
+            }
+            ?>
+        </main>
+    </div>
+    <div id="footer">
+        <?php
+        include "../page_incs/footer.inc.php";
+        ?>
+    </div>
+</div>
+</body>
 </html>

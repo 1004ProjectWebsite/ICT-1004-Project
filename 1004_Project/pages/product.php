@@ -42,7 +42,7 @@ if (isset($_POST["add_to_cart"])) {
                 'item_image' => $_POST["hidden_image_url"]
             );
             $_SESSION["shopping_cart"][$count] = $item_array;
-             echo '<script>alert("Item Added")</script>';
+            echo '<script>alert("Item Added")</script>';
         } else {
             echo '<script>alert("Item Already Added")</script>';
             //echo '<script>window.location="index.php"</script>';  
@@ -56,7 +56,7 @@ if (isset($_POST["add_to_cart"])) {
             'item_image' => $_POST["hidden_image_url"]
         );
         $_SESSION["shopping_cart"][0] = $item_array;
-         echo '<script>alert("Item Added")</script>';
+        echo '<script>alert("Item Added")</script>';
     }
 }
 ?>
@@ -65,9 +65,9 @@ if (isset($_POST["add_to_cart"])) {
 <html lang="en">
 <head>
     <title>Phone Case Shop</title>
-<?php
-include "../page_incs/head.inc.php";
-?>
+    <?php
+    include "../page_incs/head.inc.php";
+    ?>
 </head>
 
 <body>
@@ -75,41 +75,43 @@ include "../page_incs/head.inc.php";
 include "../page_incs/nav.inc.php";
 ?>
 
-    <div class="container-fluid d-flex flex-column justify-content-center flexbox">
-        <div class="row">
+<div class="container-fluid d-flex flex-column justify-content-center flexbox">
+    <div class="row">
 
-    <?php foreach ($products as $product): ?>
-                <div class="col d-flex justify-content-center">
-                     <img src="../phone_cases_img/<?=$product['p_img']?>" class="phone_image" alt="<?=$product['p_name']?>">
-                </div>
+        <?php foreach ($products as $product): ?>
+            <div class="col d-flex justify-content-center">
+                <img src="../phone_cases_img/<?= $product['p_img'] ?>" class="phone_image"
+                     alt="<?= $product['p_name'] ?>">
+            </div>
 
-                <div class="col">
-                    <article>
-                        <figure>
-                            <h5 class="text-body"><?= $product['p_name'] ?></h5>
-                            <h5 class="text-danger">&dollar;<?= $product['p_price'] ?></h5>
+            <div class="col">
+                <article>
+                    <figure>
+                        <h5 class="text-body"><?= $product['p_name'] ?></h5>
+                        <h5 class="text-danger">&dollar;<?= $product['p_price'] ?></h5>
 
-                            <form method="post" action="product.php?action=add&id=<?php echo $product["product_id"]; ?>">
-                                <div class="form-group">
-                                    <input class="form-control" type="number" id="quantity" name="quantity"
-                                           value="1" min="1" placeholder="Quantity" required aria-label="quantity">
-                                </div>
-                                <p>
-                                    <h4>Product Description</h4>
-                                    <?= $product['p_desc'] ?>
-                               <br/>
-                                <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>" />  
-                                <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>" />
-                                <input type="hidden" name="hidden_image_url" value="<?php echo $product["p_img"]; ?>" />
-                                <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" /> 
-                            </form>                              
-                        </figure>
-                    </article>
-                </div>
-            <?php endforeach; ?>
-        </div>
+                        <form method="post" action="product.php?action=add&id=<?php echo $product["product_id"]; ?>">
+                            <div class="form-group">
+                                <input class="form-control" type="number" id="quantity" name="quantity"
+                                       value="1" min="1" placeholder="Quantity" required aria-label="quantity">
+                            </div>
+                            <p>
+                            <h4>Product Description</h4>
+                            <?= $product['p_desc'] ?>
+                            <br/>
+                            <input type="hidden" name="hidden_name" value="<?php echo $product["p_name"]; ?>"/>
+                            <input type="hidden" name="hidden_price" value="<?php echo $product["p_price"]; ?>"/>
+                            <input type="hidden" name="hidden_image_url" value="<?php echo $product["p_img"]; ?>"/>
+                            <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success"
+                                   value="Add to Cart"/>
+                        </form>
+                    </figure>
+                </article>
+            </div>
+        <?php endforeach; ?>
     </div>
-    <?php
+</div>
+<?php
 include "../page_incs/footer.inc.php";
 ?>
 
