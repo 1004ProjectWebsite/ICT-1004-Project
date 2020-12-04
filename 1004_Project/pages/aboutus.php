@@ -47,7 +47,7 @@ include "../page_incs/nav.inc.php";
                             frameborder="0" style="border:0;" allowfullscreen="" title="google map of Phonix">
                     </iframe>
                 </div>
-                <form id="contactForm" action="process_contact.php" method="post" class="col-md-4 ">
+                <form id="contactForm" action="../pages/home.php" method="post" class="col-md-4 ">
                     <div class="form-group">
                         <a>Name:</a>
                         <input aria-label="contactName" type="text" class="form-control" id="contactName" name="contactName" placeholder="Name" pattern="[A-z ]+" required>
@@ -60,7 +60,7 @@ include "../page_incs/nav.inc.php";
 
                     <div class="form-group">
                         <a >Contact Number:</a>
-                        <input aria-label="contactNumber" type="tel" class="form-control" id="contactNumber" name="contactPhoneNumber" placeholder="Phone Number" pattern="/^([0-9]{8})$/" maxlength="8" required>
+                        <input aria-label="contactNumber" type="tel" class="form-control" id="contactNumber" name="contactPhoneNumber" placeholder="Phone Number" maxlength="8" required>
                     </div>
 
                     <div class="form-group">
